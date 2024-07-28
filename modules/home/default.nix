@@ -6,6 +6,7 @@
 	 ./home.nix
 	 ./terminal.nix
 	 ./nvim.nix
+   ./work.nix
 	];
 
   programs.git = {

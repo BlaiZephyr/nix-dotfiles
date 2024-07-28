@@ -1,7 +1,11 @@
 { pkgs, ... }: {
 
-  home.packages = [
-   pkgs.ddnet
-   pkgs.lutris
+  home.packages = with pkgs; [
+   ddnet
+   lutris
+   osu-lazer
+   prismlauncher
+   protonup-qt
+   gamemode
    ];
 }

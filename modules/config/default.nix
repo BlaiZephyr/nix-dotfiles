@@ -3,6 +3,7 @@
     ./steam.nix
     ./drivers.nix
     ./db.nix
+    ./dev.nix
 	];
 
     nixpkgs.config.packageOverrides = pkgs: {

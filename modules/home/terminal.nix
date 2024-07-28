@@ -14,10 +14,10 @@ shellAliases = {
 vi = "lvim";
 vim = "lvim";
 nvim = "lvim";
-};
 interactiveShellInit = ''
-  set SSH_AUTH_SOCK ~/.goldwarden-ssh-agent.sock
+eval (ssh-agent -c)
 '';
+};
 };
 
 programs.starship = {
