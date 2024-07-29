@@ -16,10 +16,10 @@ vim = "lvim";
 nvim = "lvim";
 interactiveShellInit = ''
 eval (ssh-agent -c)
+direnv hook fish | source
 '';
 };
 };
-
 programs.starship = {
     enable = true;
     settings = {
