@@ -1,4 +1,4 @@
-{config, lib, pkgs, ... }: {
+{pkgs, ... }: {
     
   fonts.fontconfig.enable = true;
   programs.neovim = {
