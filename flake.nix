@@ -6,7 +6,7 @@
     home-manager.url = "github:nix-community/home-manager";
   };
 
-  outputs = {nixpkgs, home-manager, ... }:
+  outputs = { nixpkgs, self, home-manager, ... }:
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system} {
@@ -15,17 +15,17 @@
       };
     in
     {
+      formatter.${system} = nixpkgs.legacyPackages.${system}.nixpkgs-fmt;
       nixosConfigurations = {
         melonix = nixpkgs.lib.nixosSystem {
           modules = [
             ./configuration.nix
-            home-manager.nixosModules.home-manager {
+            home-manager.nixosModules.home-manager
+            {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
               home-manager.users.melonix = {
-                imports = [
-		              ./modules/home/default.nix
-                ];
+                imports = [ ./modules/home/default.nix ];
               };
             }
           ];
@@ -33,5 +33,4 @@
       };
     };
 }
-
 

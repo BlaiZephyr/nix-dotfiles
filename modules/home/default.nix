@@ -1,13 +1,13 @@
-{pkgs, ... }: {
-	imports = [
-   ./recording.nix
-   ./gaming.nix
-   ./social.nix
-	 ./home.nix
-	 ./terminal.nix
-	 ./nvim.nix
-   ./work.nix
-	];
+{ pkgs, ... }: {
+  imports = [
+    ./recording.nix
+    ./gaming.nix
+    ./social.nix
+    ./home.nix
+    ./terminal.nix
+    ./nvim.nix
+    ./work.nix
+  ];
 
   programs.git = {
     enable = true;
@@ -19,5 +19,5 @@
     bitwarden-desktop
     bitwarden-cli
   ];
-  
+
 }

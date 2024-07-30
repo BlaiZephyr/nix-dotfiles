@@ -1,54 +1,54 @@
-{config, pkgs, ... }: {
+{ config, pkgs, ... }: {
 
-home.packages = with pkgs; [
-zsh
-nix-output-monitor
-nvd
-];
+  home.packages = with pkgs; [
+    zsh
+    nix-output-monitor
+    nvd
+  ];
 
-programs.alacritty = {
-enable = true;
-settings = {
-font.size = 14;
-shell = "/etc/profiles/per-user/melonix/bin/zsh";
-	};
+  programs.alacritty = {
+    enable = true;
+    settings = {
+      font.size = 14;
+      shell = "/etc/profiles/per-user/melonix/bin/zsh";
     };
-
-programs.zsh = {
-  enable = true;
-  enableCompletion = true;
-  autosuggestion.enable = true;
-  syntaxHighlighting.enable = true;
-
-  shellAliases = {
-    vim = "lvim";
-    nvim = "lvim";
-    vi = "lvim";
-    nhbuild = "nh os build /etc/nixos";
-    nhswitch = "nh os switch /etc/nixos";
-    config = "cd /etc/nixos";
   };
-  history = {
-    size = 10000;
-    path = "${config.xdg.dataHome}/zsh/history";
+
+  programs.zsh = {
+    enable = true;
+    enableCompletion = true;
+    autosuggestion.enable = true;
+    syntaxHighlighting.enable = true;
+
+    shellAliases = {
+      vim = "lvim";
+      nvim = "lvim";
+      vi = "lvim";
+      nhbuild = "nh os build /etc/nixos";
+      nhswitch = "nh os switch /etc/nixos";
+      config = "cd /etc/nixos";
+    };
+    history = {
+      size = 10000;
+      path = "${config.xdg.dataHome}/zsh/history";
+    };
   };
-};
 
-#programs.fish = {
-#enable = true;
-#shellAliases = {
-#vi = "lvim";
-#vim = "lvim";
-#nvim = "lvim";
-#interactiveShellInit = ''
-#eval (ssh-agent -c)
-#direnv hook fish | source
-#'';
-#};
-#};
+  #programs.fish = {
+  #enable = true;
+  #shellAliases = {
+  #vi = "lvim";
+  #vim = "lvim";
+  #nvim = "lvim";
+  #interactiveShellInit = ''
+  #eval (ssh-agent -c)
+  #direnv hook fish | source
+  #'';
+  #};
+  #};
 
 
-programs.starship = {
+  programs.starship = {
     enable = true;
     settings = {
       username = {
@@ -67,11 +67,11 @@ programs.starship = {
       };
     };
   };
-programs.direnv = {
-  enable = true;
-  nix-direnv.enable = true;
-  config.global = {
-    hide_env_diff = true;
+  programs.direnv = {
+    enable = true;
+    nix-direnv.enable = true;
+    config.global = {
+      hide_env_diff = true;
+    };
   };
-};
 }

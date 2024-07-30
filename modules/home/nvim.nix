@@ -1,13 +1,13 @@
-{pkgs, ... }: {
-    
+{ pkgs, ... }: {
+
   fonts.fontconfig.enable = true;
   programs.neovim = {
     enable = true;
     defaultEditor = true;
-};
+  };
   home.packages = with pkgs; [
-   lunarvim
+    lunarvim
 
-   (nerdfonts.override { fonts = [ "FiraCode" "JetBrainsMono" ]; })
-   ];
+    (nerdfonts.override { fonts = [ "FiraCode" "JetBrainsMono" ]; })
+  ];
 }

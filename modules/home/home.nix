@@ -1,9 +1,9 @@
-{pkgs, ... }:
+{ pkgs, ... }:
 {
 
-programs.home-manager.enable = true;
+  programs.home-manager.enable = true;
 
-home.enableNixpkgsReleaseCheck = false;
+  home.enableNixpkgsReleaseCheck = false;
 
   home.username = "melonix";
   home.homeDirectory = "/home/melonix";
@@ -11,21 +11,19 @@ home.enableNixpkgsReleaseCheck = false;
   home.stateVersion = "23.11";
 
   home.packages = with pkgs; [
-      git
+    git
   ];
 
-  home.file = {
-  };
+  home.file = { };
 
-  home.sessionVariables = {
-  };
+  home.sessionVariables = { };
 
   dconf.settings = {
-  "org/virt-manager/virt-manager/connections" = {
-   autoconnect = ["qemu:///system"];
-   uris = ["qemu:///system"];
-};
-};
+    "org/virt-manager/virt-manager/connections" = {
+      autoconnect = [ "qemu:///system" ];
+      uris = [ "qemu:///system" ];
+    };
+  };
 }
 
 

@@ -1,10 +1,10 @@
-{pkgs, ...}: {
+{ pkgs, ... }: {
 
-   environment.systemPackages = with pkgs; [
-   jetbrains.clion
-   ];
+  environment.systemPackages = with pkgs; [
+    jetbrains.clion
+  ];
 
 
 
-  
+
 }

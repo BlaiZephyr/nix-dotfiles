@@ -5,10 +5,10 @@
 
 {
   imports =
-    [  
+    [
       ./hardware-configuration.nix
       ./modules/config/default.nix
- ];
+    ];
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -16,8 +16,8 @@
   boot.initrd.kernelModules = [ "amdgpu" ];
 
   hardware.opengl = {
-   enable = true;
-};
+    enable = true;
+  };
 
   networking.hostName = "melonix";
   networking.networkmanager.enable = true;
@@ -67,7 +67,7 @@
     isNormalUser = true;
     description = "melonix";
     extraGroups = [ "networkmanager" "wheel" ];
-  }; 
+  };
   services.displayManager.autoLogin.enable = true;
   services.displayManager.autoLogin.user = "melonix";
 
@@ -79,7 +79,7 @@
   nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [
-  vim
+    vim
   ];
   system.stateVersion = "24.05"; # Did you read the comment? yes :3
   nix.settings.experimental-features = [ "nix-command" "flakes" ];

@@ -1,7 +1,7 @@
 { pkgs, ... }: {
 
   home.packages = [
-   pkgs.vesktop
-   pkgs.cinny-desktop
-   ];
+    pkgs.vesktop
+    pkgs.cinny-desktop
+  ];
 }
