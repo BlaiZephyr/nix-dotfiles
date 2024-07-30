@@ -7,5 +7,6 @@
    prismlauncher
    protonup-qt
    gamemode
+   vulkan-tools
    ];
 }

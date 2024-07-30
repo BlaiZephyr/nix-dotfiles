@@ -1,25 +1,53 @@
-{ ... }: {
+{config, pkgs, ... }: {
+
+home.packages = with pkgs; [
+zsh
+nix-output-monitor
+nvd
+];
 
 programs.alacritty = {
 enable = true;
 settings = {
 font.size = 14;
-shell.program = "/etc/profiles/per-user/melonix/bin/fish";
+shell = "/etc/profiles/per-user/melonix/bin/zsh";
 	};
     };
 
-programs.fish = {
-enable = true;
-shellAliases = {
-vi = "lvim";
-vim = "lvim";
-nvim = "lvim";
-interactiveShellInit = ''
-eval (ssh-agent -c)
-direnv hook fish | source
-'';
+programs.zsh = {
+  enable = true;
+  enableCompletion = true;
+  autosuggestion.enable = true;
+  syntaxHighlighting.enable = true;
+
+  shellAliases = {
+    vim = "lvim";
+    nvim = "lvim";
+    vi = "lvim";
+    nhbuild = "nh os build /etc/nixos";
+    nhswitch = "nh os switch /etc/nixos";
+    config = "cd /etc/nixos";
+  };
+  history = {
+    size = 10000;
+    path = "${config.xdg.dataHome}/zsh/history";
+  };
 };
-};
+
+#programs.fish = {
+#enable = true;
+#shellAliases = {
+#vi = "lvim";
+#vim = "lvim";
+#nvim = "lvim";
+#interactiveShellInit = ''
+#eval (ssh-agent -c)
+#direnv hook fish | source
+#'';
+#};
+#};
+
+
 programs.starship = {
     enable = true;
     settings = {
@@ -47,4 +75,3 @@ programs.direnv = {
   };
 };
 }
-

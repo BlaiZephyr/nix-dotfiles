@@ -1,7 +1,6 @@
 {pkgs, ... }: {
 	imports = [
    ./recording.nix
-   ./nh.nix
    ./gaming.nix
    ./social.nix
 	 ./home.nix
