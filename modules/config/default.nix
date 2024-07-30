@@ -1,4 +1,4 @@
-{ config, pks, ... }: {
+{ ... }: {
   imports = [
     ./steam.nix
     ./drivers.nix
