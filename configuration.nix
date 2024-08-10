@@ -38,17 +38,11 @@
     LC_TIME = "de_DE.UTF-8";
   };
 
+
   services.xserver.enable = true;
-
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
-
-  services.gnome.core-utilities.enable = true;
-
-  services.xserver = {
-    xkb.layout = "de";
-    xkb.variant = "";
-  };
+  services.displayManager.sddm.wayland.enable = true;
+  services.desktopManager.plasma6.enable = true;
+  services.displayManager.defaultSession = "plasma";
 
   console.keyMap = "de";
 
