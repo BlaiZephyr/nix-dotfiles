@@ -300,7 +300,8 @@ in
       noto-fonts-emoji
       noto-fonts-cjk
       font-awesome
-      symbola
+      # Commenting Symbola out to fix install this will need to be fixed or an alternative found.
+      # symbola
       material-icons
     ];
   };
