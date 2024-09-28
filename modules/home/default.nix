@@ -7,7 +7,6 @@
     ./terminal.nix
     ./nvim.nix
     ./work.nix
-    ./neovim.nix
   ];
 
   programs.git = {

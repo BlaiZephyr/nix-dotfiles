@@ -1,6 +1,6 @@
 { pkgs, ... }: {
 
   home.packages = [
-    pkgs.libreoffice-qt
+    #   pkgs.libreoffice-qt
   ];
 }
