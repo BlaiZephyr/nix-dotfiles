@@ -24,8 +24,8 @@
       vim = "lvim";
       nvim = "lvim";
       vi = "lvim";
-      nhbuild = "nh os build /etc/nixos";
-      nhswitch = "nh os switch /etc/nixos";
+      nhbuild = "nh os build ~/.dotfiles/";
+      nhswitch = "nh os switch ~/.dotfiles/";
       config = "cd /etc/nixos";
     };
     history = {

@@ -16,6 +16,7 @@
   };
 
   home.packages = with pkgs; [
+    flameshot
     bitwarden-desktop
     bitwarden-cli
   ];
