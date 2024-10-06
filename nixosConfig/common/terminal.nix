@@ -1,12 +1,6 @@
-{ config, pkgs, ... }: {
+{ config, ... }: {
 
-  home.packages = with pkgs; [
-    zsh
-    nix-output-monitor
-    nvd
-  ];
-
-  programs.alacritty = {
+    hm.programs.alacritty = {
     enable = true;
     settings = {
       font.size = 14;
@@ -14,7 +8,7 @@
     };
   };
 
-  programs.zsh = {
+  hm.programs.zsh = {
     enable = true;
     enableCompletion = true;
     autosuggestion.enable = true;
@@ -27,10 +21,6 @@
       nhbuild = "nh os build ~/.dotfiles/";
       nhswitch = "nh os switch ~/.dotfiles/";
       config = "cd /etc/nixos";
-    };
-    history = {
-      size = 10000;
-      path = "${config.xdg.dataHome}/zsh/history";
     };
   };
 
@@ -48,7 +38,7 @@
   #};
 
 
-  programs.starship = {
+  hm.programs.starship = {
     enable = true;
     settings = {
       username = {
@@ -67,11 +57,14 @@
       };
     };
   };
-  programs.direnv = {
+  hm.programs.direnv = {
     enable = true;
     nix-direnv.enable = true;
     config.global = {
       hide_env_diff = true;
     };
   };
+  hm.programs.git = {
+   enable = true;
+};
 }

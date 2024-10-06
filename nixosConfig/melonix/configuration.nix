@@ -4,11 +4,10 @@
 { pkgs, ... }:
 
 {
-  imports =
-    [
-      ./hardware-configuration.nix
-      ./modules/config/default.nix
+  imports = [
+    ./hardware-configuration.nix
     ];
+
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -91,6 +90,10 @@ environment.pathsToLink = [ "/libexec" ]; # links /libexec from derivations to /
 
   environment.systemPackages = with pkgs; [
     vim
+    zsh
+    nix-output-monitor
+    nvd
+    git
   ];
   system.stateVersion = "24.05"; # Did you read the comment? yes :3
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
