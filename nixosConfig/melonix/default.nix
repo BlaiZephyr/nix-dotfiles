@@ -7,6 +7,7 @@
    ../common/terminal.nix
    ../common/capture.nix
    ../common/home.nix
+   ../common/vscode.nix
   ];
 }
 

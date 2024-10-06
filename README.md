@@ -1,4 +1,7 @@
 # nix-dotfiles
 
-**this is a cut version of my actual config because i still have a lot of secrets hardcoded, dont take this one as a reference for anything! :P**
+this entire configuration is highly inspired by the person introducing me to nix and NixOS:
 
+https://codeberg.org/Scrumplex/
+
+i love you scrump

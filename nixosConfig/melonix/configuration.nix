@@ -89,11 +89,8 @@ environment.pathsToLink = [ "/libexec" ]; # links /libexec from derivations to /
   nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [
-    vim
-    zsh
     nix-output-monitor
     nvd
-    git
   ];
   system.stateVersion = "24.05"; # Did you read the comment? yes :3
   nix.settings.experimental-features = [ "nix-command" "flakes" ];

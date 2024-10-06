@@ -1,4 +1,4 @@
-{ config, ... }: {
+{ pkgs, config, ... }: {
 
     hm.programs.alacritty = {
     enable = true;
@@ -24,20 +24,6 @@
     };
   };
 
-  #programs.fish = {
-  #enable = true;
-  #shellAliases = {
-  #vi = "lvim";
-  #vim = "lvim";
-  #nvim = "lvim";
-  #interactiveShellInit = ''
-  #eval (ssh-agent -c)
-  #direnv hook fish | source
-  #'';
-  #};
-  #};
-
-
   hm.programs.starship = {
     enable = true;
     settings = {
@@ -57,6 +43,7 @@
       };
     };
   };
+
   hm.programs.direnv = {
     enable = true;
     nix-direnv.enable = true;
@@ -64,7 +51,16 @@
       hide_env_diff = true;
     };
   };
+
   hm.programs.git = {
    enable = true;
+   userName = "BlaiZephyr";
+   userEmail = "arbeit.t.lechner@gmail.com";
 };
+  programs.nh = {
+    enable = true;
+    clean.enable = true;
+    clean.extraArgs = "--keep-since 12d --keep 3";
+    flake = "/home/melonix/.dotfiles/";
+  };
 }
