@@ -8,15 +8,9 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    stylix = {
-      url = "github:danth/stylix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
   };
 
-  outputs = { nixpkgs, home-manager, stylix, ... }:
+  outputs = { nixpkgs, home-manager, ... }:
     let
       system = "x86_64-linux";
     in
@@ -25,7 +19,6 @@
       nixosConfigurations = {
         melonix = nixpkgs.lib.nixosSystem {
           modules = [
-            stylix.nixosModules.stylix
             ./nixosConfig/melonix/configuration.nix
             home-manager.nixosModules.home-manager
             {
