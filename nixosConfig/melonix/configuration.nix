@@ -11,7 +11,7 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.initrd.kernelModules = [ "amdgpu" ];
-  
+
   hardware.graphics = {
     enable = true;
   };
@@ -42,15 +42,15 @@
 
   environment.pathsToLink = [ "/libexec" ]; # links /libexec from derivations to /run/current-system/sw 
 
-  services.xserver.enable = true;
-  services.displayManager.sddm.enable = true;
-  services.desktopManager.plasma6.enable = true;
-  environment.plasma6.excludePackages = with pkgs.kdePackages; [
-    spectacle
-    plasma-browser-integration
-    konsole
-    oxygen
-  ];
+  services.xserver = {
+    enable = true;
+    libinput.enable = true;
+    displayManager.lightdm.enable = true;
+    desktopManager = {
+      cinnamon.enable = true;
+    };
+    displayManager.defaultSession = "cinnamon";
+  };
 
   console.keyMap = "de";
   services.printing.enable = true;
