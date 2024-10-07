@@ -1,19 +1,15 @@
 { pkgs, config, ... }: {
 
-    hm.programs.alacritty = {
+  hm.programs.alacritty = {
     enable = true;
     settings = {
       font.size = 14;
-      shell = "/etc/profiles/per-user/melonix/bin/zsh";
+      shell = "/etc/profiles/per-user/melonix/bin/bash";
     };
   };
 
-  hm.programs.zsh = {
+  hm.programs.bash = {
     enable = true;
-    enableCompletion = true;
-    autosuggestion.enable = true;
-    syntaxHighlighting.enable = true;
-
     shellAliases = {
       vim = "lvim";
       nvim = "lvim";
@@ -53,10 +49,10 @@
   };
 
   hm.programs.git = {
-   enable = true;
-   userName = "BlaiZephyr";
-   userEmail = "arbeit.t.lechner@gmail.com";
-};
+    enable = true;
+    userName = "BlaiZephyr";
+    userEmail = "arbeit.t.lechner@gmail.com";
+  };
   programs.nh = {
     enable = true;
     clean.enable = true;

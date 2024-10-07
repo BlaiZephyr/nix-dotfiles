@@ -1,6 +1,6 @@
-{pkgs, ... }: {
+{ pkgs, ... }: {
 
- hm.home.packages = with pkgs; [
-	vesktop
-];
+  hm.home.packages = with pkgs; [
+    vesktop
+  ];
 }
