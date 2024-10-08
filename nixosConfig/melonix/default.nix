@@ -9,7 +9,7 @@
       ../common/mediacreation.nix
       ../common/home.nix
       ../common/vscode.nix
-
+      ../common/audiorelay.nix
       ./configuration.nix
     ];
   };
