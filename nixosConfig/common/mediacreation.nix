@@ -1,4 +1,4 @@
-{ ... }:
+{pkgs, ... }:
 {
 
   hm.programs.obs-studio = {
@@ -8,4 +8,8 @@
   hm.services.flameshot = {
     enable = true;
   };
+
+  environment.systemPackages = with pkgs; [
+    kdenlive
+  ];
 }
