@@ -26,21 +26,7 @@
   networking.hostName = "melonix";
   networking.networkmanager.enable = true;
 
-  time.timeZone = "Europe/Berlin";
-  i18n.defaultLocale = "de_DE.UTF-8";
-  i18n.extraLocaleSettings = {
-    LC_ADDRESS = "de_DE.UTF-8";
-    LC_IDENTIFICATION = "de_DE.UTF-8";
-    LC_MEASUREMENT = "de_DE.UTF-8";
-    LC_MONETARY = "de_DE.UTF-8";
-    LC_NAME = "de_DE.UTF-8";
-    LC_NUMERIC = "de_DE.UTF-8";
-    LC_PAPER = "de_DE.UTF-8";
-    LC_TELEPHONE = "de_DE.UTF-8";
-    LC_TIME = "de_DE.UTF-8";
-  };
-
-  environment.pathsToLink = [ "/libexec" ]; # links /libexec from derivations to /run/current-system/sw 
+    environment.pathsToLink = [ "/libexec" ]; # links /libexec from derivations to /run/current-system/sw 
 
   services.xserver = {
     enable = true;
@@ -52,7 +38,6 @@
     displayManager.defaultSession = "cinnamon";
   };
 
-  console.keyMap = "de";
   services.printing.enable = true;
 
   hardware.pulseaudio.enable = false;
@@ -88,4 +73,10 @@
   ];
   system.stateVersion = "24.05"; # Did you read the comment? yes :3
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  
+  time.timeZone = "Europe/Berlin";
+  i18n.defaultLocale = "de_DE.UTF-8";
+  console.keyMap = "de";
+
+
 }

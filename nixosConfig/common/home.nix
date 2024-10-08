@@ -1,9 +1,12 @@
 { config
 , lib
+, inputs
 , ...
 }:
 let
   inherit (lib.modules) mkAliasOptionModule;
+  inherit (builtins) attrValues;
+  inherit (inputs) home-manager;
 
   username = "melonix";
 in
@@ -11,6 +14,8 @@ in
   imports = [
     (mkAliasOptionModule [ "hm" ] [ "home-manager" "users" username ])
     (mkAliasOptionModule [ "primaryUser" ] [ "users" "users" username ])
+
+    home-manager.nixosModules.home-manager
   ];
 
   config = {

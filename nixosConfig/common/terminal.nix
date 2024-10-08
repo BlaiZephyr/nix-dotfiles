@@ -10,9 +10,8 @@
   hm.programs.bash = {
     enable = true;
     shellAliases = {
-      vim = "lvim";
-      nvim = "lvim";
-      vi = "lvim";
+      vim = "nvim";
+      vi = "nvim";
       nhbuild = "nh os build ~/.dotfiles/";
       nhswitch = "nh os switch ~/.dotfiles/";
       config = "cd /etc/nixos";

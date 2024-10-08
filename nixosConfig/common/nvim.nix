@@ -1,12 +1,42 @@
-{ pkgs, ... }: {
+{
+  inputs,
+  lib,
+  pkgs,
+  ... 
+}: {
+  imports = [inputs.nixvim.nixosModules.nixvim];
 
-  fonts.fontconfig.enable = true;
-  hm.programs.neovim = {
+  programs.nixvim = {
     enable = true;
     defaultEditor = true;
+
+    enableMan = false;
+
+    extraPackages = with pkgs; [
+      fd
+      ripgrep
+    ];
+    opts = {
+      title = true;
+
+      expandtab = true; #convert tabs to spaces
+      tabstop = 4;
+      softtabstop = 4;
+      shiftwidth = 4;
+
+      wrap = true; # override mini-basics
+    };
+
+    clipboard = {
+      register = "unnamedplus";
+      providers.wl-copy.enable = true;
+    };
+
+    colorschemes.catppuccin = {
+      enable = true;
+      settings.flavour = "mocha";
+    };
+
+
   };
-  hm.home.packages = with pkgs; [
-    lunarvim
-    (nerdfonts.override { fonts = [ "FiraCode" "JetBrainsMono" ]; })
-  ];
-}
+ }
