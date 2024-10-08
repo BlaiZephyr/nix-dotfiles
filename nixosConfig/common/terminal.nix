@@ -1,4 +1,5 @@
-{ pkgs, config, ... }: {
+{ pkgs, config, ... }:
+{
 
   hm.programs.alacritty = {
     enable = true;
@@ -15,11 +16,11 @@
       nhbuild = "nh os build ~/.dotfiles/";
       nhswitch = "nh os switch ~/.dotfiles/";
       config = "cd /etc/nixos";
-      };
+    };
     bashrcExtra = ''
       eval "$(direnv hook bash)"
-      '';
-    };
+    '';
+  };
 
   hm.programs.starship = {
     enable = true;

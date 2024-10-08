@@ -1,4 +1,5 @@
-{ ... }: {
+{ ... }:
+{
 
   hm.programs.obs-studio = {
     enable = true;

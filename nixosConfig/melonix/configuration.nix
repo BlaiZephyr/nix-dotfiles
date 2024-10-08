@@ -26,7 +26,7 @@
   networking.hostName = "melonix";
   networking.networkmanager.enable = true;
 
-    environment.pathsToLink = [ "/libexec" ]; # links /libexec from derivations to /run/current-system/sw 
+  environment.pathsToLink = [ "/libexec" ]; # links /libexec from derivations to /run/current-system/sw
 
   services.xserver = {
     enable = true;
@@ -53,7 +53,10 @@
   users.users.melonix = {
     isNormalUser = true;
     description = "melonix";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+    ];
   };
   services.displayManager.autoLogin.enable = true;
   services.displayManager.autoLogin.user = "melonix";
@@ -72,11 +75,13 @@
     clinfo
   ];
   system.stateVersion = "24.05"; # Did you read the comment? yes :3
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
-  
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
+
   time.timeZone = "Europe/Berlin";
   i18n.defaultLocale = "de_DE.UTF-8";
   console.keyMap = "de";
-
 
 }

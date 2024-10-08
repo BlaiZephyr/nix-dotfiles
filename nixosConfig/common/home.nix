@@ -1,7 +1,8 @@
-{ config
-, lib
-, inputs
-, ...
+{
+  config,
+  lib,
+  inputs,
+  ...
 }:
 let
   inherit (lib.modules) mkAliasOptionModule;
@@ -12,8 +13,16 @@ let
 in
 {
   imports = [
-    (mkAliasOptionModule [ "hm" ] [ "home-manager" "users" username ])
-    (mkAliasOptionModule [ "primaryUser" ] [ "users" "users" username ])
+    (mkAliasOptionModule [ "hm" ] [
+      "home-manager"
+      "users"
+      username
+    ])
+    (mkAliasOptionModule [ "primaryUser" ] [
+      "users"
+      "users"
+      username
+    ])
 
     home-manager.nixosModules.home-manager
   ];
@@ -21,7 +30,13 @@ in
   config = {
     primaryUser = {
       isNormalUser = true;
-      extraGroups = [ "wheel" "audio" "video" "input" "dialout" ];
+      extraGroups = [
+        "wheel"
+        "audio"
+        "video"
+        "input"
+        "dialout"
+      ];
     };
     nix.settings.trusted-users = [ username ];
 

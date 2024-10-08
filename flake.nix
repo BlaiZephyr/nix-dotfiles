@@ -22,20 +22,21 @@
     };
 
     nixvim = {
-	url = "github:nix-community/nixvim";
-	inputs.nixpkgs.follows = "nixpkgs";
+      url = "github:nix-community/nixvim";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
-  outputs = inputs @ {flake-parts, ...}:
-    flake-parts.lib.mkFlake {inherit inputs;} {
-    	imports = [
+  outputs =
+    inputs@{ flake-parts, ... }:
+    flake-parts.lib.mkFlake { inherit inputs; } {
+      imports = [
         inputs.git-hooks.flakeModule
-            ./lib
-            ./nixosConfig/melonix
-          ];
-	  systems = [
-	    "x86_64-linux"
-	  ];
-  };
+        ./lib
+        ./nixosConfig/melonix
+      ];
+      systems = [
+        "x86_64-linux"
+      ];
+    };
 }
