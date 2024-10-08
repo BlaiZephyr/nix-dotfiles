@@ -3,7 +3,6 @@
     hostName = "melonix";
     modules = [
      ../common/social.nix
-     ../common/nvim.nix
      ../common/gaming.nix
      ../common/terminal.nix
      ../common/mediacreation.nix
