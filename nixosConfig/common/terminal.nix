@@ -8,6 +8,23 @@
     };
   };
 
+  hm.programs.fzf = {
+    enable = true;
+    colors = {
+       fg = "#cbccc6";
+       bg = "#1f2430";
+       hl = "#707a8c";
+    "fg+" = "#707a8c";
+    "bg+" = "#191e2a";
+    "hl+" = "#ffcc66";
+    info = "#73d0ff";
+    prompt = "#707a8c";
+    pointer = "#cbccc6";
+    marker = "#73d0ff";
+    spinner = "#73d0ff";
+    header = "#d4bfff";
+    };
+  };
   hm.programs.bash = {
     enable = true;
     shellAliases = {
@@ -16,6 +33,7 @@
       nhbuild = "nh os build ~/.dotfiles/";
       nhswitch = "nh os switch ~/.dotfiles/";
       config = "cd /etc/nixos";
+      searchpkg = "nix search nixpkgs --json | nix run nixpkgs#jq -- -r '. | keys[]' | cut -d \. -f 3- | fzf";
     };
     bashrcExtra = ''
       eval "$(direnv hook bash)"
