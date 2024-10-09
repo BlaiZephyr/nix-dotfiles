@@ -1,9 +1,26 @@
 {pkgs, ... }:
 {
+    hm.programs = {
+    obs-studio = {
+      enable = true;
+    };
 
-  hm.programs.obs-studio = {
-    enable = true;
-  };
+
+    yt-dlp = {
+      enable = true;
+      extraConfig = ''
+      ---update
+      -F
+      '';
+      settings = {
+        embed-thumbnail = false;
+        embed-subs = true;
+        sub-langs = "ger";
+        downloader = "aria2c";
+        downloader-args = "aria2c:'-c -x8 -s8 -k1M'";
+      };
+    };
+    };
 
   hm.services.flameshot = {
     enable = true;
