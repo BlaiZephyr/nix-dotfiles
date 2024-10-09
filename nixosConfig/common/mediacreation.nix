@@ -11,10 +11,7 @@
 
     yt-dlp = {
       enable = true;
-      extraConfig = ''
-      ---update
-      -F
-      '';
+
       settings = {
         embed-thumbnail = false;
         embed-subs = true;

@@ -6,6 +6,7 @@
 {
   imports = [
     ./hardware-configuration.nix
+    ./core-utils.nix
   ];
 
   boot.loader.systemd-boot.enable = true;
@@ -71,12 +72,6 @@
 
   nixpkgs.config.allowUnfree = true;
 
-  environment.systemPackages = with pkgs; [
-    nix-output-monitor
-    nvd
-    davinci-resolve
-    clinfo
-  ];
   system.stateVersion = "24.05"; # Did you read the comment? yes :3
   nix.settings.experimental-features = [
     "nix-command"
