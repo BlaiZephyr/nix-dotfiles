@@ -6,7 +6,6 @@
 
     flake-parts = {
       url = "github:hercules-ci/flake-parts";
-      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     git-hooks = {
@@ -17,8 +16,6 @@
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
-      inputs.git-hooks.follows = "git-hooks";
-      inputs.flake-parts.follows = "flake-parts";
     };
 
     nixvim = {
