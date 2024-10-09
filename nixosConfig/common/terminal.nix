@@ -1,10 +1,25 @@
 { pkgs, config, ... }:
 {
 
+  fonts.packages = with pkgs; [
+    noto-fonts
+    noto-fonts-cjk
+    noto-fonts-emoji
+    (nerdfonts.override { fonts = [ "FiraCode" "DroidSansMono" ]; })
+  ];
+
   hm.programs.alacritty = {
     enable = true;
+
     settings = {
       shell = "/etc/profiles/per-user/melonix/bin/bash";
+      
+      window = {
+      opacity = 0.8;
+      blur = true;
+      title = "let melon cook";
+      dynamic_title = true;
+      };
     };
   };
 
