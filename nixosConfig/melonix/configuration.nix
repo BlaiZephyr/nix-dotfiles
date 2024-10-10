@@ -29,17 +29,17 @@
 
   environment.pathsToLink = [ "/libexec" ]; # links /libexec from derivations to /run/current-system/sw
   services = {
-  displayManager.defaultSession = "cinnamon";
-  libinput.enable = true;
+    displayManager.defaultSession = "cinnamon";
+    libinput.enable = true;
   };
   services.xserver = {
     enable = true;
-    
+
     displayManager.lightdm.enable = true;
     desktopManager = {
       cinnamon.enable = true;
     };
-    
+
   };
 
   services.printing.enable = true;

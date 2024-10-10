@@ -5,7 +5,12 @@
     noto-fonts
     noto-fonts-cjk
     noto-fonts-emoji
-    (nerdfonts.override { fonts = [ "FiraCode" "DroidSansMono" ]; })
+    (nerdfonts.override {
+      fonts = [
+        "FiraCode"
+        "DroidSansMono"
+      ];
+    })
   ];
 
   hm.programs.alacritty = {
@@ -13,12 +18,12 @@
 
     settings = {
       shell = "/etc/profiles/per-user/melonix/bin/bash";
-      
+
       window = {
-      opacity = 0.8;
-      blur = true;
-      title = "let melon cook";
-      dynamic_title = true;
+        opacity = 0.8;
+        blur = true;
+        title = "let melon cook";
+        dynamic_title = true;
       };
     };
   };
@@ -26,18 +31,18 @@
   hm.programs.fzf = {
     enable = true;
     colors = {
-       fg = "#cbccc6";
-       bg = "#1f2430";
-       hl = "#707a8c";
-    "fg+" = "#707a8c";
-    "bg+" = "#191e2a";
-    "hl+" = "#ffcc66";
-    info = "#73d0ff";
-    prompt = "#707a8c";
-    pointer = "#cbccc6";
-    marker = "#73d0ff";
-    spinner = "#73d0ff";
-    header = "#d4bfff";
+      fg = "#cbccc6";
+      bg = "#1f2430";
+      hl = "#707a8c";
+      "fg+" = "#707a8c";
+      "bg+" = "#191e2a";
+      "hl+" = "#ffcc66";
+      info = "#73d0ff";
+      prompt = "#707a8c";
+      pointer = "#cbccc6";
+      marker = "#73d0ff";
+      spinner = "#73d0ff";
+      header = "#d4bfff";
     };
   };
   hm.programs.bash = {

@@ -1,5 +1,6 @@
-{pkgs, ... }: { 
-    environment.systemPackages = with pkgs; [
-        ddnet
-    ];
+{ pkgs, ... }:
+{
+  environment.systemPackages = with pkgs; [
+    ddnet
+  ];
 }

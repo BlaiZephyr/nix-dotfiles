@@ -1,13 +1,12 @@
-{pkgs, ... }:
+{ pkgs, ... }:
 {
-    hm.programs = {
+  hm.programs = {
     obs-studio = {
       enable = true;
-      plugins = with pkgs.obs-studio-plugins; [ 
+      plugins = with pkgs.obs-studio-plugins; [
         input-overlay
-        ];
+      ];
     };
-
 
     yt-dlp = {
       enable = true;
@@ -20,7 +19,7 @@
         downloader-args = "aria2c:'-c -x8 -s8 -k1M'";
       };
     };
-    };
+  };
 
   hm.services.flameshot = {
     enable = true;
