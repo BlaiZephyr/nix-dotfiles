@@ -1,9 +1,15 @@
 # Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
-{pkgs, ...}: {
+{
+  pkgs,
+  lib,
+  inputs,
+  ...
+}: {
   imports = [
     ./hardware-configuration.nix
     ./core-utils.nix
+    inputs.nixvim.nixosModules.nixvim
   ];
 
   boot.loader.systemd-boot.enable = true;

@@ -53,7 +53,7 @@
       vi = "nvim";
       nhbuild = "nh os build ~/.dotfiles/";
       nhswitch = "nh os switch ~/.dotfiles/";
-      config = "cd /etc/nixos";
+      config = "cd ~/.dotfiles/";
       searchpkg = "nix search nixpkgs --json | nix run nixpkgs#jq -- -r '. | keys[]' | cut -d \. -f 3- | fzf";
     };
     bashrcExtra = ''
