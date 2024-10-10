@@ -43,7 +43,6 @@
   hm.programs.bash = {
     enable = true;
     shellAliases = {
-      vim = "nvim";
       vi = "nvim";
       nhbuild = "nh os build ~/.dotfiles/";
       nhswitch = "nh os switch ~/.dotfiles/";

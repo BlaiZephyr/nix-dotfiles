@@ -10,6 +10,7 @@
       ../common/home.nix
       ../common/vscode.nix
       ./configuration.nix
+      ../common/nvim.nix
     ];
   };
 }

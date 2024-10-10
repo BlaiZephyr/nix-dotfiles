@@ -6,5 +6,6 @@
         nvd
         davinci-resolve
         clinfo
+        devenv
     ];
 }
