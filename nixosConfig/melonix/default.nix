@@ -8,6 +8,7 @@
       ../common/mediacreation.nix
       ../common/home.nix
       ../common/vscode.nix
+      ../common/nvim.nix
       ./configuration.nix
     ];
   };

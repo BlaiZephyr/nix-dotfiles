@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  lib',
+  pkgs,
+  ...
+}: {
   environment.systemPackages = with pkgs; [
     xfce.thunar
     xfce.thunar-volman

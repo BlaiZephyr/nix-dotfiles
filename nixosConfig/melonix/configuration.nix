@@ -9,7 +9,6 @@
   imports = [
     ./hardware-configuration.nix
     ./core-utils.nix
-    inputs.nixvim.nixosModules.nixvim
   ];
 
   boot.loader.systemd-boot.enable = true;

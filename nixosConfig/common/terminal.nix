@@ -51,6 +51,7 @@
     enable = true;
     shellAliases = {
       vi = "nvim";
+      vim = "nvim";
       nhbuild = "nh os build ~/.dotfiles/";
       nhswitch = "nh os switch ~/.dotfiles/";
       config = "cd ~/.dotfiles/";
