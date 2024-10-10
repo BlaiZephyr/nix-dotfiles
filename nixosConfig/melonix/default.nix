@@ -1,5 +1,4 @@
-{ lib', ... }:
-{
+{lib', ...}: {
   flake.nixosConfigurations = lib'.mkHost {
     hostName = "melonix";
     modules = [

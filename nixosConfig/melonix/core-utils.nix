@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-{
+{pkgs, ...}: {
   environment.systemPackages = with pkgs; [
     xfce.thunar
     xfce.thunar-volman
@@ -8,5 +7,6 @@
     davinci-resolve
     clinfo
     devenv
+    alejandra
   ];
 }

@@ -1,9 +1,6 @@
 # Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
-
-{ pkgs, ... }:
-
-{
+{pkgs, ...}: {
   imports = [
     ./hardware-configuration.nix
     ./core-utils.nix
@@ -11,7 +8,7 @@
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-  boot.initrd.kernelModules = [ "amdgpu" ];
+  boot.initrd.kernelModules = ["amdgpu"];
 
   hardware.graphics = {
     enable = true;
@@ -27,7 +24,7 @@
   networking.hostName = "melonix";
   networking.networkmanager.enable = true;
 
-  environment.pathsToLink = [ "/libexec" ]; # links /libexec from derivations to /run/current-system/sw
+  environment.pathsToLink = ["/libexec"]; # links /libexec from derivations to /run/current-system/sw
   services = {
     displayManager.defaultSession = "cinnamon";
     libinput.enable = true;
@@ -39,7 +36,6 @@
     desktopManager = {
       cinnamon.enable = true;
     };
-
   };
 
   services.printing.enable = true;
@@ -81,5 +77,4 @@
   time.timeZone = "Europe/Berlin";
   i18n.defaultLocale = "de_DE.UTF-8";
   console.keyMap = "de";
-
 }

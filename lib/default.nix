@@ -1,35 +1,32 @@
-{ inputs, ... }:
-{
+{inputs, ...}: {
   _module.args.lib' = {
-    mkHost =
-      {
-        hostName,
-        modules,
-      }:
-      {
-        "${hostName}" = inputs.nixpkgs.lib.nixosSystem {
-          modules = [
+    mkHost = {
+      hostName,
+      modules,
+    }: {
+      "${hostName}" = inputs.nixpkgs.lib.nixosSystem {
+        modules =
+          [
             {
               networking = {
                 inherit hostName;
               };
             }
-          ] ++ modules;
+          ]
+          ++ modules;
 
-          specialArgs = {
-            inherit inputs;
-          };
+        specialArgs = {
+          inherit inputs;
         };
       };
-    mkDeploy =
-      {
-        targetHost,
-        extraFlags,
-      }:
-      {
-        _module.args.deploy = {
-          inherit targetHost extraFlags;
-        };
+    };
+    mkDeploy = {
+      targetHost,
+      extraFlags,
+    }: {
+      _module.args.deploy = {
+        inherit targetHost extraFlags;
       };
+    };
   };
 }

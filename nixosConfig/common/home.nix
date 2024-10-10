@@ -3,22 +3,20 @@
   lib,
   inputs,
   ...
-}:
-let
+}: let
   inherit (lib.modules) mkAliasOptionModule;
   inherit (builtins) attrValues;
   inherit (inputs) home-manager;
 
   username = "melonix";
-in
-{
+in {
   imports = [
-    (mkAliasOptionModule [ "hm" ] [
+    (mkAliasOptionModule ["hm"] [
       "home-manager"
       "users"
       username
     ])
-    (mkAliasOptionModule [ "primaryUser" ] [
+    (mkAliasOptionModule ["primaryUser"] [
       "users"
       "users"
       username
@@ -38,7 +36,7 @@ in
         "dialout"
       ];
     };
-    nix.settings.trusted-users = [ username ];
+    nix.settings.trusted-users = [username];
 
     hm = {
       home.homeDirectory = config.users.users."${username}".home;

@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-{
+{pkgs, ...}: {
   hm.programs = {
     obs-studio = {
       enable = true;
