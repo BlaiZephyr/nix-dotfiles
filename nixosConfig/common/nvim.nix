@@ -1,6 +1,5 @@
 {
   inputs,
-  lib,
   pkgs,
   ...
 }: {
@@ -39,12 +38,10 @@
 
     clipboard = {
       register = "unnamedplus";
-      providers.wl-copy.enable = true;
     };
 
-    colorschemes.catppuccin = {
+    colorschemes.gruvbox = {
       enable = true;
-      settings.flavour = "mocha";
     };
 
     plugins = {
@@ -54,28 +51,8 @@
           "/" = {
             sources = [{name = "buffer";}];
           };
-          ":" = {
-            sources = lib.warn "TODO: path and cmdline are in separate groups" [
-              {name = "path";}
-              {name = "cmdline";}
-            ];
-          };
         };
         settings = {
-          sources = lib.warn "TODO: groupIndex is not a thing anymore" [
-            {
-              name = "nvim_lsp";
-              groupIndex = 1;
-            }
-            {
-              name = "luasnip";
-              groupIndex = 1;
-            }
-            {
-              name = "buffer";
-              groupIndex = 2;
-            }
-          ];
           mapping.__raw = ''
             cmp.mapping.preset.insert({
               ['<C-b>'] = cmp.mapping.scroll_docs(-4),
@@ -172,7 +149,6 @@
             "<leader>D" = "type_definition";
             "<leader>rn" = "rename";
             "<leader>ca" = "code_action";
-            #"<leader>f" = "formatting"; ?
           };
         };
 
@@ -184,25 +160,25 @@
           cssls.enable = true;
           eslint.enable = true;
           gopls.enable = true;
-          harper-ls.enable = true;
-          helm-ls.enable = true;
+          harper_ls.enable = true;
+          helm_ls.enable = true;
           html.enable = true;
           jsonls.enable = true;
           marksman.enable = true;
-          nil-ls.enable = true;
+          nil_ls.enable = true;
           nixd.enable = true;
-          openscad-lsp.enable = true;
+          openscad_lsp.enable = true;
           prismals.enable = true;
           pylsp.enable = true;
           pyright.enable = true;
-          rust-analyzer = {
+          rust_analyzer = {
             enable = true;
             installRustc = false;
             installCargo = false;
           };
           tailwindcss.enable = true;
           terraformls.enable = true;
-          ts-ls.enable = true;
+          ts_ls.enable = true;
           yamlls.enable = true;
         };
       };
@@ -259,6 +235,12 @@
       (mkNMap "<leader>xw" "<cmd>TroubleToggle workspace_diagnostics<CR>")
       (mkNMap "<leader>xd" "<cmd>TroubleToggle document_diagnostics<CR>")
       (mkNMap "gR" "<cmd>TroubleToggle lsp_references<CR>")
+      #(mkNMap "<leader>ff" "%!alejandra -qq")
+
+      (mkNMap "<leader>y" "+y")
+      (mkNMap "<leader>Y" "+yg_")
+      (mkNMap "<leader>p" "+p")
+      (mkNMap "<leader>P" "+P")
     ];
   };
 }

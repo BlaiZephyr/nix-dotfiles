@@ -22,6 +22,9 @@
 
   hm.services.flameshot = {
     enable = true;
+    package = pkgs.flameshot.overrideAttrs (oldAttrs: {
+      cmakeFlags = oldAttrs.cmakeFlags ++ ["-DFLAMESHOT?DEBUG?CAPTURE=ON"];
+    });
   };
 
   environment.systemPackages = with pkgs; [
