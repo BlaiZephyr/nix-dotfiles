@@ -9,7 +9,6 @@
 
     yt-dlp = {
       enable = true;
-
       settings = {
         embed-thumbnail = false;
         embed-subs = true;
@@ -22,9 +21,6 @@
 
   hm.services.flameshot = {
     enable = true;
-    package = pkgs.flameshot.overrideAttrs (oldAttrs: {
-      cmakeFlags = oldAttrs.cmakeFlags ++ ["-DFLAMESHOT?DEBUG?CAPTURE=ON"];
-    });
   };
 
   environment.systemPackages = with pkgs; [
