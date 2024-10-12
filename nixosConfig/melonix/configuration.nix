@@ -3,7 +3,6 @@
 {pkgs, ...}: {
   imports = [
     ./hardware-configuration.nix
-    ./core-utils.nix
   ];
 
   boot.loader.systemd-boot.enable = true;
@@ -38,6 +37,24 @@
     };
   };
 
+  environment.systemPackages = with pkgs; [
+    xfce.thunar
+    xfce.thunar-volman
+    nix-output-monitor
+    nvd
+    clinfo
+    devenv
+    alejandra
+
+    #games
+    ddnet
+    prismlauncher
+    vesktop
+
+    #kdenlive
+    kdenlive
+  ];
+
   services.printing.enable = true;
 
   hardware.pulseaudio.enable = false;
@@ -65,9 +82,6 @@
   systemd.services."autovt@tty1".enable = false;
 
   programs.firefox.enable = true;
-
-  nixpkgs.config.allowUnfree = true;
-
   system.stateVersion = "24.05"; # Did you read the comment? yes :3
   nix.settings.experimental-features = [
     "nix-command"

@@ -1,38 +1,75 @@
 {
-  description = "melon's flakes!";
+  description = "melon's flake!";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:nixos/nixpkgs";
+    nixos-hardware.url = "github:nixos/nixos-hardware";
 
-    flake-parts = {
-      url = "github:hercules-ci/flake-parts";
-    };
-
-    git-hooks = {
-      url = "github:cachix/git-hooks.nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    flake-utils.url = "github:numtide/flake-utils";
 
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nixvim = {
-      url = "github:nix-community/nixvim";
+    nur.url = "github:nix-community/NUR";
+    firefox-addons = {
+      url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    neovim.url = "github:fred-drake/neovim";
   };
 
-  outputs = inputs @ {flake-parts, ...}:
-    flake-parts.lib.mkFlake {inherit inputs;} {
-      imports = [
-        inputs.git-hooks.flakeModule
-        ./lib
-        ./nixosConfig/melonix
-      ];
-      systems = [
-        "x86_64-linux"
-      ];
+  # Output configuration
+  outputs = {
+    self,
+    home-manager,
+    nixpkgs,
+    ...
+  } @ inputs: let
+    #fancy way of neoviming
+    mkNeovimPackages = pkgs: neovimPkgs: let
+      mkNeovimAlias = name: pkg:
+        pkgs.runCommand "neovim-${name}" {} ''
+          mkdir -p $out/bin
+          ln -s ${pkg}/bin/nvim $out/bin/nvim-${name}
+        '';
+    in
+      builtins.mapAttrs mkNeovimAlias neovimPkgs;
+  in
+    inputs.flake-utils.lib.eachDefaultSystem (system: {})
+    // {
+      nixosConfigurations = {
+        melonix = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          pkgs = import nixpkgs {
+            system = "x86_64-linux";
+            config.allowUnfree = true;
+          };
+          specialArgs = {inherit inputs;};
+          modules = [
+            inputs.nur.nixosModules.nur
+            ./nixosConfig/melonix/configuration.nix
+            home-manager.nixosModules.home-manager
+            {
+              home-manager = {
+                useGlobalPkgs = true;
+                useUserPackages = true;
+                backupFileExtension = "backup";
+                users.melonix.imports = [
+                  ./nixosConfig/home
+                  ({pkgs, ...}: {
+                    home.packages =
+                      (builtins.attrValues (mkNeovimPackages pkgs inputs.neovim.packages.${pkgs.system}))
+                      ++ [inputs.neovim.packages.${pkgs.system}.default];
+                  })
+                ];
+                extraSpecialArgs = {inherit inputs;};
+              };
+            }
+          ];
+        };
+      };
     };
 }

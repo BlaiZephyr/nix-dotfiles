@@ -11,7 +11,7 @@
     })
   ];
 
-  hm.programs.alacritty = {
+  programs.alacritty = {
     enable = true;
 
     settings = {
@@ -26,7 +26,7 @@
     };
   };
 
-  hm.programs.fzf = {
+  programs.fzf = {
     enable = true;
     colors = {
       fg = "#cbccc6";
@@ -43,7 +43,7 @@
       header = "#d4bfff";
     };
   };
-  hm.programs.bash = {
+  programs.bash = {
     enable = true;
     shellAliases = {
       vi = "nvim";
@@ -58,7 +58,7 @@
     '';
   };
 
-  hm.programs.starship = {
+  programs.starship = {
     enable = true;
     settings = {
       username = {
@@ -78,7 +78,7 @@
     };
   };
 
-  hm.programs.direnv = {
+  programs.direnv = {
     enable = true;
     nix-direnv.enable = true;
     config.global = {
@@ -86,7 +86,7 @@
     };
   };
 
-  hm.programs.git = {
+  programs.git = {
     enable = true;
     userName = "BlaiZephyr";
     userEmail = "arbeit.t.lechner@gmail.com";
