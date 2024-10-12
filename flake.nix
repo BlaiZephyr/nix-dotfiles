@@ -18,7 +18,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    neovim.url = "github:fred-drake/neovim";
+    neovim.url = "github:BlaiZephyr/nvim";
   };
 
   # Output configuration

@@ -1,16 +1,4 @@
 {pkgs, ...}: {
-  fonts.packages = with pkgs; [
-    noto-fonts
-    noto-fonts-cjk
-    noto-fonts-emoji
-    (nerdfonts.override {
-      fonts = [
-        "FiraCode"
-        "DroidSansMono"
-      ];
-    })
-  ];
-
   programs.alacritty = {
     enable = true;
 
@@ -90,11 +78,5 @@
     enable = true;
     userName = "BlaiZephyr";
     userEmail = "arbeit.t.lechner@gmail.com";
-  };
-  programs.nh = {
-    enable = true;
-    clean.enable = true;
-    clean.extraArgs = "--keep-since 12d --keep 3";
-    flake = "/home/melonix/.dotfiles/";
   };
 }
