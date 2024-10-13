@@ -4,6 +4,8 @@
   imports = [
     ./hardware-configuration.nix
     ./database.nix
+    ./hyprland.nix
+    ./core-utils.nix
   ];
 
   boot.loader.systemd-boot.enable = true;
