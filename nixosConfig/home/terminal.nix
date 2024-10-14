@@ -79,4 +79,23 @@
     userName = "BlaiZephyr";
     userEmail = "arbeit.t.lechner@gmail.com";
   };
+
+  programs.tmux = {
+    enable = true;
+
+    plugins = with pkgs.tmuxPlugins; [
+      cpu
+      {
+        plugin = resurrect;
+        extraConfig = "set -g @resurrect-strategy-nvim 'session'";
+      }
+      {
+        plugin = continuum;
+        extraConfig = ''
+          set -g @continuum-restore 'on'
+          set -g @continuum-save-interval '5'
+        '';
+      }
+    ];
+  };
 }
