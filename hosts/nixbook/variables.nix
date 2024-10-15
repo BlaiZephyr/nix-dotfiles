@@ -15,4 +15,5 @@ monitor=eDP-1,2560x1600@60,0x0,1.25
   browser = "brave"; # Set Default Browser (google-chrome-stable for google-chrome)
   terminal = "kitty"; # Set Default System Terminal
   keyboardLayout = "us";
+  consoleKeyMap = "us";
 }

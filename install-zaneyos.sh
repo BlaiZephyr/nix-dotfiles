@@ -75,6 +75,15 @@ sed -i "/^\s*keyboardLayout[[:space:]]*=[[:space:]]*\"/s/\"\(.*\)\"/\"$keyboardL
 
 echo "-----"
 
+read -rp "Enter your console keymap: [ us ] " consoleKeyMap
+if [ -z "$consoleKeyMap" ]; then
+  consoleKeyMap="us"
+fi
+
+sed -i "/^\s*consoleKeyMap[[:space:]]*=[[:space:]]*\"/s/\"\(.*\)\"/\"$consoleKeyMap\"/" ./hosts/$hostName/variables.nix
+
+echo "-----"
+
 installusername=$(echo $USER)
 sed -i "/^\s*username[[:space:]]*=[[:space:]]*\"/s/\"\(.*\)\"/\"$installusername\"/" ./flake.nix
 
