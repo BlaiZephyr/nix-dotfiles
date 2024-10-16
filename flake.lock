@@ -256,16 +256,16 @@
         "rust-overlay": "rust-overlay"
       },
       "locked": {
-        "lastModified": 1728728898,
-        "narHash": "sha256-QHKJipM2LxpV/e/30R+DBvjPDuv4rlRJAb8Tf6ocO4I=",
-        "owner": "BlaiZephyr",
-        "repo": "nvim",
-        "rev": "bf2780e293006fba0c640f2c8db941774cad5f56",
+        "lastModified": 1728831675,
+        "narHash": "sha256-f0VKkuNSuMn+cvMMb/2aeFAK20Q1/p6RB2ngSxV/lV8=",
+        "owner": "fred-drake",
+        "repo": "neovim",
+        "rev": "1128eb14b5109ca6187d86e741a6130eba0ec9c8",
         "type": "github"
       },
       "original": {
-        "owner": "BlaiZephyr",
-        "repo": "nvim",
+        "owner": "fred-drake",
+        "repo": "neovim",
         "type": "github"
       }
     },
