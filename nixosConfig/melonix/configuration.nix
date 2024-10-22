@@ -12,8 +12,13 @@
   boot.loader.efi.canTouchEfiVariables = true;
   boot.initrd.kernelModules = ["amdgpu"];
 
+  programs.nix-ld.enable = true;
+  # for the zed editor so LSP servers work.
+  programs.nix-ld.libraries = [];
+
   hardware.graphics = {
     enable = true;
+    enable32Bit = true;
   };
   nix.extraOptions = ''
     extra-substituters = ["https://devenv.cachix.org"];
@@ -24,7 +29,6 @@
 
   hardware.graphics.extraPackages = with pkgs; [
     amdvlk
-    rocmPackages.clr.icd
   ];
   hardware.graphics.extraPackages32 = with pkgs; [
     driversi686Linux.amdvlk
@@ -88,9 +92,7 @@
     clinfo
     devenv
     alejandra
-
     #games
-    ddnet
     prismlauncher
     vesktop
 
