@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  inputs,
+  ...
+}: {
   environment.systemPackages = with pkgs; [
     flameshot
     wineWow64Packages.full
@@ -8,15 +12,19 @@
     nvd
     clinfo
     devenv
-    alejandra
     #games
     prismlauncher
     vesktop
 
     #kdenlive
     kdenlive
+
+    #lsp + formatter
+    nixd
+    alejandra
   ];
 
+  nix.nixPath = ["nixpkgs=${inputs.nixpkgs}"];
   programs.firefox.enable = true;
 
   programs.steam = {
