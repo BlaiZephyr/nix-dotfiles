@@ -6,6 +6,7 @@
     ./database.nix
     ./core-utils.nix
     ./networking.nix
+    ./wm.nix
   ];
 
   # GENERAL
@@ -25,29 +26,16 @@
 
   #GRAPHICS
   hardware.graphics = {
-    extraPackages = with pkgs; [amdvlk];
+    extraPackages = with pkgs; [
+      amdvlk
+      rocmPackages.clr.icd
+    ];
     extraPackages32 = with pkgs; [driversi686Linux.amdvlk];
     enable = true;
     enable32Bit = true;
   };
 
   #ENVIRONMENT
-  environment.pathsToLink = ["/libexec"]; # links /libexec from derivations to /run/current-system/sw
-  services = {
-    displayManager.defaultSession = "cinnamon";
-    libinput.enable = true;
-  };
-  services.xserver = {
-    enable = true;
-
-    displayManager.lightdm.enable = true;
-    desktopManager = {
-      cinnamon.enable = true;
-    };
-  };
-  services.displayManager.autoLogin.enable = true;
-  services.displayManager.autoLogin.user = "melonix";
-
   #AUDIO
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;

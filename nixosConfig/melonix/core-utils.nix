@@ -3,27 +3,6 @@
   inputs,
   ...
 }: {
-  environment.systemPackages = with pkgs; [
-    flameshot
-    wineWow64Packages.full
-    xfce.thunar
-    xfce.thunar-volman
-    nix-output-monitor
-    nvd
-    clinfo
-    devenv
-    #games
-    prismlauncher
-    vesktop
-
-    #kdenlive
-    kdenlive
-
-    #lsp + formatter
-    nixd
-    alejandra
-  ];
-
   nix.nixPath = ["nixpkgs=${inputs.nixpkgs}"];
   programs.firefox.enable = true;
 
@@ -58,4 +37,27 @@
   ];
 
   services.printing.enable = true;
+
+  environment.systemPackages = with pkgs; [
+    #e-mail
+    thunderbird
+
+    wineWow64Packages.full
+    xfce.thunar
+    xfce.thunar-volman
+    nix-output-monitor
+    nvd
+    clinfo
+    devenv
+    #games
+    prismlauncher
+    vesktop
+
+    #kdenlive
+    kdenlive
+
+    #lsp + formatter
+    nixd
+    alejandra
+  ];
 }
