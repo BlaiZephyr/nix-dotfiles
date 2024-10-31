@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs";
+    nixpkgs-unstable.url = "github:nixos/nixpkgs-unstable";
     nixos-hardware.url = "github:nixos/nixos-hardware";
 
     flake-utils.url = "github:numtide/flake-utils";
@@ -16,6 +17,11 @@
     firefox-addons = {
       url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
       inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    nixcord = {
+      url = "github:kaylorben/nixcord";
+      inputs.nixpkgs.follows = "nixpkgs-unstable"; #because i can.
     };
 
     neovim.url = "github:fred-drake/neovim";
