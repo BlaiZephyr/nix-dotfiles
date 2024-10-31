@@ -3,7 +3,6 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs";
-    nixpkgs-unstable.url = "github:nixos/nixpkgs-unstable";
     nixos-hardware.url = "github:nixos/nixos-hardware";
 
     flake-utils.url = "github:numtide/flake-utils";
@@ -21,7 +20,7 @@
 
     nixcord = {
       url = "github:kaylorben/nixcord";
-      inputs.nixpkgs.follows = "nixpkgs-unstable"; #because i can.
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     neovim.url = "github:fred-drake/neovim";
@@ -29,12 +28,10 @@
 
   # Output configuration
   outputs = {
-    self,
     home-manager,
     nixpkgs,
     ...
   } @ inputs: let
-    #fancy way of neoviming
     mkNeovimPackages = pkgs: neovimPkgs: let
       mkNeovimAlias = name: pkg:
         pkgs.runCommand "neovim-${name}" {} ''
