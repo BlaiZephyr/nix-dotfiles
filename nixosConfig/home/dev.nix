@@ -4,6 +4,8 @@
     vscode-fhs
     libsForQt5.full
 
+    nixpkgs-review
+    gh
     git
     cmake
 
