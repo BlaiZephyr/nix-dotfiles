@@ -42,7 +42,7 @@
     #e-mail
     thunderbird
 
-    wineWow64Packages.full
+    wineWowPackages.stable
     xfce.thunar
     xfce.thunar-volman
     nix-output-monitor
@@ -51,7 +51,6 @@
     devenv
     #games
     prismlauncher
-    vesktop
 
     #kdenlive
     kdenlive

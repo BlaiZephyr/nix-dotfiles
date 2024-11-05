@@ -1,6 +1,7 @@
 {pkgs, ...}: {
   environment.pathsToLink = ["/libexec"]; # links /libexec from derivations to /run/current-system/sw
 
+  services.xserver = {enable = true;};
   #test to disable x11 completly
   services.displayManager.sddm.enable = true;
   services.desktopManager.plasma6.enable = true;

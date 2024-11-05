@@ -5,16 +5,18 @@
 
   programs.nixcord = {
     enable = true;
-    quickCss = builtins.readFile ../../extras/styles/custom.css; #joinked from Nagi :3
+    discord.enable = false;
+    vesktop.enable = true;
+    quickCss = builtins.readFile ../../extras/styles/custom.css;
     config = {
-      frameless = true;
+      frameless = false;
       plugins = {
         hideAttachments.enable = true;
         memberCount.enable = true;
         mentionAvatars.enable = true;
-        messageLatency.enable = true;
-        showHiddenThings.enable = true;
-        showMeYourName.enable = true;
+        alwaysAnimate.enable = true;
+        webScreenShareFixes.enable = true;
+        betterRoleContext.enable = true;
       };
     };
   };
