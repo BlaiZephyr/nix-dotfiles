@@ -10,6 +10,7 @@
   ];
 
   # GENERAL
+
   time.timeZone = "Europe/Berlin";
   i18n.defaultLocale = "de_DE.UTF-8";
   console.keyMap = "de";
@@ -67,7 +68,10 @@
   nix = {
     settings = {
       trusted-users = ["melonix"];
-      experimental-features = ["nix-command" "flakes"];
+      experimental-features = [
+        "nix-command"
+        "flakes"
+      ];
     };
     extraOptions = ''
       extra-substituters = ["https://devenv.cachix.org"];

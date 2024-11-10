@@ -1,18 +1,17 @@
 {pkgs, ...}: {
-  home.packages = with pkgs; [
+  home.packages = [
     #core tools
-    vscode-fhs
-    libsForQt5.full
-    devenv
+    pkgs.vscode-fhs
+    pkgs.devenv
 
-    nixpkgs-review
-    gh
-    git
-
-    nixpkgs-fmt
+    pkgs.nixpkgs-review
+    pkgs.gh
+    pkgs.git
+    pkgs.nixpkgs-fmt
   ];
+
   programs.helix = {
-    enable = true;
+    enable = false;
     themes = {
       gruvy = {
         inherits = "gruvbox";
@@ -33,13 +32,18 @@
           fg = "red1";
           modifiers = ["italic"];
         };
-        "markup.italic" = {modifiers = ["italic"];};
-        "markup.quote" = {modifiers = ["italic"];};
+        "markup.italic" = {
+          modifiers = ["italic"];
+        };
+        "markup.quote" = {
+          modifiers = ["italic"];
+        };
       };
     };
     settings = {
       theme = "gruvy";
       editor = {
+        line-number = "relative";
         auto-format = true;
         completion-trigger-len = 0;
         scroll-lines = 1;
@@ -56,8 +60,17 @@
         };
         bufferline = "always";
         statusline = {
-          left = ["mode" "spinner" "file-name"];
-          right = ["diagnostics" "position" "total-line-numbers" "file-encoding"];
+          left = [
+            "mode"
+            "spinner"
+            "file-name"
+          ];
+          right = [
+            "diagnostics"
+            "position"
+            "total-line-numbers"
+            "file-encoding"
+          ];
           center = ["version-control"];
         };
         soft-wrap = {
@@ -72,6 +85,11 @@
         "f" = "file_picker_in_current_directory";
         "F" = "file_picker";
       };
+
+      keys.normal = {
+        "$" = "goto_line_end";
+        "_" = "goto_line_start";
+      };
     };
 
     languages = {
@@ -80,7 +98,10 @@
           name = "svelte";
           formatter = {
             command = "prettier";
-            args = ["--parser" "svelte"];
+            args = [
+              "--parser"
+              "svelte"
+            ];
           };
           auto-format = true;
         }
@@ -88,7 +109,10 @@
           name = "typescript";
           formatter = {
             command = "prettier";
-            args = ["--parser" "typescript"];
+            args = [
+              "--parser"
+              "typescript"
+            ];
           };
           auto-format = true;
         }
@@ -96,13 +120,18 @@
           name = "json";
           formatter = {
             command = "prettier";
-            args = ["--parser" "json"];
+            args = [
+              "--parser"
+              "json"
+            ];
           };
           auto-format = true;
         }
         {
           name = "nix";
-          formatter = {command = "nixpkgs-fmt";};
+          formatter = {
+            command = "nixpkgs-fmt";
+          };
           auto-format = true;
         }
         {
@@ -110,7 +139,10 @@
           formatter = {
             command = "xmllint";
             auto-format = true;
-            args = ["--format" "-"];
+            args = [
+              "--format"
+              "-"
+            ];
           };
         }
       ];
@@ -119,9 +151,6 @@
         rust-analyzer = {
           config = {
             checkOnSave.command = "clippy";
-            # Careful! If you enable this, then a lot of errors
-            # will no longer show up in Helix. Do not enable it.
-            # cargo.allFeatures = true; <- do NOT enable me
           };
         };
       };

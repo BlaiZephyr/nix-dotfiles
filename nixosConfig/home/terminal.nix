@@ -1,35 +1,15 @@
 {pkgs, ...}: {
-  programs.alacritty = {
+  programs.kitty = {
     enable = true;
-
     settings = {
-      shell = "/etc/profiles/per-user/melonix/bin/bash";
-
-      window = {
-        opacity = 0.6;
-        blur = true;
-        title = "let melon cook";
-        dynamic_title = true;
-      };
+      dynamic_background_opacity = true;
+      background_blur = 5;
+      background_opacity = "0.5";
     };
   };
 
   programs.fzf = {
     enable = true;
-    colors = {
-      fg = "#cbccc6";
-      bg = "#1f2430";
-      hl = "#707a8c";
-      "fg+" = "#707a8c";
-      "bg+" = "#191e2a";
-      "hl+" = "#ffcc66";
-      info = "#73d0ff";
-      prompt = "#707a8c";
-      pointer = "#cbccc6";
-      marker = "#73d0ff";
-      spinner = "#73d0ff";
-      header = "#d4bfff";
-    };
   };
   programs.bash = {
     enable = true;
@@ -78,24 +58,5 @@
     enable = true;
     userName = "BlaiZephyr";
     userEmail = "arbeit.t.lechner@gmail.com";
-  };
-
-  programs.tmux = {
-    enable = true;
-
-    plugins = with pkgs.tmuxPlugins; [
-      cpu
-      {
-        plugin = resurrect;
-        extraConfig = "set -g @resurrect-strategy-nvim 'session'";
-      }
-      {
-        plugin = continuum;
-        extraConfig = ''
-          set -g @continuum-restore 'on'
-          set -g @continuum-save-interval '5'
-        '';
-      }
-    ];
   };
 }

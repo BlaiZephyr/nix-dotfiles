@@ -13,10 +13,6 @@
     localNetworkGameTransfers.openFirewall = true;
   };
 
-  programs.nix-ld.enable = true;
-  # for the zed editor so LSP servers work.
-  programs.nix-ld.libraries = [];
-
   programs.nh = {
     enable = true;
     clean.enable = true;

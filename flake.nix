@@ -5,6 +5,7 @@
     nixpkgs.url = "github:nixos/nixpkgs";
     nixos-hardware.url = "github:nixos/nixos-hardware";
 
+    stylix.url = "github:danth/stylix";
     flake-utils.url = "github:numtide/flake-utils";
 
     home-manager = {
@@ -26,7 +27,6 @@
     neovim.url = "github:fred-drake/neovim";
   };
 
-  # Output configuration
   outputs = {
     home-manager,
     nixpkgs,
@@ -50,9 +50,13 @@
             system = "x86_64-linux";
             config.allowUnfree = true;
           };
-          specialArgs = {inherit inputs;};
+          specialArgs = {
+            inherit inputs;
+          };
           modules = [
             inputs.nur.nixosModules.nur
+            inputs.stylix.nixosModules.stylix
+
             ./nixosConfig/melonix/configuration.nix
             home-manager.nixosModules.home-manager
             {
@@ -62,13 +66,17 @@
                 backupFileExtension = "backup";
                 users.melonix.imports = [
                   ./nixosConfig/home
-                  ({pkgs, ...}: {
-                    home.packages =
-                      (builtins.attrValues (mkNeovimPackages pkgs inputs.neovim.packages.${pkgs.system}))
-                      ++ [inputs.neovim.packages.${pkgs.system}.default];
-                  })
+                  (
+                    {pkgs, ...}: {
+                      home.packages =
+                        (builtins.attrValues (mkNeovimPackages pkgs inputs.neovim.packages.${pkgs.system}))
+                        ++ [inputs.neovim.packages.${pkgs.system}.default];
+                    }
+                  )
                 ];
-                extraSpecialArgs = {inherit inputs;};
+                extraSpecialArgs = {
+                  inherit inputs;
+                };
               };
             }
           ];
