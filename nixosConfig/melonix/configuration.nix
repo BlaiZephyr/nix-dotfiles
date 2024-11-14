@@ -3,10 +3,12 @@
 {pkgs, ...}: {
   imports = [
     ./hardware-configuration.nix
+    ../../modules/nixosModules
     ./database.nix
     ./core-utils.nix
     ./networking.nix
     ./wm.nix
+    ./stylix.nix
   ];
 
   # GENERAL
@@ -17,12 +19,20 @@
 
   #BOOT OPTIONS
 
+  desktop = {
+    niri.enable = true;
+  };
+
+  utility = {
+    thunar.enable = true;
+  };
   boot = {
-    loader = {
-      systemd-boot.enable = true;
-      efi.canTouchEfiVariables = true;
-    };
+    plymouth.enable = true;
+    loader.systemd-boot.enable = true;
+    loader.efi.canTouchEfiVariables = true;
     initrd.kernelModules = ["amdgpu"];
+    kernelParams = ["quiet"];
+    kernelPackages = pkgs.linuxPackages_latest;
   };
 
   #GRAPHICS
@@ -36,7 +46,12 @@
     enable32Bit = true;
   };
 
-  environment.systemPackages = with pkgs; [lact];
+  #mouse
+  services.ratbagd.enable = true;
+  environment.systemPackages = with pkgs; [
+    piper
+    lact
+  ];
   systemd.packages = with pkgs; [lact];
   systemd.services.lactd.wantedBy = ["multi-user.target"];
   #ENVIRONMENT

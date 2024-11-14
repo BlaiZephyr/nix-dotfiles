@@ -11,7 +11,7 @@
   ];
 
   programs.helix = {
-    enable = false;
+    enable = true;
     themes = {
       gruvy = {
         inherits = "gruvbox";
@@ -46,7 +46,7 @@
         line-number = "relative";
         auto-format = true;
         completion-trigger-len = 0;
-        scroll-lines = 1;
+        scroll-lines = 4;
         scrolloff = 5;
         cursorline = true;
         color-modes = true;
@@ -81,7 +81,6 @@
       keys.normal.space = {
         "h" = ":toggle-option lsp.display-inlay-hints";
         "c" = [":write-all"];
-        # f and F are swapped, as picking in cwd is much more common for me.
         "f" = "file_picker_in_current_directory";
         "F" = "file_picker";
       };
