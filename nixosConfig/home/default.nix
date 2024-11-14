@@ -4,6 +4,5 @@
     ./home.nix
     ./work.nix
     ./media-creation.nix
-    ./discord.nix
   ];
 }

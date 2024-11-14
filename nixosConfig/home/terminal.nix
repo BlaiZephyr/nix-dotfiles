@@ -1,15 +1,4 @@
 {pkgs, ...}: {
-  programs.kitty = {
-    enable = true;
-    settings = {
-      dynamic_background_opacity = true;
-      background_opacity = "0.8";
-      background_blur = 5;
-      enable_audio_bell = false;
-      confirm_os_window_close = 1;
-    };
-  };
-
   programs.fzf = {
     enable = true;
   };
