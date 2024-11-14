@@ -7,7 +7,7 @@
   options.desktop = {
     plasma6.enable = lib.mkEnableOption "enable KDE-Plasma 6 Wayland";
   };
-  config = lib.mkIf config.desktop.niri.enable {
+  config = lib.mkIf config.desktop.plasma6.enable {
     environment.plasma6.excludePackages = with pkgs.kdePackages; [
       plasma-browser-integration
       konsole
