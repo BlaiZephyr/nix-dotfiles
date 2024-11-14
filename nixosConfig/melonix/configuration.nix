@@ -7,7 +7,6 @@
     ./database.nix
     ./core-utils.nix
     ./networking.nix
-    ./wm.nix
     ./stylix.nix
   ];
 
@@ -17,15 +16,16 @@
   i18n.defaultLocale = "de_DE.UTF-8";
   console.keyMap = "de";
 
-  #BOOT OPTIONS
+  services.xserver = {enable = true;};
 
   desktop = {
-    niri.enable = true;
+    plasma6.enable = true;
   };
 
   utility = {
     thunar.enable = true;
   };
+
   boot = {
     plymouth.enable = true;
     loader.systemd-boot.enable = true;

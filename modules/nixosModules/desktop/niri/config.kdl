@@ -3,10 +3,9 @@
 // Check the wiki for a full description of the configuration:
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Overview
 environment {
-  TERMINAL "ghostty"
+  TERMINAL "kitty"
   DISPLAY ":0"
   __NV_PRIME_RENDER_OFFLOAD "1"
-  __GLX_VENDOR_LIBRARY_NAME "nvidia"
 }
 
 input {
@@ -200,21 +199,18 @@ binds {
 
   // Apps
 
-  Super+T { spawn "ghostty"; }
+  Super+T { spawn "kitty"; }
   // Super+Ctrl+T { spawn "kitty"; }
   Super+Space { spawn "rofi" "-show"; }
   Super+L { spawn "swaylock"; }
-  Super+N {spawn "ghostty" "-e" "nvim";}
-  Super+J {spawn "ghostty" "-e" "nvim" "-c" "'Neorg journal today'";}
-  Super+M {spawn "ghostty" "-e" "ncmpcpp";}
-  Super+H {spawn "ghostty" "-e" "btop";}
+  Super+H {spawn "kitty" "-e" "btop";}
   // You can also use a shell:
   // Mod+T { spawn "bash" "-c" "notify-send hello && exec alacritty"; }
 
   // GUI apps
   Super+F { spawn "thunar"; }
   Super+W { spawn "floorp"; }
-
+  Super+S { spawn "steam"; }
   // MPD
 
   Shift+Alt+P allow-when-locked=true { spawn "mpc" "toggle"; }
