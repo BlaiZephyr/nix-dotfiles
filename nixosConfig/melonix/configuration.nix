@@ -8,7 +8,7 @@
 }: {
   imports = [
     ./hardware-configuration.nix
-    ../../modules/nixosModules
+    ../../nixosModules
     ./core-utils.nix
     ./networking.nix
     inputs.home-manager.nixosModules.default
