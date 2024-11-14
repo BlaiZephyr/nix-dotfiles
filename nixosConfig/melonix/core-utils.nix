@@ -39,8 +39,6 @@
     thunderbird
 
     wineWowPackages.stable
-    xfce.thunar
-    xfce.thunar-volman
     nix-output-monitor
     nvd
     clinfo
@@ -50,9 +48,5 @@
 
     #kdenlive
     kdenlive
-
-    #lsp + formatter
-    nixd
-    alejandra
   ];
 }

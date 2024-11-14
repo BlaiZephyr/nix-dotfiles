@@ -1,13 +1,17 @@
 # Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
-{pkgs, ...}: {
+{
+  pkgs,
+  inputs,
+  pkgs-stable,
+  ...
+}: {
   imports = [
     ./hardware-configuration.nix
     ../../modules/nixosModules
-    ./database.nix
     ./core-utils.nix
     ./networking.nix
-    ./stylix.nix
+    inputs.home-manager.nixosModules.default
   ];
 
   # GENERAL
@@ -24,6 +28,10 @@
 
   utility = {
     thunar.enable = true;
+  };
+
+  development = {
+    utils.enable = true;
   };
 
   boot = {
@@ -76,6 +84,14 @@
       "networkmanager"
       "wheel"
     ];
+  };
+
+  home-manager = {
+    extraSpecialArgs = {
+      inherit inputs pkgs-stable;
+    };
+    users."melonix" = import ../home;
+    useUserPackages = true;
   };
 
   system.stateVersion = "24.05"; # Did you read the comment? yes :3

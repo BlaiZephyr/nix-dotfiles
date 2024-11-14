@@ -2,7 +2,8 @@
   description = "melon's flake!";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs-stable.url = "github:nixos/nixpkgs/release-24.05";
     nixos-hardware.url = "github:nixos/nixos-hardware";
 
     stylix.url = "github:danth/stylix";
@@ -24,41 +25,37 @@
       url = "github:kaylorben/nixcord";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    helix-overlay.url = "github:helix-editor/helix";
   };
 
   outputs = {
     home-manager,
     nixpkgs,
+    nixpkgs-stable,
     ...
-  } @ inputs: {
+  } @ inputs: let
+    system = "x86_64-linux";
+    pkgs-stable = import nixpkgs-stable {
+      system = "x86_64-linux";
+      config.allowUnfree = true;
+    };
+    pkgs = import nixpkgs {
+      system = "x86_64-linux";
+      config.allowUnfree = true;
+    };
+  in {
     nixosConfigurations = {
       melonix = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        pkgs = import nixpkgs {
-          system = "x86_64-linux";
-          config.allowUnfree = true;
-        };
         specialArgs = {
+          inherit system;
+          inherit pkgs;
+          inherit pkgs-stable;
           inherit inputs;
         };
+
         modules = [
-          inputs.nur.nixosModules.nur
-          inputs.stylix.nixosModules.stylix
           ./nixosConfig/melonix/configuration.nix
-          home-manager.nixosModules.home-manager
-          {
-            home-manager = {
-              useGlobalPkgs = true;
-              useUserPackages = true;
-              backupFileExtension = "backup";
-              users.melonix.imports = [
-                ./nixosConfig/home
-              ];
-              extraSpecialArgs = {
-                inherit inputs;
-              };
-            };
-          }
         ];
       };
     };
