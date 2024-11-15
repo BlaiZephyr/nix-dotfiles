@@ -1,6 +1,6 @@
 {pkgs, ...}: {
   imports = [
-    ../../homemodules
+    ../../modules/home
   ];
 
   hm = {
