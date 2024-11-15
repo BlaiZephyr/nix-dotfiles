@@ -11,11 +11,13 @@
     inputs.home-manager.nixosModules.default
   ];
 
+
+  programs.firefox.enable = true;
   services.xserver.enable = true;
 
   desktop = {
-    plasma6.enable = false;
-    niri.enable = true;
+    plasma6.enable = true;
+    niri.enable = false;
   };
 
   utility = {
@@ -24,7 +26,7 @@
   };
 
   development = {
-    utils.enable = false;
+    utils.enable = true;
   };
 
   boot.loader.systemd-boot.enable = true;
@@ -68,5 +70,15 @@
     extraGroups = ["networkmanager" "wheel"];
   };
 
+
+  nix = {
+    settings = {
+      trusted-users = ["cosmec"];
+      experimental-features = [
+        "nix-command"
+        "flakes"
+      ];
+    };
+  };
   system.stateVersion = "24.11";
 }
