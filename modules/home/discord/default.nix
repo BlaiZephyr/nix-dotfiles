@@ -17,8 +17,9 @@
       enable = true;
       discord.enable = false;
       vesktop.enable = true;
-      quickCss = builtins.readFile ../../extras/styles/custom.css;
+      quickCss = builtins.readFile ../../../extras/styles/custom.css;
       config = {
+        useQuickCss = false;
         frameless = false;
         plugins = {
           hideAttachments.enable = true;
