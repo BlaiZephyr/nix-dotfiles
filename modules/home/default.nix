@@ -6,6 +6,7 @@
     ./kitty
     ./nh
     ./obs-studio
+    ./plasma-manager
     ./shell
   ];
 }
