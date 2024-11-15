@@ -1,10 +1,11 @@
 {...}: {
   imports = [
+    ./discord
+    ./git
     ./helix
     ./kitty
-    ./discord
+    ./nh
     ./obs-studio
-    ./git
     ./shell
   ];
 }

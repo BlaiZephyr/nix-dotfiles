@@ -9,12 +9,43 @@
   imports = [
     ./hardware-configuration.nix
     ../../nixosModules
-    ./core-utils.nix
-    ./networking.nix
     inputs.home-manager.nixosModules.default
   ];
 
   # GENERAL
+
+  #iirc this is for nixd to properly function
+  nix.nixPath = ["nixpkgs=${inputs.nixpkgs}"];
+
+  programs.firefox.enable = true;
+
+  fonts.packages = with pkgs; [
+    noto-fonts
+    noto-fonts-cjk-sans
+    noto-fonts-emoji
+    (nerdfonts.override {
+      fonts = [
+        "FiraCode"
+        "DroidSansMono"
+      ];
+    })
+  ];
+
+  services.printing.enable = true;
+
+  environment.systemPackages = with pkgs; [
+    thunderbird
+    wineWowPackages.stable
+    nix-output-monitor
+    nvd
+    clinfo
+    devenv
+    prismlauncher
+    kdenlive
+
+    piper
+    lact
+  ];
 
   time.timeZone = "Europe/Berlin";
   i18n.defaultLocale = "de_DE.UTF-8";
@@ -29,6 +60,7 @@
 
   utility = {
     thunar.enable = true;
+    steam.enable = true;
   };
 
   development = {
@@ -75,10 +107,7 @@
 
   #MOUSE
   services.ratbagd.enable = true;
-  environment.systemPackages = with pkgs; [
-    piper
-    lact
-  ];
+
   systemd.packages = with pkgs; [lact];
   systemd.services.lactd.wantedBy = ["multi-user.target"];
   #AUDIO

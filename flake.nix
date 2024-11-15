@@ -58,6 +58,18 @@
           ./nixosConfig/melonix/configuration.nix
         ];
       };
+      cosmec = nixpkgs.lib.nixosSystem {
+        specialArgs = {
+          inherit system;
+          inherit pkgs;
+          inherit pkgs-stable;
+          inherit inputs;
+        };
+
+        modules = [
+          ./nixosConfig/cosmec/configuration.nix
+        ];
+      };
     };
   };
 }

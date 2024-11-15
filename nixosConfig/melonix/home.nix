@@ -4,10 +4,11 @@
   ];
 
   hm = {
+    discord.enable = true;
     git.enable = true;
     helix.enable = true;
     kitty.enable = true;
-    discord.enable = true;
+    nh.enable = true;
     obs-studio.enable = true;
     shell.enable = true; #TODO: seperate bash from the rest as a standalone
   };
@@ -23,5 +24,6 @@
     #GENERAL FOR WORK
     libreoffice
   ];
+
   home.stateVersion = "24.05";
 }
