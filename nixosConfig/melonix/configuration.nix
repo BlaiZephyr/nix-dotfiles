@@ -24,6 +24,7 @@
 
   desktop = {
     plasma6.enable = true;
+    niri.enable = false;
   };
 
   utility = {
@@ -54,7 +55,25 @@
     enable32Bit = true;
   };
 
-  #mouse
+  #NETWORKING
+  networking.hostName = "melonix";
+  networking.networkmanager.enable = true;
+  networking.firewall = {
+    enable = true;
+    allowedTCPPorts = [80 443];
+    allowedUDPPortRanges = [
+      {
+        from = 8303;
+        to = 8304;
+      }
+      {
+        from = 8403;
+        to = 8404;
+      }
+    ];
+  };
+
+  #MOUSE
   services.ratbagd.enable = true;
   environment.systemPackages = with pkgs; [
     piper
@@ -62,7 +81,6 @@
   ];
   systemd.packages = with pkgs; [lact];
   systemd.services.lactd.wantedBy = ["multi-user.target"];
-  #ENVIRONMENT
   #AUDIO
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
@@ -77,6 +95,7 @@
   systemd.services."getty@tty1".enable = false;
   systemd.services."autovt@tty1".enable = false;
 
+  #USER
   users.users.melonix = {
     isNormalUser = true;
     description = "melonix";
@@ -86,16 +105,16 @@
     ];
   };
 
+  #HOME-MANAGER
   home-manager = {
     extraSpecialArgs = {
       inherit inputs pkgs-stable;
     };
-    users."melonix" = import ../home;
+    users."melonix" = import ./home.nix;
     useUserPackages = true;
   };
 
-  system.stateVersion = "24.05"; # Did you read the comment? yes :3
-
+  #NIX-SETTINGS
   nix = {
     settings = {
       trusted-users = ["melonix"];
@@ -109,4 +128,5 @@
       extra-trusted-public-keys = ["devenv.cachix.org-1:w1cLUi8dv3hnoSPGAuibQv+f9TZLr6cv/Hm9XgU50cw="];
     '';
   };
+  system.stateVersion = "24.05";
 }
