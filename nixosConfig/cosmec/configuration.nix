@@ -14,8 +14,8 @@
   services.xserver.enable = true;
 
   desktop = {
-    plasma6.enable = true;
-    niri.enable = false;
+    plasma6.enable = false;
+    niri.enable = true;
   };
 
   utility = {
@@ -24,7 +24,7 @@
   };
 
   development = {
-    utils.enable = true;
+    utils.enable = false;
   };
 
   boot.loader.systemd-boot.enable = true;
