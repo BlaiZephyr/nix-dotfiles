@@ -1,6 +1,7 @@
 {
   inputs,
   pkgs-stable,
+  lib,
   pkgs,
   ...
 }: {
@@ -35,7 +36,7 @@
   time.timeZone = "Europe/Berlin";
 
   i18n.defaultLocale = "de_DE.UTF-8";
-  console = {
+  console = lib.mkDefault {
     keyMap = "de";
     useXkbConfig = true;
   };
