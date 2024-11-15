@@ -12,7 +12,7 @@
       enable = true;
       clean.enable = true;
       clean.extraArgs = "--keep-since 12d --keep 3";
-      flake = "/home/melonix/.dotfiles/";
+      flake = "~/.dotfiles/";
     };
   };
 }

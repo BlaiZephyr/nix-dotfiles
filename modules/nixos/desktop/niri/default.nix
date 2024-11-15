@@ -29,7 +29,7 @@
       };
     };
 
-    home-manager.users."melonix" = {
+    home-manager.users."cosmec" = {
       home.file.".config/niri/config.kdl" = {
         source = ./config.kdl;
       };
