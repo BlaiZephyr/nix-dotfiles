@@ -1,6 +1,5 @@
 {
   inputs,
-  pkgs,
   lib,
   config,
   ...
@@ -18,6 +17,17 @@
         theme = "Breeze";
         colorScheme = "GruvboxColors";
         lookAndFeel = "org.kde.breezedark.desktop";
+      };
+
+      shortcuts = {
+        ksmserver = {
+          "Show Rofi" = [
+            "rofi -show drun"
+            "Meta+D"
+          ];
+        };
+      };
+      configFile = {
       };
     };
   };

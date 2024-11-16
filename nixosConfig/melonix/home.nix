@@ -14,6 +14,7 @@
     stylix.enable = true;
     shell.enable = true; #TODO: seperate bash from the rest as a standalone
     code.enable = true;
+    rofi.enable = true;
   };
 
   home.packages = with pkgs; [

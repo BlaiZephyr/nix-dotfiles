@@ -37,6 +37,13 @@
         serif = config.stylix.fonts.monospace;
         sansSerif = config.stylix.fonts.monospace;
         emoji = config.stylix.fonts.monospace;
+        sizes = {
+          desktop = 12;
+          terminal = 12;
+        };
+      };
+      targets = {
+        firefox.enable = false; #idk, need to fix fontsize first
       };
     };
   };

@@ -10,5 +10,6 @@
     ./shell
     ./stylix
     ./code
+    ./rofi
   ];
 }
