@@ -20,10 +20,6 @@
 
     programs.helix = {
       enable = true;
-
-      settings = {
-        theme = "gruvy";
-      };
     };
   };
 }

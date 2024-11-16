@@ -8,5 +8,6 @@
     ./obs-studio
     ./plasma-manager
     ./shell
+    ./stylix
   ];
 }
