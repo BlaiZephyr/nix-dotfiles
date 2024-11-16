@@ -13,7 +13,6 @@
   ];
 
   # GENERAL
-
   #iirc this is for nixd to properly function
   nix.nixPath = ["nixpkgs=${inputs.nixpkgs}"];
 

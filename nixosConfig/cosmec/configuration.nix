@@ -11,7 +11,6 @@
     inputs.home-manager.nixosModules.default
   ];
 
-
   programs.firefox.enable = true;
   services.xserver.enable = true;
 
@@ -69,7 +68,6 @@
     isNormalUser = true;
     extraGroups = ["networkmanager" "wheel"];
   };
-
 
   nix = {
     settings = {

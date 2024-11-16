@@ -10,7 +10,6 @@
   };
   config = lib.mkIf config.development.utils.enable {
     environment.systemPackages = with pkgs; [
-      vscode-fhs #seperate?
       devenv
 
       nixpkgs-review #seperate?

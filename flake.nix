@@ -31,6 +31,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     helix-overlay.url = "github:helix-editor/helix";
+
+    nix-vscode-extensions = {
+      url = "github:nix-community/nix-vscode-extensions";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {

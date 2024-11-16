@@ -9,5 +9,6 @@
     ./plasma-manager
     ./shell
     ./stylix
+    ./code
   ];
 }

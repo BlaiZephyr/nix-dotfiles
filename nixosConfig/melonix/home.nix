@@ -13,6 +13,7 @@
     plasma-manager.enable = true;
     stylix.enable = true;
     shell.enable = true; #TODO: seperate bash from the rest as a standalone
+    code.enable = true;
   };
 
   home.packages = with pkgs; [
@@ -26,6 +27,5 @@
     #GENERAL FOR WORK
     libreoffice
   ];
-
   home.stateVersion = "24.11";
 }
