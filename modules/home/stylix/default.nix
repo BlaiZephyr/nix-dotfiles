@@ -15,23 +15,23 @@
       enable = true;
       image = ./wallpapers/Background.png;
       base16Scheme = {
-        # Gruvbox dark colors
-        base00 = "#282828"; # bg
-        base01 = "#3c3836";
-        base02 = "#504945";
-        base03 = "#665c54";
-        base04 = "#bdae93";
-        base05 = "#d5c4a1"; # fg
-        base06 = "#ebdbb2";
-        base07 = "#fbf1c7";
-        base08 = "#fb4934"; # red
-        base09 = "#fe8019"; # orange
-        base0A = "#fabd2f"; # yellow
-        base0B = "#b8bb26"; # green
-        base0C = "#8ec07c"; # aqua
-        base0D = "#83a598"; # blue
-        base0E = "#d3869b"; # purple
-        base0F = "#d65d0e"; # brown
+        # Tokyonight
+        base00 = "#24283b";
+        base01 = "#1f2335";
+        base02 = "#292e42";
+        base03 = "#565f89";
+        base04 = "#a9b1d6";
+        base05 = "#c0caf5";
+        base06 = "#c0caf5";
+        base07 = "#c0caf5";
+        base08 = "#f7768e";
+        base09 = "#ff9e64";
+        base0A = "#e0af68";
+        base0B = "#9ece6a";
+        base0C = "#1abc9c";
+        base0D = "#41a6b5";
+        base0E = "#bb9af7";
+        base0F = "#ff007c";
       };
       fonts = {
         serif = config.stylix.fonts.monospace;
@@ -43,7 +43,7 @@
         };
       };
       targets = {
-        firefox.enable = false; #idk, need to fix fontsize first
+        firefox.enable = true; #idk, need to fix fontsize first
       };
     };
   };

@@ -1,6 +1,7 @@
 # Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 {
+  lib,
   pkgs,
   inputs,
   pkgs-stable,
@@ -18,6 +19,10 @@
 
   programs.firefox.enable = true;
 
+  services.mysql = {
+    enable = true;
+    package = pkgs.mariadb;
+  };
   fonts.packages = with pkgs; [
     noto-fonts
     noto-fonts-cjk-sans
@@ -40,10 +45,10 @@
     clinfo
     devenv
     prismlauncher
-    kdenlive
 
     piper
     lact
+    obsidian
   ];
 
   time.timeZone = "Europe/Berlin";
@@ -52,9 +57,12 @@
 
   services.xserver = {enable = true;};
 
+  security.polkit.enable = true;
   desktop = {
     plasma6.enable = true;
     niri.enable = false;
+    cosmic.enable = false;
+    xwayland.enable = false;
   };
 
   utility = {
@@ -133,6 +141,10 @@
     ];
   };
 
+  nixpkgs.config.allowUnfreePredicate = pkg:
+    builtins.elem (lib.getName pkg) [
+      "obsidian"
+    ];
   #HOME-MANAGER
   home-manager = {
     extraSpecialArgs = {
@@ -151,6 +163,7 @@
         "flakes"
       ];
     };
+
     extraOptions = ''
       extra-substituters = ["https://devenv.cachix.org"];
       extra-trusted-public-keys = ["devenv.cachix.org-1:w1cLUi8dv3hnoSPGAuibQv+f9TZLr6cv/Hm9XgU50cw="];

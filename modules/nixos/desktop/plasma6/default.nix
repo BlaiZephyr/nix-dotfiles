@@ -13,6 +13,11 @@
       konsole
       oxygen
     ];
+
+    environment.systemPackages = with pkgs; [
+      rofi-wayland
+    ];
+
     # links /libexec from derivations to /run/current-system/sw
     environment.pathsToLink = ["/libexec"];
 

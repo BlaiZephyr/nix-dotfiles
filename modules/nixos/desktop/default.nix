@@ -3,5 +3,6 @@
     ./niri
     ./plasma6
     ./utility
+    ./cosmic
   ];
 }
