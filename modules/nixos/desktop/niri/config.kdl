@@ -8,6 +8,15 @@ environment {
   __NV_PRIME_RENDER_OFFLOAD "1"
 }
 
+output "DP-2" {
+  mode "1920x1080@239.964"
+  scale 1.0
+}
+
+output "DP-3" {
+  mode "1920x1080@239.964"
+  scale 1.0
+} 
 input {
   keyboard {
     xkb {
@@ -71,7 +80,7 @@ layout {
     // inactive-color "#505050"
     // inactive-color "#7700AE"
 
-    active-gradient from="#7700AE" to="#0060FF" angle=45
+    active-gradient from="#7700AE" to="#0060FF" angle=65
 
     // You can also color the gradient relative to the entire view
     // of the workspace, rather than relative to just the window itself.
@@ -163,7 +172,7 @@ window-rule {
 }
 
 window-rule {
-  match app-id="floorp"
+  match app-id="firefox"
   open-maximized true
   // default-column-width { proportion 1.00; }
 }
@@ -203,13 +212,13 @@ binds {
   // Super+Ctrl+T { spawn "kitty"; }
   Super+Space { spawn "rofi" "-show"; }
   Super+L { spawn "swaylock"; }
-  Super+H {spawn "kitty" "-e" "btop";}
+  Super+H {spawn "kitty" "-e" "htop";}
   // You can also use a shell:
   // Mod+T { spawn "bash" "-c" "notify-send hello && exec alacritty"; }
 
   // GUI apps
   Super+F { spawn "thunar"; }
-  Super+W { spawn "floorp"; }
+  Super+W { spawn "firefox"; }
   Super+S { spawn "steam"; }
   // MPD
 
@@ -370,3 +379,4 @@ binds {
 
 //spawn-at-startup "xfce4-panel"
 spawn-at-startup "wpaperd"
+spawn-at-startup "xwayland-sattelite"

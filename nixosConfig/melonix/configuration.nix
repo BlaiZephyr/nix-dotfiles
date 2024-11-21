@@ -37,6 +37,10 @@
 
   services.printing.enable = true;
 
+  nixpkgs.overlays = [
+    inputs.prismlauncher.overlays.default
+  ];
+  programs.dconf.enable = true; #for some god forsaken reason, home manager crashes without
   environment.systemPackages = with pkgs; [
     thunderbird
     wineWowPackages.stable
@@ -44,11 +48,10 @@
     nvd
     clinfo
     devenv
-    prismlauncher
-
     piper
     lact
     obsidian
+    prismlauncher
   ];
 
   time.timeZone = "Europe/Berlin";
@@ -62,8 +65,11 @@
     plasma6.enable = true;
     niri.enable = false;
     cosmic.enable = false;
-    xwayland.enable = false;
+    xwayland.enable = true;
   };
+
+  # programs.hyprland.enable = true; # requires the home manager option to be set!
+  # programs.hyprland.package = inputs.hyprland.packages."${pkgs.system}".hyprland;
 
   utility = {
     thunar.enable = true;

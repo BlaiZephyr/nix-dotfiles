@@ -15,6 +15,8 @@
     shell.enable = true; #TODO: seperate bash from the rest as a standalone
     code.enable = true;
     rofi.enable = true;
+    waybar.enable = false;
+    #   hyprland.enable = true; #stop seperating things you moronic askdjnalsdnksal
   };
 
   home.packages = with pkgs; [
@@ -25,7 +27,6 @@
     ffmpeg
     audacity
 
-    #GENERAL FOR WORK
     libreoffice
   ];
   home.stateVersion = "24.11";

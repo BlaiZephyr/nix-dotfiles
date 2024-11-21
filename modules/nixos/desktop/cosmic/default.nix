@@ -11,7 +11,6 @@
 
       xwayland.enable = lib.mkEnableOption "Xwayland support for cosmic-comp" // {default = true;};
     };
-
     environment.cosmic.excludePackages = lib.mkOption {
       description = lib.mdDoc "List of COSMIC packages to exclude from the default environment";
       type = lib.types.listOf lib.types.package;

@@ -13,6 +13,9 @@
     environment.systemPackages = with pkgs; [
       niri
       xwayland-satellite
+      wpaperd
+      wl-clipboard
+      xclip
     ];
 
     environment.variables = {
@@ -29,7 +32,7 @@
       };
     };
 
-    home-manager.users."cosmec" = {
+    home-manager.users."melonix" = {
       home.file.".config/niri/config.kdl" = {
         source = ./config.kdl;
       };

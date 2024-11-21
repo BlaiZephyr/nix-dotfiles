@@ -1,4 +1,5 @@
 {
+  pkgs,
   lib,
   config,
   ...
@@ -7,6 +8,9 @@
     kitty.enable = lib.mkEnableOption "enable kitty";
   };
   config = lib.mkIf config.hm.kitty.enable {
+    home.packages = with pkgs; [
+      btop
+    ];
     programs.kitty = {
       enable = true;
       font = lib.mkForce {

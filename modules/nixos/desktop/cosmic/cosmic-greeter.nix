@@ -44,7 +44,6 @@
 
       users.groups.cosmic-greeter = {};
 
-      # required features
       hardware.${
         if lib.versionAtLeast lib.version "24.11"
         then "graphics"
