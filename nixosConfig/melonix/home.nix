@@ -10,13 +10,11 @@
     kitty.enable = true;
     nh.enable = true;
     obs-studio.enable = true;
-    plasma-manager.enable = true;
+    plasma-manager.enable = false;
     stylix.enable = true;
     shell.enable = true; #TODO: seperate bash from the rest as a standalone
     code.enable = true;
     rofi.enable = true;
-    waybar.enable = false;
-    #   hyprland.enable = true; #stop seperating things you moronic askdjnalsdnksal
   };
 
   home.packages = with pkgs; [

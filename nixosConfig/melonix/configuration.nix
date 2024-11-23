@@ -62,9 +62,10 @@
 
   security.polkit.enable = true;
   desktop = {
-    plasma6.enable = true;
+    plasma6.enable = false;
     niri.enable = false;
     cosmic.enable = false;
+    sway.enable = true;
     xwayland.enable = true;
   };
 

@@ -4,5 +4,6 @@
     ./plasma6
     ./utility
     ./cosmic
+    ./sway
   ];
 }

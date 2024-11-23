@@ -11,7 +11,6 @@
     ./stylix
     ./code
     ./rofi
-    ./waybar
     ./hyprland
   ];
 }
