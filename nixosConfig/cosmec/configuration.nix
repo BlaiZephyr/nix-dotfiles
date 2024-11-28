@@ -2,7 +2,6 @@
   inputs,
   pkgs-stable,
   lib,
-  pkgs,
   ...
 }: {
   imports = [
@@ -66,7 +65,10 @@
 
   users.users.cosmec = {
     isNormalUser = true;
-    extraGroups = ["networkmanager" "wheel"];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+    ];
   };
 
   nix = {

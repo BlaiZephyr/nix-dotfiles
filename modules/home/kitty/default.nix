@@ -17,7 +17,9 @@
         name = "JetBrainsMonoNL Nerd Font Mono";
         size = 16.0;
       };
-      settings = {
+      settings = lib.mkForce {
+        background_opacity = "0.2";
+        background_blur = 8;
         enable_audio_bell = false;
         shell = "bash";
         url_style = "single";

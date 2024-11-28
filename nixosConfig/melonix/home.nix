@@ -15,6 +15,7 @@
     shell.enable = true; #TODO: seperate bash from the rest as a standalone
     code.enable = true;
     rofi.enable = true;
+    neovim.enable = true;
   };
 
   home.packages = with pkgs; [
@@ -25,6 +26,7 @@
     ffmpeg
     audacity
 
+    kdenlive
     libreoffice
   ];
   home.stateVersion = "24.11";

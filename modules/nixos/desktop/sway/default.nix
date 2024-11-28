@@ -27,7 +27,7 @@
 
     home-manager.users."melonix" = {
       home.packages = with pkgs; [
-        grim
+        sway-contrib.grimshot
         slurp
         wl-clipboard
         swappy
@@ -142,11 +142,17 @@
             "Mod4+shift+KP_7" = "move container to workspace number 7";
 
             #screenshot tools
-            "Mod4+shift+q" = "kill";
-            "Print" = "exec grim -g \"$(slurp)\" - | swappy -f -"; # Select area with editing
-            "Shift+Print" = "exec grim -o $(swaymsg -t get_outputs | jq -r '.[] | select(.focused) | .name') - | swappy -f -";
-            "Ctrl+Print" = "exec grim -o $(swaymsg -t get_outputs | jq -r '.[] | select(.focused) | .name') - | wl-copy";
-            "Ctrl+Shift+Print" = "exec grim - | swappy -f -";
+            # Area select with editing
+            "Print" = "exec grimshot --notify save area - | swappy -f -";
+
+            # Current output with editing
+            "Shift+Print" = "exec grimshot --notify save output - | swappy -f -";
+
+            # Current output directly to clipboard (no editing)
+            "Ctrl+Print" = "exec grimshot --notify copy output";
+
+            # Full screenshot with editing
+            "Ctrl+Shift+Print" = "exec grimshot --notify save screen - | swappy -f -";
           };
 
           terminal = "kitty";

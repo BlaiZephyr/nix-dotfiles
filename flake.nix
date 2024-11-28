@@ -9,6 +9,11 @@
       inputs.hyprland.follows = "hyprland";
     };
 
+    nvf = {
+      url = "github:notashelf/nvf";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nixpkgs-stable.url = "github:nixos/nixpkgs/release-24.05";
     nixos-hardware.url = "github:nixos/nixos-hardware";

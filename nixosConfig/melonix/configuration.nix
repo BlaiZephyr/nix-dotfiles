@@ -1,5 +1,3 @@
-# Help is available in the configuration.nix(5) man page
-# and in the NixOS manual (accessible by running ‘nixos-help’).
 {
   lib,
   pkgs,
@@ -14,7 +12,6 @@
   ];
 
   # GENERAL
-  #iirc this is for nixd to properly function
   nix.nixPath = ["nixpkgs=${inputs.nixpkgs}"];
 
   programs.firefox.enable = true;
@@ -40,8 +37,19 @@
   nixpkgs.overlays = [
     inputs.prismlauncher.overlays.default
   ];
-  programs.dconf.enable = true; #for some god forsaken reason, home manager crashes without
+  programs.dconf.enable = true;
+  nixpkgs.config.permittedInsecurePackages = [
+    "openssl-1.1.1w"
+  ];
+
   environment.systemPackages = with pkgs; [
+    llvmPackages.libcxxClang
+    llvmPackages.libcxxStdenv
+    clang-tools
+    clang
+    libclang
+    nil
+    kdePackages.konsole
     thunderbird
     wineWowPackages.stable
     nix-output-monitor
@@ -58,20 +66,18 @@
   i18n.defaultLocale = "de_DE.UTF-8";
   console.keyMap = "de";
 
-  services.xserver = {enable = true;};
+  services.xserver = {
+    enable = true;
+  };
 
   security.polkit.enable = true;
   desktop = {
-    plasma6.enable = false;
+    plasma6.enable = true;
     niri.enable = false;
     cosmic.enable = false;
-    sway.enable = true;
-    xwayland.enable = true;
+    sway.enable = false;
+    xwayland.enable = false;
   };
-
-  # programs.hyprland.enable = true; # requires the home manager option to be set!
-  # programs.hyprland.package = inputs.hyprland.packages."${pkgs.system}".hyprland;
-
   utility = {
     thunar.enable = true;
     steam.enable = true;
@@ -90,7 +96,6 @@
     kernelPackages = pkgs.linuxPackages_latest;
   };
 
-  #GRAPHICS
   hardware.graphics = {
     extraPackages = with pkgs; [
       amdvlk
@@ -106,7 +111,10 @@
   networking.networkmanager.enable = true;
   networking.firewall = {
     enable = true;
-    allowedTCPPorts = [80 443];
+    allowedTCPPorts = [
+      80
+      443
+    ];
     allowedUDPPortRanges = [
       {
         from = 8303;
@@ -119,12 +127,10 @@
     ];
   };
 
-  #MOUSE
   services.ratbagd.enable = true;
 
   systemd.packages = with pkgs; [lact];
   systemd.services.lactd.wantedBy = ["multi-user.target"];
-  #AUDIO
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
@@ -138,7 +144,6 @@
   systemd.services."getty@tty1".enable = false;
   systemd.services."autovt@tty1".enable = false;
 
-  #USER
   users.users.melonix = {
     isNormalUser = true;
     description = "melonix";
@@ -152,7 +157,6 @@
     builtins.elem (lib.getName pkg) [
       "obsidian"
     ];
-  #HOME-MANAGER
   home-manager = {
     extraSpecialArgs = {
       inherit inputs pkgs-stable;
@@ -161,7 +165,6 @@
     useUserPackages = true;
   };
 
-  #NIX-SETTINGS
   nix = {
     settings = {
       trusted-users = ["melonix"];

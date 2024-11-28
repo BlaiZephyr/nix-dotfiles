@@ -12,5 +12,6 @@
     ./code
     ./rofi
     ./hyprland
+    ./neovim
   ];
 }
