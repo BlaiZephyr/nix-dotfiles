@@ -12,13 +12,13 @@
     shell.enable = true;
   };
 
-  #home.packages = with pkgs; [
-  #  ffmpeg
-  #  yt-dlp
-  #  imgcat
-  #  vlc
-  #  libreoffice
-  # ];
+  home.packages = with pkgs; [
+    ffmpeg
+    yt-dlp
+    imgcat
+    vlc
+  libreoffice
+   ];
 
   home.stateVersion = "24.11";
 }

@@ -15,7 +15,6 @@
 
   desktop = {
     plasma6.enable = true;
-    niri.enable = false;
   };
 
   utility = {
