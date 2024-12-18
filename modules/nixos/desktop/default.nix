@@ -5,5 +5,6 @@
     ./utility
     ./cosmic
     ./sway
+    ./wayfire
   ];
 }

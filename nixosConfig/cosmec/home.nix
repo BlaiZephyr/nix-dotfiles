@@ -17,8 +17,8 @@
     yt-dlp
     imgcat
     vlc
-  libreoffice
-   ];
+    libreoffice
+  ];
 
   home.stateVersion = "24.11";
 }

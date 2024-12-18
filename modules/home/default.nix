@@ -13,5 +13,6 @@
     ./rofi
     ./hyprland
     ./neovim
+    ./firefox
   ];
 }

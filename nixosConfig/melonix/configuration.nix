@@ -14,8 +14,6 @@
   # GENERAL
   nix.nixPath = ["nixpkgs=${inputs.nixpkgs}"];
 
-  programs.firefox.enable = true;
-
   services.mysql = {
     enable = true;
     package = pkgs.mariadb;
@@ -76,7 +74,8 @@
     niri.enable = false;
     cosmic.enable = false;
     sway.enable = false;
-    xwayland.enable = false;
+    xwayland.enable = true;
+    wayfire.enable = false;
   };
   utility = {
     thunar.enable = true;

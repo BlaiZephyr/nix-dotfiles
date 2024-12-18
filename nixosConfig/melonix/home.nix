@@ -10,12 +10,13 @@
     kitty.enable = true;
     nh.enable = true;
     obs-studio.enable = true;
-    plasma-manager.enable = false;
+    plasma-manager.enable = true;
     stylix.enable = true;
-    shell.enable = true; #TODO: seperate bash from the rest as a standalone
+    shell.enable = true; # TODO: seperate bash from the rest as a standalone
     code.enable = true;
     rofi.enable = true;
     neovim.enable = true;
+    firefox.enable = true;
   };
 
   home.packages = with pkgs; [

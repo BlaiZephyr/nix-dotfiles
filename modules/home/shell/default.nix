@@ -1,5 +1,4 @@
 {
-  pkgs,
   lib,
   config,
   ...
@@ -12,7 +11,7 @@
     programs.bash = {
       enable = true;
       shellAliases = {
-       nhbuild = "nh os build ~/.dotfiles/";
+        nhbuild = "nh os build ~/.dotfiles/";
         nhswitch = "nh os switch ~/.dotfiles/";
         config = "cd ~/.dotfiles/";
         searchpkg = "nix search nixpkgs --json | nix run nixpkgs#jq -- -r '. | keys[]' | cut -d \. -f 3- | fzf";

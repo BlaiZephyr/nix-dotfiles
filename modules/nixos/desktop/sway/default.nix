@@ -19,13 +19,13 @@
       settings = rec {
         initial_session = {
           command = "${pkgs.sway}/bin/sway";
-          user = "cosmec";
+          user = "melonix";
         };
         default_session = initial_session;
       };
     };
 
-    home-manager.users."cosmec" = {
+    home-manager.users."melonix" = {
       home.packages = with pkgs; [
         sway-contrib.grimshot
         slurp

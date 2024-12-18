@@ -7,7 +7,7 @@
   options.desktop = {
     niri.enable = lib.mkEnableOption "enable niri";
   };
-  imports = [./greetd.nix];
+  imports = [../];
 
   config = lib.mkIf config.desktop.niri.enable {
     environment.systemPackages = with pkgs; [
@@ -32,7 +32,7 @@
       };
     };
 
-    home-manager.users."cosmec" = {
+    home-manager.users."melonix" = {
       home.file.".config/niri/config.kdl" = {
         source = ./config.kdl;
       };
