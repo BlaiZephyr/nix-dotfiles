@@ -41,6 +41,9 @@
   ];
 
   environment.systemPackages = with pkgs; [
+    marksman
+    nix-index
+    gopls
     llvmPackages.libcxxClang
     llvmPackages.libcxxStdenv
     clang-tools
