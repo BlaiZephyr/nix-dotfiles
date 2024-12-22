@@ -14,5 +14,6 @@
     ./hyprland
     ./neovim
     ./firefox
+    ./emacs
   ];
 }

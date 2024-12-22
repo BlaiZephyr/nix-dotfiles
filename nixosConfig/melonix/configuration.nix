@@ -36,11 +36,9 @@
     inputs.prismlauncher.overlays.default
   ];
   programs.dconf.enable = true;
-  nixpkgs.config.permittedInsecurePackages = [
-    "openssl-1.1.1w"
-  ];
 
   environment.systemPackages = with pkgs; [
+    lutris
     marksman
     nix-index
     gopls
@@ -52,7 +50,6 @@
     nil
     kdePackages.konsole
     thunderbird
-    wineWowPackages.stable
     nix-output-monitor
     nvd
     clinfo
@@ -87,6 +84,7 @@
 
   development = {
     utils.enable = true;
+    emacs.enable = true;
   };
 
   boot = {
@@ -155,10 +153,14 @@
     ];
   };
 
-  nixpkgs.config.allowUnfreePredicate = pkg:
-    builtins.elem (lib.getName pkg) [
-      "obsidian"
-    ];
+  nixpkgs.config = {
+    allowUnfreePredicate = pkg:
+      builtins.elem (lib.getName pkg) [
+        "obsidian"
+      ];
+    allowUnfree = true;
+  };
+
   home-manager = {
     extraSpecialArgs = {
       inherit inputs pkgs-stable;
@@ -175,7 +177,6 @@
         "flakes"
       ];
     };
-
     extraOptions = ''
       extra-substituters = ["https://devenv.cachix.org"];
       extra-trusted-public-keys = ["devenv.cachix.org-1:w1cLUi8dv3hnoSPGAuibQv+f9TZLr6cv/Hm9XgU50cw="];

@@ -3,13 +3,21 @@
   pkgs,
   config,
   ...
-}: {
+}:
+{
   options.development = {
     utils.enable = lib.mkEnableOption "Enable LSP and Formatters for development";
-    #TODO: think about if this really should be installed systemwide, or better fit into homeModules.
   };
   config = lib.mkIf config.development.utils.enable {
     environment.systemPackages = with pkgs; [
+      nodePackages.typescript-language-server
+      nodePackages.vscode-langservers-extracted
+      rust-analyzer
+      pyright
+
+      nodePackages.prettier
+      black
+      rustfmt
       devenv
       #clang is really annoying, i just want my peace
       llvmPackages.libcxxClang
@@ -18,13 +26,13 @@
       clang
       libclang
 
-      nixpkgs-review #seperate?
+      nixpkgs-review # seperate?
       gh
       git
-      nixfmt-rfc-style #for nixpkgs
+      nixfmt-rfc-style # for nixpkgs
 
-      nixd #LSP
-      alejandra #code formatter
+      nixd # LSP
+      alejandra # code formatter
     ];
   };
 }

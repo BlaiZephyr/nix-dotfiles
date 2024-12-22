@@ -6,7 +6,7 @@
   hm = {
     discord.enable = true;
     git.enable = true;
-    helix.enable = true;
+    helix.enable = false;
     kitty.enable = true;
     nh.enable = true;
     obs-studio.enable = true;
@@ -20,13 +20,19 @@
   };
 
   home.packages = with pkgs; [
+    #GAMING
+    (wineWowPackages.full.override {
+      wineRelease = "staging";
+      mingwSupport = true;
+    })
+    winetricks
+
     #GENERAL AUDIO/VIDEO
     vlc
     imgcat
     yt-dlp
     ffmpeg
     audacity
-
     kdenlive
     libreoffice
   ];
