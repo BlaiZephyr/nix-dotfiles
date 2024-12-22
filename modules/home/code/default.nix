@@ -29,6 +29,14 @@
         ms-vscode.cmake-tools
         ms-vscode.cpptools-extension-pack
         kamadorueda.alejandra
+        ms-vscode.js-debug
+        tamasfe.even-better-toml
+        ms-vscode.remote-repositories
+        aaron-bond.better-comments
+        ms-vsliveshare.vsliveshare
+        usernamehw.errorlens
+        gruntfuggly.todo-tree
+        vadimcn.vscode-lldb
       ];
 
       userSettings = {
@@ -41,6 +49,15 @@
         "formatting" = {
           "command" = ["alejandra"];
         };
+
+        "editor.semanticHighlighting.enabled" = true;
+        "editor.guides.bracketPairs" = true;
+        "editor.suggestSelection" = "first";
+        "editor.renderWhitespace" = "boundary";
+        "diffEditor.ignoreTrimWhitespace" = false;
+        "files.trimTrailingWhitespace" = true;
+        "git.enableSmartCommit" = true;
+        "editor.formatOnSave" = true;
       };
     };
   };
