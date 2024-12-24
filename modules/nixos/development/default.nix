@@ -1,5 +1,4 @@
-{ ... }:
-{
+{...}: {
   imports = [
     ./database
     ./utils.nix

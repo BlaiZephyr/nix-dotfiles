@@ -3,12 +3,11 @@
   pkgs,
   config,
   ...
-}:
-{
+}: {
   options.desktop = {
     niri.enable = lib.mkEnableOption "enable niri";
   };
-  imports = [ ./greetd.nix ];
+  imports = [./greetd.nix];
 
   config = lib.mkIf config.desktop.niri.enable {
     environment.systemPackages = with pkgs; [
@@ -27,7 +26,7 @@
     xdg.portal = {
       enable = lib.mkDefault true;
       xdgOpenUsePortal = true;
-      extraPortals = [ pkgs.xdg-desktop-portal-gnome ];
+      extraPortals = [pkgs.xdg-desktop-portal-gnome];
       config = {
         common.default = "gnome";
       };

@@ -3,8 +3,7 @@
   pkgs,
   config,
   ...
-}:
-{
+}: {
   options.development = {
     utils.enable = lib.mkEnableOption "Enable LSP and Formatters for development";
   };

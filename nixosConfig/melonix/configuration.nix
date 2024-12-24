@@ -22,14 +22,9 @@
     noto-fonts
     noto-fonts-cjk-sans
     noto-fonts-emoji
-    (nerdfonts.override {
-      fonts = [
-        "FiraCode"
-        "DroidSansMono"
-      ];
-    })
   ];
 
+  virtualisation.docker.enable = true;
   services.printing.enable = true;
 
   nixpkgs.overlays = [
@@ -38,6 +33,7 @@
   programs.dconf.enable = true;
 
   environment.systemPackages = with pkgs; [
+    reaper
     lutris
     marksman
     nix-index
@@ -148,6 +144,7 @@
     isNormalUser = true;
     description = "melonix";
     extraGroups = [
+      "docker"
       "networkmanager"
       "wheel"
     ];

@@ -1,11 +1,11 @@
 {
   programs.nvf.settings.vim = {
+    globals = {
+      mapleader = " ";
+    };
     viAlias = false;
     vimAlias = true;
-    updateTime = 100;
     useSystemClipboard = true;
-    leaderKey = " ";
-    autoIndent = true;
     spellcheck.enable = true;
 
     luaConfigPost = ''

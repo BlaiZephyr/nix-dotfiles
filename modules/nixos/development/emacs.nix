@@ -3,14 +3,11 @@
   pkgs,
   lib,
   ...
-}:
-
-{
+}: {
   options.development = {
     emacs.enable = lib.mkEnableOption "Enable emacs";
   };
   config = lib.mkIf config.development.emacs.enable {
-
     services.emacs = {
       enable = true;
       package = pkgs.emacs;
@@ -24,12 +21,8 @@
     fonts.packages = with pkgs; [
       fira-code
       fira-code-symbols
-      (nerdfonts.override {
-        fonts = [
-          "FiraCode"
-          "JetBrainsMono"
-        ];
-      })
+      nerd-fonts.fira-code
+      nerd-fonts.jetbrains-mono
     ];
 
     nixpkgs.overlays = [
