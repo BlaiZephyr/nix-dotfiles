@@ -3,7 +3,8 @@
   lib,
   config,
   ...
-}: {
+}:
+{
   options.hm = {
     kitty.enable = lib.mkEnableOption "enable kitty";
   };
@@ -18,8 +19,7 @@
         size = 16.0;
       };
       settings = lib.mkForce {
-        background_opacity = "0.2";
-        background_blur = 8;
+        background_opacity = "0.8";
         enable_audio_bell = false;
         shell = "bash";
         url_style = "single";
@@ -27,37 +27,48 @@
         scrollback_lines = 2000;
         confirm_os_window_close = 0;
         font_size = 11;
-        background = "#181B28";
-        foreground = "#F8F8F2";
-        selection_foreground = "#1E1F28";
-        selection_background = "#44475A";
-        color0 = "#000000"; # black
-        color1 = "#ff5555"; # red
-        color2 = "#50fa7b"; # green
-        color3 = "#da00e9"; # highligh
-        color4 = "#bd92f8"; # blue
-        color5 = "#ff78c5"; # magenta
-        color6 = "#8ae9fc"; # cyan
-        color7 = "#bbbbbb"; # white
-        color8 = "#545454"; # br black
-        color9 = "#ff5454"; # br red
-        color10 = "#50fa7b"; # br green
-        color11 = "#f0fa8b"; # br yellow
-        color12 = "#bd92f8"; # br blue
-        color13 = "#ff78c5"; # br magenta
-        color14 = "#8ae9fc"; # br cyan
-        color15 = "#ffffff"; # br white
-        url_color = "#0087BD"; # URL
-        cursor = "#F4DBD6";
-        cursor_text_color = "#24273A";
-        active_border_color = "#B7BDF8";
-        inactive_border_color = "#6E738D";
-        bell_border_color = "#EED49F";
-        active_tab_foreground = "#181926";
-        active_tab_background = "#C6A0F6";
-        inactive_tab_foreground = "#CAD3F5";
-        inactive_tab_background = "#1E2030";
-        tab_bar_background = "#181926";
+
+        # Ayu Dark Theme Colors
+        background = "#0A0E14";
+        foreground = "#B3B1AD";
+        selection_background = "#273747";
+        selection_foreground = "#B3B1AD";
+
+        # Normal colors
+        color0 = "#01060E"; # black
+        color1 = "#EA6C73"; # red
+        color2 = "#91B362"; # green
+        color3 = "#F9AF4F"; # yellow
+        color4 = "#53BDFA"; # blue
+        color5 = "#FAE994"; # magenta
+        color6 = "#90E1C6"; # cyan
+        color7 = "#C7C7C7"; # white
+
+        # Bright colors
+        color8 = "#686868"; # bright black
+        color9 = "#F07178"; # bright red
+        color10 = "#C2D94C"; # bright green
+        color11 = "#FFB454"; # bright yellow
+        color12 = "#59C2FF"; # bright blue
+        color13 = "#FFEE99"; # bright magenta
+        color14 = "#95E6CB"; # bright cyan
+        color15 = "#FFFFFF"; # bright white
+
+        # Extended colors
+        cursor = "#F29718";
+        cursor_text_color = "#0A0E14";
+        url_color = "#59C2FF";
+
+        # Tab bar colors
+        active_tab_foreground = "#0A0E14";
+        active_tab_background = "#F29718";
+        inactive_tab_foreground = "#B3B1AD";
+        inactive_tab_background = "#0F1419";
+        tab_bar_background = "#0A0E14";
+
+        active_border_color = "#F29718";
+        inactive_border_color = "#0F1419";
+        bell_border_color = "#FF3333";
       };
     };
   };

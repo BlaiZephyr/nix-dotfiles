@@ -33,13 +33,16 @@
         tamasfe.even-better-toml
         ms-vscode.remote-repositories
         aaron-bond.better-comments
-        ms-vsliveshare.vsliveshare
+        #ms-vsliveshare.vsliveshare
         usernamehw.errorlens
         gruntfuggly.todo-tree
         vadimcn.vscode-lldb
+
+        #theme
+        teabyii.ayu
       ];
 
-      userSettings = {
+      userSettings = lib.mkDefault {
         #NIXD
         "nix.serverPath" = "nixd";
         "nix.enableLanguageServer" = true;
@@ -58,6 +61,9 @@
         "files.trimTrailingWhitespace" = true;
         "git.enableSmartCommit" = true;
         "editor.formatOnSave" = true;
+
+        #theme
+        "workbench.colorTheme" = "Ayu Dark Bordered";
       };
     };
   };
