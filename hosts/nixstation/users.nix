@@ -19,6 +19,7 @@ in
         "libvirtd"
         "scanner"
         "lp"
+        "docker"
       ];
       shell = pkgs.bash;
       ignoreShellProgramCheck = true;

@@ -240,6 +240,7 @@ in
     vim
     wget
     killall
+    docker-compose
     eza
     git
     cmatrix
@@ -454,11 +455,7 @@ in
 
   # Virtualization / Containers
   virtualisation.libvirtd.enable = true;
-  virtualisation.podman = {
-    enable = true;
-    dockerCompat = true;
-    defaultNetwork.settings.dns_enabled = true;
-  };
+  virtualisation.docker.enable = true;
 
   # OpenGL
   hardware.graphics = {
