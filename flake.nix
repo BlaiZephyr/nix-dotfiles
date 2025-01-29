@@ -15,8 +15,8 @@
   outputs =
     { nixpkgs, home-manager, ... }@inputs:
     let
-      system = "aarch64-linux";
-      host = "nixbook";
+      system = "x86_64-linux";
+      host = "nixstation";
       username = "zaney";
     in
     {
