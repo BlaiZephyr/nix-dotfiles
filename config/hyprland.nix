@@ -72,15 +72,22 @@ with lib;
           }
           windowrule = noborder,^(wofi)$
           windowrule = center,^(wofi)$
-          windowrule = center,^(steam)$
-          windowrule = float, nm-connection-editor|blueman-manager
-          windowrule = float, swayimg|vlc|Viewnior|pavucontrol
-          windowrule = float, nwg-look|qt5ct|mpv
-          windowrule = float, zoom
+          windowrule = float,^(steam)$
+          windowrulev2 = float, class:(xdg-desktop-portal-gtk)
+          windowrulev2 = float, class:^(nwg-look|qt5ct|qt6ct)$
+          windowrulev2 = float, class:^(nm-applet|nm-connection-editor|blueman-manager)$
+          windowrulev2 = float, class:^(file-roller|org.gnome.FileRoller)$ # archive manager
+          windowrulev2 = float, class:([Tt]hunar), title:(File Operation Progress)
+          windowrulev2 = float, class:([Tt]hunar), title:(Confirm to replace files)
           windowrulev2 = stayfocused, title:^()$,class:^(steam)$
           windowrulev2 = minsize 1 1, title:^()$,class:^(steam)$
-          windowrulev2 = opacity 0.9 0.7, class:^(Brave)$
           windowrulev2 = opacity 0.9 0.7, class:^(thunar)$
+          # Window Rules For Size
+          windowrule = size 1080 900, ^(steam)$
+          windowrulev2 = size 70% 70%, class:^(gnome-system-monitor|org.gnome.SystemMonitor)$
+          windowrulev2 = size 70% 70%, class:^(xdg-desktop-portal-gtk)$
+          windowrulev2 = size 60% 70%, class:^(qt6ct)$
+          windowrulev2 = size 60% 70%, class:^(file-roller|org.gnome.FileRoller)$
           gestures {
             workspace_swipe = true
             workspace_swipe_fingers = 3
