@@ -80,7 +80,7 @@ in
     cursor.size = 24;
     fonts = {
       monospace = {
-        package = pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; };
+        package = pkgs.nerd-fonts.jetbrains-mono;
         name = "JetBrainsMono Nerd Font Mono";
       };
       sansSerif = {
@@ -298,10 +298,9 @@ in
   fonts = {
     packages = with pkgs; [
       noto-fonts-emoji
-      noto-fonts-cjk
+      noto-fonts-cjk-sans
       font-awesome
-      # Commenting Symbola out to fix install this will need to be fixed or an alternative found.
-      # symbola
+      symbola
       material-icons
     ];
   };
@@ -408,7 +407,7 @@ in
   services.blueman.enable = true;
 
   # Enable sound with pipewire.
-  hardware.pulseaudio.enable = false;
+  services.pulseaudio.enable = false;
 
   # Security / Polkit
   security.rtkit.enable = true;
