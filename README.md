@@ -86,7 +86,7 @@ Create the host folder for your machine(s)
 cp -r hosts/default hosts/<your-desired-hostname>
 ```
 
-**🪧🪧🪧 Edit options.nix 🪧🪧🪧**
+**🪧🪧🪧 Edit `hosts/<your-desired-hostname>/config.nix` and `hosts/<your-desired-hostname>/variables.nix` 🪧🪧🪧**
 
 Generate your hardware.nix like so:
 
