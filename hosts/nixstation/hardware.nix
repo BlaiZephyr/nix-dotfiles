@@ -26,6 +26,12 @@
       options = [ "fmask=0077" "dmask=0077" ];
     };
 
+  fileSystems."/home/zaney/BFD" =
+    { device = "/dev/disk/by-uuid/5A30E2CC30E2AE67";
+      fsType = "ntfs";
+      options = [  "defaults" "umask=000" "dmask=027" "fmask=137" "uid=1000" "gid=1000" "windows_names" ];
+    };
+
   swapDevices = [ ];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
