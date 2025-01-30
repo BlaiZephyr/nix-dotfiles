@@ -305,7 +305,7 @@ in
   };
 
   environment.variables = {
-    ZANEYOS_VERSION = "2.2";
+    ZANEYOS_VERSION = "2.3";
     ZANEYOS = "true";
   };
 

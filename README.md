@@ -10,8 +10,8 @@ ZaneyOS is a simple way of reproducing my configuration on any NixOS system. Thi
 
 </div>
 
-> **This project has a [Wiki](https://zaney.org/wiki/zaneyos-2.2/). Find out how to use ZaneyOS here!**
-> **I have put a lot of effort into the [documentation](https://zaney.org/wiki/zaneyos-2.2/) so it should be accurate. However, please if you notice that something is wrong with it create an issue or reach out to me on Discord.**
+> **This project has a [Wiki](https://zaney.org/wiki/zaneyos-2.3/). Find out how to use ZaneyOS here!**
+> **I have put a lot of effort into the [documentation](https://zaney.org/wiki/zaneyos-2.3/) so it should be accurate. However, please if you notice that something is wrong with it create an issue or reach out to me on Discord.**
 
 #### 🍖 Requirements
 - You must be running on NixOS.
@@ -38,7 +38,7 @@ ZaneyOS is a simple way of reproducing my configuration on any NixOS system. Thi
 
 <div align="center">
 
-Please do yourself a favor and [read the wiki](https://zaney.org/wiki/zaneyos-2.2/).
+Please do yourself a favor and [read the wiki](https://zaney.org/wiki/zaneyos-2.3/).
 
 </div>
 
@@ -65,7 +65,7 @@ nix-shell -p git curl
 Then:
 
 ```
-sh <(curl -L https://gitlab.com/Zaney/zaneyos/-/raw/stable-2.2/install-zaneyos.sh)
+sh <(curl -L https://gitlab.com/Zaney/zaneyos/-/raw/main/install-zaneyos.sh)
 ```
 
 #### 🦽 Manual:
@@ -79,7 +79,7 @@ nix-shell -p git vim
 Clone this repo & enter it:
 
 ```
-git clone -b stable-2.2 --single-branch https://gitlab.com/zaney/zaneyos.git
+git clone https://gitlab.com/zaney/zaneyos.git
 cd zaneyos
 ```
 
