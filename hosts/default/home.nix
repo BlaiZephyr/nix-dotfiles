@@ -206,7 +206,7 @@ in
           hide_cursor = true;
           no_fade_in = false;
         };
-        background = [
+        lib.mkPrio.background = [
           {
             path = "/home/${username}/Pictures/Wallpapers/zaney-wallpaper.jpg";
             blur_passes = 3;
@@ -225,7 +225,7 @@ in
             valign = "center";
           }
         ];
-        input-field = [
+        lib.mkPrio.input-field = [
           {
             size = "200, 50";
             position = "0, -80";
