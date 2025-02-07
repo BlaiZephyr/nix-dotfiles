@@ -11,7 +11,7 @@
   };
 
   imports = [
-    #   ./plugins
+    ./plugins
     inputs.nvf.homeManagerModules.default
   ];
   config = lib.mkIf config.hm.neovim.enable {

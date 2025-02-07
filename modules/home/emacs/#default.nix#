@@ -108,6 +108,7 @@
         (yas-global-mode 1)
         (global-git-gutter-mode +1)
         (smartparens-global-mode)
+        (global-rainbow-delimiters-mode)
 
         ;; Treemacs setup
         (require 'treemacs)
@@ -189,3 +190,4 @@
     };
   };
 }
+	

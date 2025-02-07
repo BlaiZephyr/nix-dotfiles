@@ -62,6 +62,10 @@
 
   services.libinput.enable = true;
 
+  services.emacs = {
+    enable = true;
+    };
+
   users.users.cosmec = {
     isNormalUser = true;
     extraGroups = [

@@ -10,7 +10,6 @@
     spellcheck.enable = true;
 
     luaConfigPost = ''
-      vim.luaConfigRC.ayu = "vim.cmd('colorscheme ayu')";
       vim.opt.tabstop = 2
       vim.opt.shiftwidth = 2
       vim.opt.smartindent = true
