@@ -13,6 +13,7 @@ in
   imports = [
     ./hardware.nix
     ./users.nix
+    ./packages.nix
     ../../modules/amd-drivers.nix
     ../../modules/nvidia-drivers.nix
     ../../modules/nvidia-prime-drivers.nix
@@ -55,24 +56,24 @@ in
   stylix = {
     enable = true;
     image = ../../config/wallpapers/beautifulmountainscape.jpg;
-    # base16Scheme = {
-    #   base00 = "232136";
-    #   base01 = "2a273f";
-    #   base02 = "393552";
-    #   base03 = "6e6a86";
-    #   base04 = "908caa";
-    #   base05 = "e0def4";
-    #   base06 = "e0def4";
-    #   base07 = "56526e";
-    #   base08 = "eb6f92";
-    #   base09 = "f6c177";
-    #   base0A = "ea9a97";
-    #   base0B = "3e8fb0";
-    #   base0C = "9ccfd8";
-    #   base0D = "c4a7e7";
-    #   base0E = "f6c177";
-    #   base0F = "56526e";
-    # };
+    base16Scheme = {
+      base00 = "282936";
+      base01 = "3a3c4e";
+      base02 = "4d4f68";
+      base03 = "626483";
+      base04 = "62d6e8";
+      base05 = "e9e9f4";
+      base06 = "f1f2f8";
+      base07 = "f7f7fb";
+      base08 = "ea51b2";
+      base09 = "b45bcf";
+      base0A = "00f769";
+      base0B = "ebff87";
+      base0C = "a1efe4";
+      base0D = "62d6e8";
+      base0E = "b45bcf";
+      base0F = "00f769";
+    };
     polarity = "dark";
     opacity.terminal = 0.8;
     cursor.package = pkgs.bibata-cursors;
@@ -135,166 +136,9 @@ in
     LC_TIME = "en_US.UTF-8";
   };
 
-  programs = {
-    firefox.enable = false;
-    starship = {
-      enable = true;
-      settings = {
-        add_newline = false;
-        buf = {
-          symbol = " ";
-        };
-        c = {
-          symbol = " ";
-        };
-        directory = {
-          read_only = " 󰌾";
-        };
-        docker_context = {
-          symbol = " ";
-        };
-        fossil_branch = {
-          symbol = " ";
-        };
-        git_branch = {
-          symbol = " ";
-        };
-        golang = {
-          symbol = " ";
-        };
-        hg_branch = {
-          symbol = " ";
-        };
-        hostname = {
-          ssh_symbol = " ";
-        };
-        lua = {
-          symbol = " ";
-        };
-        memory_usage = {
-          symbol = "󰍛 ";
-        };
-        meson = {
-          symbol = "󰔷 ";
-        };
-        nim = {
-          symbol = "󰆥 ";
-        };
-        nix_shell = {
-          symbol = " ";
-        };
-        nodejs = {
-          symbol = " ";
-        };
-        ocaml = {
-          symbol = " ";
-        };
-        package = {
-          symbol = "󰏗 ";
-        };
-        python = {
-          symbol = " ";
-        };
-        rust = {
-          symbol = " ";
-        };
-        swift = {
-          symbol = " ";
-        };
-        zig = {
-          symbol = " ";
-        };
-      };
-    };
-    dconf.enable = true;
-    seahorse.enable = true;
-    fuse.userAllowOther = true;
-    mtr.enable = true;
-    gnupg.agent = {
-      enable = true;
-      enableSSHSupport = true;
-    };
-    virt-manager.enable = true;
-    steam = {
-      enable = true;
-      gamescopeSession.enable = true;
-      remotePlay.openFirewall = true;
-      dedicatedServer.openFirewall = true;
-    };
-    thunar = {
-      enable = true;
-      plugins = with pkgs.xfce; [
-        thunar-archive-plugin
-        thunar-volman
-      ];
-    };
-  };
-
-  nixpkgs.config.allowUnfree = true;
-
   users = {
     mutableUsers = true;
   };
-
-  environment.systemPackages = with pkgs; [
-    vim
-    wget
-    killall
-    docker-compose
-    eza
-    git
-    cmatrix
-    lolcat
-    htop
-    brave
-    libvirt
-    lxqt.lxqt-policykit
-    lm_sensors
-    unzip
-    unrar
-    libnotify
-    v4l-utils
-    ydotool
-    duf
-    ncdu
-    wl-clipboard
-    pciutils
-    ffmpeg
-    socat
-    cowsay
-    ripgrep
-    lshw
-    bat
-    pkg-config
-    meson
-    hyprpicker
-    ninja
-    brightnessctl
-    virt-viewer
-    swappy
-    appimage-run
-    networkmanagerapplet
-    yad
-    inxi
-    playerctl
-    nh
-    nixfmt-rfc-style
-    discord
-    libvirt
-    swww
-    grim
-    slurp
-    file-roller
-    swaynotificationcenter
-    imv
-    mpv
-    gimp
-    pavucontrol
-    tree
-    spotify
-    neovide
-    greetd.tuigreet
-  ];
 
   fonts = {
     packages = with pkgs; [
