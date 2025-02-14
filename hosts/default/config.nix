@@ -14,6 +14,7 @@ in
     ./hardware.nix
     ./users.nix
     ./packages.nix
+    ../../config/starfish.nix
     ../../modules/amd-drivers.nix
     ../../modules/nvidia-drivers.nix
     ../../modules/nvidia-prime-drivers.nix
@@ -81,7 +82,7 @@ in
     cursor.size = 24;
     fonts = {
       monospace = {
-        package = pkgs.nerd-fonts.jetbrains-mono;
+        package = pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; };
         name = "JetBrainsMono Nerd Font Mono";
       };
       sansSerif = {
@@ -250,9 +251,6 @@ in
   hardware.bluetooth.enable = true;
   hardware.bluetooth.powerOnBoot = true;
   services.blueman.enable = true;
-
-  # Enable sound with pipewire.
-  services.pulseaudio.enable = false;
 
   # Security / Polkit
   security.rtkit.enable = true;
