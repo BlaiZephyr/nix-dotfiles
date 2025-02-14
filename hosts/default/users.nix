@@ -20,6 +20,7 @@ in
         "scanner"
         "lp"
         "docker"
+        "plugdev"
       ];
       shell = pkgs.bash;
       ignoreShellProgramCheck = true;
