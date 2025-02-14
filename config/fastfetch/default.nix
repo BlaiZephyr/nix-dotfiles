@@ -50,7 +50,7 @@
           }
           {
               type = "custom";
-              format = " OS -> ZaneyOS 2.2";
+              format = " OS -> ZaneyOS 2.3";
           }
           {
               type = "kernel";
