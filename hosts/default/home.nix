@@ -16,7 +16,7 @@ in
   # Import Program Configurations
   imports = [
     ../../config/emoji.nix
-    ../../config/fastfetch
+    ../../modules/home
     ../../config/hyprland.nix
     ../../config/neovim.nix
     ../../config/rofi/rofi.nix
@@ -25,7 +25,6 @@ in
     ../../config/swaync.nix
     ../../config/waybar.nix
     ../../config/wlogout.nix
-    ../../config/fastfetch
   ];
 
   # Place Files Inside Home Directory

@@ -126,6 +126,7 @@ with lib;
           windowrulev2 = float, class:([Tt]hunar), title:negative:(.*[Tt]hunar.*)
           windowrulev2 = float, initialTitle:(Add Folder to Workspace)
           windowrulev2 = float, initialTitle:(Open Files)
+          windowrulev2 = float, initialTitle:(wants to save)
 
           # Window Size
           windowrulev2 = size 70% 60%, initialTitle:(Open Files)
