@@ -35,10 +35,9 @@ This includes the wallpaper, scripts, applications, config files, and more.
 
 #### 🏇 Optimized Workflow & Simple Yet Elegant Neovim
 
-- Using scratchpads with Hyprland for increased functionality and effeciency.
+- Using Hyprland for increased elegance, functionality, and effeciency.
 - No massive Neovim project here. This is my simple, easy to understand, yet
-  incredible Neovim setup. You can grep recursively through entire folders and
-  find specific files without ever leaving the text editor!
+  incredible Neovim setup.
 
 #### 🖥️ Multi Host & User Configuration
 
