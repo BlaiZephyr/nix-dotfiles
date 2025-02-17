@@ -18,13 +18,6 @@
       enableSSHSupport = true;
     };
 
-    steam = {
-      enable = true;
-      gamescopeSession.enable = true;
-      remotePlay.openFirewall = true;
-      dedicatedServer.openFirewall = true;
-    };
-
     thunar = {
       enable = true;
       plugins = with pkgs.xfce; [
@@ -35,7 +28,6 @@
   };
 
   nixpkgs.config.allowUnfree = true;
-  hardware.keyboard.qmk.enable = true;
 
   environment.systemPackages = with pkgs; [
     appimage-run
@@ -54,14 +46,12 @@
     gimp
     git
     greetd.tuigreet
-    grim
     htop
     hyprpicker
     imv
     inxi
     killall
     libnotify
-    libvirt
     libvirt
     lm_sensors
     lolcat
@@ -70,7 +60,6 @@
     meson
     mpv
     ncdu
-    networkmanagerapplet
     nh
     ninja
     nixfmt-rfc-style
@@ -80,23 +69,15 @@
     pkg-config
     playerctl
     ripgrep
-    slurp
     socat
-    spotify
-    swappy
-    swaynotificationcenter
-    swww
     tree
     unrar
     unzip
     usbutils
     v4l-utils
-    vim
     virt-viewer
     wget
-    wl-clipboard
     yad
-    ydotool
   ];
 
 }
