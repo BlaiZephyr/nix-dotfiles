@@ -144,7 +144,7 @@ these options:
 
 ```
 NIX_CONFIG="experimental-features = nix-command flakes" 
-sudo nixos-rebuild switch --flake .#hostname
+sudo nixos-rebuild switch --flake .#profile
 ```
 
 Now when you want to rebuild the configuration you have access to an alias `fr`
