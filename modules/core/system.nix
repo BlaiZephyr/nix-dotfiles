@@ -1,9 +1,6 @@
-{ host, ... }:
-
-let
+{host, ...}: let
   inherit (import ../../hosts/${host}/variables.nix) consoleKeyMap;
-in
-{
+in {
   nix = {
     settings = {
       auto-optimise-store = true;
@@ -11,13 +8,8 @@ in
         "nix-command"
         "flakes"
       ];
-      substituters = [ "https://hyprland.cachix.org" ];
-      trusted-public-keys = [ "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc=" ];
-    };
-    gc = {
-      automatic = true;
-      dates = "weekly";
-      options = "--delete-older-than 7d";
+      substituters = ["https://hyprland.cachix.org"];
+      trusted-public-keys = ["hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="];
     };
   };
   time.timeZone = "America/Chicago";

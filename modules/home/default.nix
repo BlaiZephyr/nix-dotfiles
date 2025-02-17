@@ -1,8 +1,4 @@
-{
-  ...
-}:
-
-{
+{...}: {
   imports = [
     ./bash.nix
     ./btop.nix

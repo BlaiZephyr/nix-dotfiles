@@ -1,11 +1,5 @@
-{
-  pkgs,
-  ...
-}:
-
-{
+{pkgs, ...}: {
   programs = {
-
     firefox.enable = false;
     dconf.enable = true;
     seahorse.enable = true;
@@ -60,7 +54,6 @@
     meson
     mpv
     ncdu
-    nh
     ninja
     nixfmt-rfc-style
     obs-studio
@@ -79,5 +72,4 @@
     wget
     yad
   ];
-
 }
