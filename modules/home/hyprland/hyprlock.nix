@@ -1,6 +1,4 @@
-{ username, ... }:
-
-{
+{username, ...}: {
   programs.hyprlock = {
     enable = true;
     settings = {
@@ -10,7 +8,7 @@
         hide_cursor = true;
         no_fade_in = false;
       };
-      lib.mkPrio.background = [
+      background = [
         {
           path = "/home/${username}/Pictures/Wallpapers/beautifulmountainscape.jpg";
           blur_passes = 3;
@@ -29,7 +27,7 @@
           valign = "center";
         }
       ];
-      lib.mkPrio.input-field = [
+      input-field = [
         {
           size = "200, 50";
           position = "0, -80";

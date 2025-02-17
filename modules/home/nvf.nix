@@ -32,6 +32,18 @@
           action = ":nohl<CR>";
           desc = "Clear search highlights";
         }
+        {
+          key = "<leader>F";
+          mode = ["n"];
+          action = "<cmd>Telescope find_files<cr>";
+          desc = "Search files by name";
+        }
+        {
+          key = "<leader>ff";
+          mode = ["n"];
+          action = "<cmd>Telescope live_grep<cr>";
+          desc = "Search files by contents";
+        }
       ];
 
       theme = {
@@ -113,12 +125,8 @@
         gitsigns.codeActions.enable = false; # throws an annoying debug message
       };
 
-      dashboard = {
-        dashboard-nvim = {
-          enable = true;
-        };
-        alpha.enable = true;
-      };
+      projects.project-nvim.enable = true;
+      dashboard.dashboard-nvim.enable = true;
 
       notify = {
         nvim-notify.enable = true;
