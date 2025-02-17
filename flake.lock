@@ -66,22 +66,6 @@
         "type": "github"
       }
     },
-    "fine-cmdline": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1721082103,
-        "narHash": "sha256-SMmOzDhkRBBPCuXXZFUxog6YWRQ2tdlJuJGjYlyNTgk=",
-        "owner": "VonHeikemen",
-        "repo": "fine-cmdline.nvim",
-        "rev": "aec9efebf6f4606a5204d49ffa3ce2eeb7e08a3e",
-        "type": "github"
-      },
-      "original": {
-        "owner": "VonHeikemen",
-        "repo": "fine-cmdline.nvim",
-        "type": "github"
-      }
-    },
     "firefox-gnome-theme": {
       "flake": false,
       "locked": {
@@ -443,7 +427,6 @@
     },
     "root": {
       "inputs": {
-        "fine-cmdline": "fine-cmdline",
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs",
         "nvf": "nvf",

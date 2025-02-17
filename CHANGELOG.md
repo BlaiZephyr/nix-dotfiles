@@ -43,3 +43,7 @@ This release has a big theming change as well as including the move back to rofi
 - Btop is back baby!
 - Switching to Brave as the default to protect user privacy.
 - Replaced lsd with eza for a better looking experience.
+
+**ZaneyOS 2.3**
+
+With this release there are improvements to Neovim and the entire file structure has been improved.
