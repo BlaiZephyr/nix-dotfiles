@@ -1,9 +1,7 @@
-{ ... }:
-
-{
+{...}: {
   imports = [
-    ./config-emoji.nix
     ./config-long.nix
+    ./config-wide.nix
     ./rofi.nix
   ];
 }
