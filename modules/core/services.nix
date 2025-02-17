@@ -3,18 +3,16 @@
   username,
   host,
   ...
-}:
-let
+}: let
   inherit (import ../../hosts/${host}/variables.nix) keyboardLayout;
-in
-{
+in {
   # Services to start
   services = {
     libinput.enable = true;
     fstrim.enable = true;
     gvfs.enable = true;
     openssh.enable = true;
-    flatpak.enable = false;
+    flatpak.enable = true;
     blueman.enable = true;
 
     xserver = {
@@ -63,17 +61,17 @@ in
       alsa.support32Bit = true;
       pulse.enable = true;
     };
-    rpcbind.enable = false;
-    nfs.server.enable = false;
+    rpcbind.enable = true;
+    nfs.server.enable = true;
   };
 
   systemd.services.flatpak-repo = {
-    path = [ pkgs.flatpak ];
+    path = [pkgs.flatpak];
     script = ''
       flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
     '';
   };
-  
+
   # Security / Polkit
   security.rtkit.enable = true;
   security.polkit.enable = true;
@@ -98,5 +96,4 @@ in
       auth include login
     '';
   };
-
 }
