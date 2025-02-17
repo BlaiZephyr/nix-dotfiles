@@ -37,7 +37,6 @@
     file-roller
     gedit
     gimp
-    git
     greetd.tuigreet
     htop
     hyprpicker
