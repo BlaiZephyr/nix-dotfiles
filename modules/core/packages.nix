@@ -68,6 +68,5 @@
     v4l-utils
     virt-viewer
     wget
-    yad
   ];
 }
