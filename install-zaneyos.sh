@@ -78,6 +78,8 @@ installusername=$(echo $USER)
 git config --global user.name "$installusername"
 git config --global user.email "$installusername@gmail.com"
 git add .
+git config --global --unset-all user.name
+git config --global --unset-all user.email
 sed -i "/^\s*host[[:space:]]*=[[:space:]]*\"/s/\"\(.*\)\"/\"$hostName\"/" ./flake.nix
 sed -i "/^\s*profile[[:space:]]*=[[:space:]]*\"/s/\"\(.*\)\"/\"$profile\"/" ./flake.nix
 
