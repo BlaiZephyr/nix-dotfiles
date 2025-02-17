@@ -1,18 +1,12 @@
-{ ... }:
-
-{
+{...}: {
   home.file.".config/rofi/config-long.rasi".text = ''
-    @import "~/.config/rofi/config.rasi" 
-    window {
-      width: 50%;
-    }
+    @import "~/.config/rofi/config.rasi"
     entry {
       placeholder: "🔎 Search       ";
     }
     listview {
       columns: 1;
-      lines: 8;
-      scrollbar: true;
+      lines: 10;
     }
   '';
 }
