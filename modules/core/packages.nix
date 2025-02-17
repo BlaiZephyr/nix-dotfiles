@@ -25,7 +25,6 @@
 
   environment.systemPackages = with pkgs; [
     appimage-run
-    bat
     brave
     brightnessctl
     cmatrix
