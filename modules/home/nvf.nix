@@ -1,6 +1,9 @@
-{ inputs, ... }:
 {
-  imports = [ inputs.nvf.homeManagerModules.default ];
+  inputs,
+  config,
+  ...
+}: {
+  imports = [inputs.nvf.homeManagerModules.default];
 
   programs.nvf = {
     enable = true;
@@ -8,6 +11,28 @@
     settings.vim = {
       vimAlias = true;
       viAlias = true;
+      withNodeJs = true;
+
+      options = {
+        tabstop = 2;
+        shiftwidth = 2;
+        wrap = false;
+      };
+
+      keymaps = [
+        {
+          key = "jk";
+          mode = ["i"];
+          action = "<ESC>";
+          desc = "Exit insert mode with jk";
+        }
+        {
+          key = "<leader>nh";
+          mode = ["n"];
+          action = ":nohl<CR>";
+          desc = "Clear search highlights";
+        }
+      ];
 
       theme = {
         enable = true;
@@ -44,19 +69,19 @@
         clang.enable = true;
         zig.enable = true;
         python.enable = true;
+        markdown.enable = true;
+        ts.enable = true;
+        html.enable = true;
       };
 
       visuals = {
-        # nvim-web-devicons.enable = true;
+        nvim-web-devicons.enable = true;
         nvim-cursorline.enable = true;
         cinnamon-nvim.enable = true;
         fidget-nvim.enable = true;
 
         highlight-undo.enable = true;
         indent-blankline.enable = true;
-
-        # Fun
-        # cellular-automaton.enable = false;
       };
 
       statusline = {
@@ -89,12 +114,15 @@
       };
 
       dashboard = {
-        dashboard-nvim.enable = true;
+        dashboard-nvim = {
+          enable = true;
+        };
         alpha.enable = true;
       };
 
       notify = {
         nvim-notify.enable = true;
+        nvim-notify.setupOpts.background_colour = "#${config.lib.stylix.colors.base01}";
       };
 
       utility = {
@@ -124,7 +152,7 @@
           navbuddy.enable = false;
         };
         smartcolumn = {
-          enable = true;
+          enable = false;
         };
         fastaction.enable = true;
       };
