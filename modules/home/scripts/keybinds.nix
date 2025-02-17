@@ -9,6 +9,6 @@ pkgs.writeShellScriptBin "list-keybinds" ''
   keybinds=$(cat ~/.config/hypr/hyprland.conf | grep modifier)
 
   # use rofi to display the keybinds with the modified content
-  echo "$keybinds" | rofi -dmenu -i -mesg "$msg"
+  echo "$keybinds" | rofi -dmenu -i -config ~/.config/rofi/config-long.rasi -mesg "$msg"
 
 ''

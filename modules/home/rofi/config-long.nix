@@ -2,7 +2,7 @@
   home.file.".config/rofi/config-long.rasi".text = ''
     @import "~/.config/rofi/config.rasi"
     window {
-      width: 600px;
+      width: 750px;
       border-radius: 20px;
     }
     mainbox {
