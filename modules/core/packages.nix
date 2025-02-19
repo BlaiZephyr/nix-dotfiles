@@ -69,6 +69,7 @@
     usbutils
     v4l-utils
     virt-viewer
+    yarn
     wget
   ];
 }

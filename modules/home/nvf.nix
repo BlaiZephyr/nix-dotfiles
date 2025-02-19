@@ -24,7 +24,7 @@
           key = "jk";
           mode = ["i"];
           action = "<ESC>";
-          desc = "Exit insert mode with jk";
+          desc = "Exit insert mode";
         }
         {
           key = "<leader>nh";
@@ -33,16 +33,22 @@
           desc = "Clear search highlights";
         }
         {
-          key = "<leader>F";
+          key = "<leader>ff";
           mode = ["n"];
           action = "<cmd>Telescope find_files<cr>";
           desc = "Search files by name";
         }
         {
-          key = "<leader>ff";
+          key = "<leader>lg";
           mode = ["n"];
           action = "<cmd>Telescope live_grep<cr>";
           desc = "Search files by contents";
+        }
+        {
+          key = "<leader>fe";
+          mode = ["n"];
+          action = "<cmd>Neotree toggle<cr>";
+          desc = "File browser toggle";
         }
       ];
 
@@ -127,6 +133,8 @@
 
       projects.project-nvim.enable = true;
       dashboard.dashboard-nvim.enable = true;
+
+      filetree.neo-tree.enable = true;
 
       notify = {
         nvim-notify.enable = true;
