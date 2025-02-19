@@ -25,6 +25,7 @@
 
   environment.systemPackages = with pkgs; [
     appimage-run
+    audacity
     brave
     brightnessctl
     cmatrix
@@ -54,6 +55,7 @@
     ncdu
     ninja
     nixfmt-rfc-style
+    nodejs
     obs-studio
     pavucontrol
     pciutils
