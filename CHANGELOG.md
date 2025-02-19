@@ -73,3 +73,6 @@ has been improved.
 - Massive improvement to Hyprland window rules.
 - Removed broken support for Apple Silicon (this may return).
 - Install script improved.
+- Fixed `nix flake check` not working.
+- Added nvidia prime PCI ID variables to host `variables.nix`.
+- Made Ghostty the new default terminal.

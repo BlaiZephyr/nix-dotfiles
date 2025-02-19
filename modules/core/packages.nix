@@ -59,7 +59,6 @@
     playerctl
     ripgrep
     socat
-    tree
     unrar
     unzip
     usbutils

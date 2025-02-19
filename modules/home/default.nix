@@ -22,5 +22,6 @@
     ./waybar.nix
     ./wlogout
     ./xdg.nix
+    ./zsh.nix
   ];
 }

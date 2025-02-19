@@ -36,7 +36,7 @@ in {
       "lp"
       "docker"
     ];
-    shell = pkgs.bash;
+    shell = pkgs.zsh;
     ignoreShellProgramCheck = true;
   };
   nix.settings.allowed-users = ["${username}"];
