@@ -25,12 +25,10 @@
 
   environment.systemPackages = with pkgs; [
     appimage-run
-    audacity
     brave
     brightnessctl
     cmatrix
     cowsay
-    discord
     docker-compose
     duf
     eza
@@ -55,8 +53,6 @@
     ncdu
     ninja
     nixfmt-rfc-style
-    nodejs
-    obs-studio
     pavucontrol
     pciutils
     pkg-config
@@ -69,7 +65,6 @@
     usbutils
     v4l-utils
     virt-viewer
-    yarn
     wget
   ];
 }
