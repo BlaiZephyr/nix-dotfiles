@@ -1,6 +1,9 @@
 {...}: {
-  stylix.targets.waybar.enable = false;
-  stylix.targets.rofi.enable = false;
-  stylix.targets.hyprland.enable = false;
-  stylix.targets.hyprlock.enable = false;
+  stylix.targets = {
+    waybar.enable = false;
+    rofi.enable = false;
+    hyprland.enable = false;
+    hyprlock.enable = false;
+    ghostty.enable = false;
+  };
 }
