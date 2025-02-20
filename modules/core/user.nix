@@ -29,12 +29,13 @@ in {
     isNormalUser = true;
     description = "${gitUsername}";
     extraGroups = [
-      "networkmanager"
-      "wheel"
-      "libvirtd"
-      "scanner"
-      "lp"
+      "adbusers"
       "docker"
+      "libvirtd"
+      "lp"
+      "networkmanager"
+      "scanner"
+      "wheel"
     ];
     shell = pkgs.zsh;
     ignoreShellProgramCheck = true;
