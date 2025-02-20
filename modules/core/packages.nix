@@ -56,6 +56,7 @@
     nixfmt-rfc-style
     pavucontrol
     pciutils
+    picard
     pkg-config
     playerctl
     ripgrep
@@ -65,6 +66,7 @@
     usbutils
     v4l-utils
     virt-viewer
+    ytmdl
     wget
   ];
 }
