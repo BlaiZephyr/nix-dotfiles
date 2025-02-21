@@ -16,11 +16,11 @@
   };
 
   home.packages = with pkgs; [
-    #   ffmpeg
-    #   yt-dlp
-    #   imgcat
-    #   vlc
-    #   libreoffice
+    ffmpeg
+    yt-dlp
+    imgcat
+    vlc
+    libreoffice
   ];
 
   home.stateVersion = "24.11";

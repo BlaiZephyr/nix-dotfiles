@@ -63,7 +63,7 @@
         "editor.formatOnSave" = true;
 
         #theme
-        "workbench.colorTheme" = "Ayu Dark Bordered";
+        "workbench.colorTheme" = "Ayu Mirage";
       };
     };
   };
