@@ -5,10 +5,10 @@
     syntaxHighlighting.enable = true;
 
     initExtra = ''
-      bindkey "^H" backward-word
-      bindkey "^J" down-line-or-history
-      bindkey "^K" up-line-or-history
-      bindkey "^L" forward-word
+      bindkey "\eh" backward-word
+      bindkey "\ej" down-line-or-history
+      bindkey "\ek" up-line-or-history
+      bindkey "\el" forward-word
     '';
 
     shellAliases = {
