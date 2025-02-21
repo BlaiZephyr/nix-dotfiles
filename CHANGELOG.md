@@ -76,6 +76,6 @@ has been improved.
 - Fixed `nix flake check` not working.
 - Added nvidia prime PCI ID variables to host `variables.nix`.
 - Made Ghostty the new default terminal.
-- Added vim keybindings to rofi (hjkl) and zsh (ctrl+hjkl).
+- Added vim keybindings to rofi (hjkl) and zsh (alt+hjkl).
 - Added (ctrl+hjkl) keybinds for vim movement while in insert mode in neovim.
 - Supports adb out of the box.
