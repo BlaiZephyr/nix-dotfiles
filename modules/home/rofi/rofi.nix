@@ -16,10 +16,6 @@
         display-drun = " Apps";
         display-run = " Run";
         display-filebrowser = " File";
-        kb-row-up = "k,Up";
-        kb-row-down = "j,Down";
-        kb-mode-next = "l";
-        kb-mode-previous = "h";
       };
       theme = let
         inherit (config.lib.formats.rasi) mkLiteral;
