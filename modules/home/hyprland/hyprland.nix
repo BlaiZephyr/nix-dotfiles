@@ -2,9 +2,7 @@
   pkgs,
   username,
   ...
-}:
-
-{
+}: {
   home.packages = with pkgs; [
     swww
     grim

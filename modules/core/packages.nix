@@ -1,6 +1,6 @@
 {pkgs, ...}: {
   programs = {
-    firefox.enable = false;
+    firefox.enable = false; # Firefox is not installed by defualt
     dconf.enable = true;
     seahorse.enable = true;
     fuse.userAllowOther = true;
@@ -67,7 +67,7 @@
     usbutils
     v4l-utils
     virt-viewer
-    ytmdl
     wget
+    ytmdl
   ];
 }

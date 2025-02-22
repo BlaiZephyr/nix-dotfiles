@@ -1,17 +1,17 @@
-{ host,
+{
+  host,
   username,
   config,
-  ... 
-}:
-let
-  inherit (import ../../../hosts/${host}/variables.nix)
+  ...
+}: let
+  inherit
+    (import ../../../hosts/${host}/variables.nix)
     browser
     terminal
     extraMonitorSettings
     keyboardLayout
     ;
-in
-{
+in {
   wayland.windowManager.hyprland = {
     settings = {
       exec-once = [
@@ -22,6 +22,7 @@ in
         "killall -q swaync;sleep .5 && swaync"
         "nm-applet --indicator"
         "lxqt-policykit-agent"
+        "pypr &"
         "sleep 1.5 && swww img /home/${username}/Pictures/Wallpapers/zaney-wallpaper.jpg"
       ];
 
@@ -114,11 +115,12 @@ in
         "$modifier,O,exec,obs"
         "$modifier,C,exec,hyprpicker -a"
         "$modifier,G,exec,gimp"
-        "$modifier SHIFT,G,exec,godot4"
-        "$modifier,T,exec,thunar"
-        "$modifier,M,exec,spotify"
+        "$modifier,T,exec,pypr toggle term"
+        "$modifier SHIFT,T,exec,pypr toggle thunar"
+        "$modifier,M,exec,pavucontrol"
         "$modifier,Q,killactive,"
-        "$modifier,P,pseudo,"
+        "$modifier,P,exec,pypr toggle volume"
+        "$modifier SHIFT,P,pseudo,"
         "$modifier SHIFT,I,togglesplit,"
         "$modifier,F,fullscreen,"
         "$modifier SHIFT,F,togglefloating,"
