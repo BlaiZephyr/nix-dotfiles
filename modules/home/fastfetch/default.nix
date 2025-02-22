@@ -6,7 +6,7 @@
       display = {
         color = {
           keys = "35";
-          output = "90";
+          output = "95";
         };
         separator = " ➜  ";
       };
@@ -25,64 +25,107 @@
       modules = [
         "break"
         {
-          type = "cpu";
-          format = "{1} ({3}) @ {7}";
-          key = "HW   ";
+          type = "os";
+          key = "OS - ZaneyOS v2.3"; 
+          keyColor = "31";  
         }
-        {
-          type = "gpu";
-          key = " ├ 󰍛 ";
-        }
-        {
-          type = "memory";
-          key = " └  ";
-        }
-        "break"
         {
           type = "kernel";
-          key = "SW   ";
+          key = " ├  ";
+          keyColor = "31";
         }
         {
           type = "packages";
           key = " ├ 󰏖 ";
+          keyColor = "31";
         }
         {
           type = "shell";
           key = " └  ";
+          keyColor = "31";
         }
         "break"
         {
           type = "wm";
           key = "WM   ";
+          keyColor = "32";
         }
         {
           type = "wmtheme";
           key = " ├ 󰉼 ";
+          keyColor = "32";
+        }
+        {
+          type = "icons";
+          key = " ├ 󰀻 ";
+          keyColor = "32";
+        }
+        {
+          type = "cursor";
+          key = " ├  ";
+          keyColor = "32";
         }
         {
           type = "terminal";
-          key = " └  ";
+          key = " ├  ";
+          keyColor = "32";
+        }
+        {
+          type = "terminalfont";
+          key = " └  ";
+          keyColor = "32";
+        }
+        "break"
+        {
+          type = "host";
+          format = "{5} {1} Type {2}";
+          key = "PC   ";
+          keyColor = "33";
+        }
+        {
+          type = "cpu";
+          format = "{1} ({3}) @ {7} GHz";
+          key = " ├  ";
+          keyColor = "33";
+        }
+        {
+          type = "gpu";
+          format = "{1} {2} @ {12} GHz";
+          key = " ├ 󰢮 ";
+          keyColor = "33";
+        }
+        {
+          type = "memory";
+          key = " ├  ";
+          keyColor = "33";
+        }
+        {
+          type = "disk";
+          key = " ├ 󰋊 ";
+          keyColor = "33";
+        }
+        {
+          type = "monitor";
+          key = " └  ";
+          keyColor = "33";
+        }
+        {
+          type = "player";
+          key = "└ 󰥠 ";
+          keyColor = "33";
+        }
+        {
+          type = "media";
+          key = " └ 󰝚 ";
+          keyColor = "33";
         }
         "break"
         {
           type = "uptime";
-          key = "UP   ";
+          key = "   Uptime   ";
         }
-        {
-          type = "command";
-          key = " └  ";
-          text =
-            #bash
-            ''
-              birth_install=$(stat -c %W /)
-              current=$(date +%s)
-              delta=$((current - birth_install))
-              delta_days=$((delta / 86400))
-              echo $delta_days days
-            '';
-        }
-        "break"
       ];
     };
   };
 }
+
