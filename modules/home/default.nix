@@ -3,6 +3,7 @@
     ./bash.nix
     ./bat.nix
     ./btop.nix
+    ./cava.nix
     ./emoji.nix
     ./fastfetch
     ./gh.nix
