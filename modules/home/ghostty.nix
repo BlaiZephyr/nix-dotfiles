@@ -1,6 +1,6 @@
 _: {
   programs.ghostty = {
-    enable = true;
+    enable = false;
     enableBashIntegration = false;
     enableZshIntegration = true;
     settings = {
