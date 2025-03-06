@@ -35,6 +35,7 @@
     duf # Utility For Viewing Disk Usage In Terminal
     eza # Beautiful ls Replacement
     ffmpeg # Terminal Video / Audio Editing
+    ffmpegthumbnailer  # Need for video / image preview in file mgr
     file-roller # Archive Manager
     gedit # Simple Graphical Text Editor
     gimp # Great Photo Editor
