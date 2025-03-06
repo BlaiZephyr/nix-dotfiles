@@ -7,6 +7,7 @@
     openssh.enable = true;
     flatpak.enable = true;
     blueman.enable = true;
+    tumbler.enable = true;  # Image/video preview
 
     smartd = {
       enable = false;
