@@ -21,4 +21,7 @@
 
   # Enable NFS
   enableNFS = true;
+
+  # Enable Printing Support
+  printEnable = false;
 }

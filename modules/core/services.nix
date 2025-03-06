@@ -1,44 +1,26 @@
-{pkgs, ...}: {
+{profile, ...}: {
   # Services to start
   services = {
-    libinput.enable = true;
-    fstrim.enable = true;
-    gvfs.enable = true;
-    openssh.enable = true;
-    flatpak.enable = true;
-    blueman.enable = true;
-    tumbler.enable = true;  # Image/video preview
+    libinput.enable = true; # Input Handling
+    fstrim.enable = true; # SSD Optimizer
+    gvfs.enable = true; # For Mounting USB & More
+    openssh.enable = true; # Enable SSH
+    blueman.enable = true; # Bluetooth Support
+    tumbler.enable = true; # Image/video preview
+    gnome.gnome-keyring.enable = true;
 
     smartd = {
-      enable = false;
+      enable =
+        if profile == "vm"
+        then false
+        else true;
       autodetect = true;
     };
-    printing = {
-      enable = true;
-      drivers = [
-        # pkgs.hplipWithPlugin
-      ];
-    };
-    gnome.gnome-keyring.enable = true;
-    avahi = {
-      enable = true;
-      nssmdns4 = true;
-      openFirewall = true;
-    };
-    ipp-usb.enable = true;
     pipewire = {
       enable = true;
       alsa.enable = true;
       alsa.support32Bit = true;
       pulse.enable = true;
     };
-  };
-
-  systemd.services.flatpak-repo = {
-    wantedBy = ["multi-user.target"];
-    path = [pkgs.flatpak];
-    script = ''
-      flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-    '';
   };
 }
