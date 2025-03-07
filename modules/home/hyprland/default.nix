@@ -1,5 +1,6 @@
 {...}: {
   imports = [
+    ./binds.nix
     ./config.nix
     ./hypridle.nix
     ./hyprland.nix
