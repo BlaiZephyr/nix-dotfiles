@@ -211,3 +211,29 @@ It will be announced on the Zaney [Discord](https://discord.gg/W7efsSDS) server.
 3. Once you have everything configured properly, use the `fr` Flake Rebuild alias to create a new generation. 
 
 4. You will need to preface applications you want to use the NVIDIA GPU with `nvidia-offload APPLICATION-NAME`  
+
+
+## I am new to NIXOS where can I go to get more info? 
+
+- NIXOS Config Guide 
+https://www.youtube.com/watch?v=AGVXJ-TIv3Y&t=34s
+- VIMJOYER YouTube Channel  
+https://www.youtube.com/@vimjoyer/videos
+- Librephoenix YouTube Channel  
+https://www.youtube.com/@librephoenix
+- 8 Part Video Series on NIXOS  
+https://www.youtube.com/watch?v=QKoQ1gKJY5A&list=PL-saUBvIJzOkjAw_vOac75v-x6EzNzZq-
+
+## Where can I get info on using GIT repositories 
+
+- Managing NIXOSD config with GIT
+https://www.youtube.com/watch?v=20BN4gqHwaQ
+
+- GIT for dummies 
+https://www.youtube.com/watch?v=K6Q31YkorUE
+
+- How GIT works
+https://www.youtube.com/watch?v=e9lnsKot_SQ
+
+ - In depth 1hr video on GIT
+https://www.youtube.com/watch?v=S7XpTAnSDL4&t=123s
