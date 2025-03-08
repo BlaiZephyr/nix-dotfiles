@@ -22,7 +22,7 @@
       enabled_layouts splits
 
       # Clipboard
-      map ctrl+shift+s        paste_from_selection
+      map ctrl+shift+v        paste_from_selection
       map shift+insert        paste_from_selection
 
       # Scrolling
@@ -40,7 +40,7 @@
       map alt+n               new_os_window
       map alt+w               close_window
       map ctrl+shift+enter    launch --location=hsplit
-      map ctrl+shift+v        launch --location=vsplit
+      map ctrl+shift+s        launch --location=vsplit
       map ctrl+shift+]        next_window
       map ctrl+shift+[        previous_window
       map ctrl+shift+f        move_window_forward
