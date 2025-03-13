@@ -1,6 +1,6 @@
 # ZaneyOS FAQ for v2.3 
-- **Revision v0.2**  
-- **Date:** 1-Mar-2025
+- **Revision v0.3**  
+- **Date:** 11-Mar-2025
 
 ## Why did you create ZaneyOS ?
  
@@ -204,13 +204,13 @@ It will be announced on the Zaney [Discord](https://discord.gg/W7efsSDS) server.
 
 ## How do I configure my hybrid laptop with Intel/NVIDIA GPUs? 
 
-1. Either run the `install-zaneyos.sh` script and select `nvidia-prime` template or if configuring manually, set the template in the `flake.nix` to `nvidia-prime`  
+1. Either run the `install-zaneyos.sh` script and select `nvidia-laptop` template or if configuring manually, set the template in the `flake.nix` to `nvidia-prime`  
 
 2. In the `~/zaneyos/hosts/HYBRID-HOST/variables.nix` file you will need to set the PCI IDs for the Intel and NVIDIA GPUs. Refer to [this page](https://nixos.wiki/wiki/Nvidia) to help determine those values.
 
 3. Once you have everything configured properly, use the `fr` Flake Rebuild alias to create a new generation. 
 
-4. You will need to preface applications you want to use the NVIDIA GPU with `nvidia-offload APPLICATION-NAME`  
+4. In the `~/zaneyos/modules/home/hyprland/config.nix` file is an ENV setting` "AQ_DRM_DEVICES,/dev/dri/card0:/dev/dri/card1"` This sets the primary and secondary GPUs. Using the info from the weblink above you might have to change the order of these values.
 
 
 ## I am new to NIXOS where can I go to get more info? 
@@ -226,7 +226,7 @@ https://www.youtube.com/watch?v=QKoQ1gKJY5A&list=PL-saUBvIJzOkjAw_vOac75v-x6EzNz
 
 ## Where can I get info on using GIT repositories 
 
-- Managing NIXOSD config with GIT
+- Managing NIXOS config with GIT
 https://www.youtube.com/watch?v=20BN4gqHwaQ
 
 - GIT for dummies 
