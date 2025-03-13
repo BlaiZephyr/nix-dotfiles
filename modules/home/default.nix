@@ -1,6 +1,7 @@
 {...}: {
   imports = [
     ./bash.nix
+    ./bashrc-personal.nix
     ./bat.nix
     ./btop.nix
     ./cava.nix
@@ -24,5 +25,6 @@
     ./wlogout
     ./xdg.nix
     ./zsh.nix
+    ./zshrc-personal.nix
   ];
 }
