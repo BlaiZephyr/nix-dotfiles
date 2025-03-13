@@ -23,6 +23,7 @@
     ./waybar.nix
     ./wlogout
     ./xdg.nix
+    ./zoxide.nix
     ./zsh.nix
   ];
 }
