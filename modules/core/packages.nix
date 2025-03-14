@@ -68,5 +68,6 @@
     virt-viewer # View Virtual Machines
     wget # Tool For Fetching Files With Links
     ytmdl # Tool For Downloading Audio From YouTube
+    inputs.yazi.packages.${pkgs.system}.yazi   #TUI FileMgr
   ];
 }
