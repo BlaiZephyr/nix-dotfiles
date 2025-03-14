@@ -1,5 +1,5 @@
 # ZaneyOS FAQ for v2.3 
-- **Revision v0.5**  
+- **Revision v1.0**  
 - **Date:** 14-Mar-2025
 
 ## Why did you create ZaneyOS ?
@@ -298,8 +298,8 @@ ALT is the defined META key for WezTerm
   -- Tab management
 ALT + t                 Open new Tab
 ALT + w                 Close current Tab
-ALT + TAB               Move to next Tab
-ALT + SHIFT + TAB       Move to previous Tab 
+ALT + n                 Move to next Tab
+ALT + p                 Move to previous Tab 
   -- Pane management
 ALT + v                 Create Vertical Split
 ALT + h                 Create Horizontal Split
