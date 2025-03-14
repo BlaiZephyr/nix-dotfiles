@@ -1,5 +1,5 @@
 # ZaneyOS FAQ for v2.3 
-- **Revision v0.4**  
+- **Revision v0.5**  
 - **Date:** 14-Mar-2025
 
 ## Why did you create ZaneyOS ?
@@ -274,6 +274,43 @@ The Yazi configuration file is located in `~/zaneyos/modules/home/yazi.nix`
 Yazi is configured like VIM and VIM motions 
 
 The keymap is in the `~/zaneyos/modules/home/yazi/keymap.toml` file
+
+## How do I enable WezTerm? 
+
+ Edit the `/zaneyos/modules/home/wezterm.nix`  Change `enable = false` to `enable = true;`  
+ Save the file and rebuild zaneyos with the `fr` command. 
+
+```
+{pkgs, ...}: {
+  programs.wezterm = {
+    enable = false;
+    package = pkgs.wezterm;
+  };
+
+``` 
+## What are the WezTerm keybindings and how can I change them? 
+
+The kitty bindings are configured in `~/zaneyos/modules/home/wezterm.nix`  
+  
+The defaults are:
+```
+ALT is the defined META key for WezTerm
+  -- Tab management
+ALT + t                 Open new Tab
+ALT + w                 Close current Tab
+ALT + TAB               Move to next Tab
+ALT + SHIFT + TAB       Move to previous Tab 
+  -- Pane management
+ALT + v                 Create Vertical Split
+ALT + h                 Create Horizontal Split
+ALT + q                 Close Current Pane
+   -- Pane navigation (move between panes with ALT + Arrows)
+ALT + Left Arrow        Move to pane -- Left
+ALT + Right Arrow       Move to pane -- Right
+ALT + Down Arrow        Move to pane -- Down
+ALT + Up Arrow          Move to pane -- Down
+
+```
 
 ## I am new to NIXOS where can I go to get more info? 
 
