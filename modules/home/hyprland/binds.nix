@@ -28,6 +28,7 @@ in {
       "$modifier SHIFT,I,togglesplit,"
       "$modifier,F,fullscreen,"
       "$modifier SHIFT,F,togglefloating,"
+      "$modifier ALT,F,workspaceopt, allfloat"
       "$modifier SHIFT,C,exit,"
       "$modifier SHIFT,left,movewindow,l"
       "$modifier SHIFT,right,movewindow,r"
