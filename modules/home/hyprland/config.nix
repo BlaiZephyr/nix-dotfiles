@@ -179,6 +179,8 @@ in {
         "SDL_VIDEODRIVER, x11"
         "MOZ_ENABLE_WAYLAND, 1"
         "AQ_DRM_DEVICES,/dev/dri/card0:/dev/dri/card1"
+        "GDK_SCALE,1"
+        "QT_SCALE_FACTOR,1"
       ];
     };
 
