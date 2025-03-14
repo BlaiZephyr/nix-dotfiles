@@ -1,6 +1,6 @@
 # ZaneyOS FAQ for v2.3 
-- **Revision v0.3**  
-- **Date:** 11-Mar-2025
+- **Revision v0.4**  
+- **Date:** 14-Mar-2025
 
 ## Why did you create ZaneyOS ?
  
@@ -212,6 +212,71 @@ It will be announced on the Zaney [Discord](https://discord.gg/W7efsSDS) server.
 
 4. In the `~/zaneyos/modules/home/hyprland/config.nix` file is an ENV setting` "AQ_DRM_DEVICES,/dev/dri/card0:/dev/dri/card1"` This sets the primary and secondary GPUs. Using the info from the weblink above you might have to change the order of these values.
 
+## What are the Kitty keybindings and how can I change them? 
+
+  The kitty bindings are configured in `~/zaneyos/modules/home/kitty.nix`  
+  
+  The defaults are:
+
+  ```   # Clipboard
+      map ctrl+shift+v        paste_from_selection
+      map shift+insert        paste_from_selection
+
+      # Scrolling
+      map ctrl+shift+up        scroll_line_up
+      map ctrl+shift+down      scroll_line_down
+      map ctrl+shift+k         scroll_line_up
+      map ctrl+shift+j         scroll_line_down
+      map ctrl+shift+page_up   scroll_page_up
+      map ctrl+shift+page_down scroll_page_down
+      map ctrl+shift+home      scroll_home
+      map ctrl+shift+end       scroll_end
+      map ctrl+shift+h         show_scrollback
+
+      # Window management
+      map alt+n               new_os_window
+      map alt+w               close_window
+      map ctrl+shift+enter    launch --location=hsplit
+      map ctrl+shift+s        launch --location=vsplit
+      map ctrl+shift+]        next_window
+      map ctrl+shift+[        previous_window
+      map ctrl+shift+f        move_window_forward
+      map ctrl+shift+b        move_window_backward
+      map ctrl+shift+`        move_window_to_top
+      map ctrl+shift+1        first_window
+      map ctrl+shift+2        second_window
+      map ctrl+shift+3        third_window
+      map ctrl+shift+4        fourth_window
+      map ctrl+shift+5        fifth_window
+      map ctrl+shift+6        sixth_window
+      map ctrl+shift+7        seventh_window
+      map ctrl+shift+8        eighth_window
+      map ctrl+shift+9        ninth_window
+      map ctrl+shift+0        tenth_window
+
+      # Tab management
+      map ctrl+shift+right    next_tab
+      map ctrl+shift+left     previous_tab
+      map ctrl+shift+t        new_tab
+      map ctrl+shift+q        close_tab
+      map ctrl+shift+l        next_layout
+      map ctrl+shift+.        move_tab_forward
+      map ctrl+shift+,        move_tab_backward
+
+      # Miscellaneous
+      map ctrl+shift+up      increase_font_size
+      map ctrl+shift+down    decrease_font_size
+      map ctrl+shift+backspace restore_font_size
+
+  ```
+
+## What are the Yazi keybindings and how can I change them? 
+
+The Yazi configuration file is located in `~/zaneyos/modules/home/yazi.nix`
+
+Yazi is configured like VIM and VIM motions 
+
+The keymap is in the `~/zaneyos/modules/home/yazi/keymap.toml` file
 
 ## I am new to NIXOS where can I go to get more info? 
 
