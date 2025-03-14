@@ -13,8 +13,8 @@ This includes the wallpaper, scripts, applications, config files, and more.
 </div>
 
 > **This project has a [Wiki](https://zaney.org/wiki/zaneyos-2.3/). Find out how
-> to use ZaneyOS here!** **I have put a lot of effort into the
-> [documentation](https://zaney.org/wiki/zaneyos-2.3/) so it should be accurate.
+> to use ZaneyOS here!** **dwilliams62 have put a lot of effort into the
+> [FAQ](https://zaney.org/wiki/zaneyos-2.3/FAQ) so it should be accurate.
 > However, please if you notice that something is wrong with it create an issue
 > or reach out to me on Discord.**
 
@@ -80,6 +80,8 @@ Please do yourself a favor and
   faster response.
 
 ### ⬇️ Install
+
+Don't forget to checkout the [FAQ](https://zaney.org/wiki/zaneyos-2.3/FAQ)
 
 #### 📜 Script:
 
