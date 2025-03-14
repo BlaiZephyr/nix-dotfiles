@@ -22,6 +22,7 @@
     ./swaync.nix
     ./virtmanager.nix
     ./waybar.nix
+    ./wezterm.nix
     ./wlogout
     ./xdg.nix
     ./yazi
