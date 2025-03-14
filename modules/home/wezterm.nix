@@ -63,8 +63,8 @@
        -- Tab management
        { key = "t", mods = "ALT", action = wezterm.action.SpawnTab("CurrentPaneDomain") },
        { key = "w", mods = "ALT", action = wezterm.action.CloseCurrentTab({ confirm = false }) },
-       { key = "Tab", mods = "ALT", action = wezterm.action.ActivateTabRelative(1) },
-       { key = "Tab", mods = "ALT|SHIFT", action = wezterm.action.ActivateTabRelative(-1) },
+       { key = "n", mods = "ALT", action = wezterm.action.ActivateTabRelative(1) },
+       { key = "p", mods = "ALT", action = wezterm.action.ActivateTabRelative(-1) },
 
        -- Pane management
        { key = "v", mods = "ALT", action = wezterm.action.SplitVertical({ domain = "CurrentPaneDomain" }) },
