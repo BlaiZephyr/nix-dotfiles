@@ -55,8 +55,7 @@ Edit the `extraMonitorSettings` line.
             monitor=HDMI-A-1,2560x1440@75,auto,auto
             ";` 
 
-Information on configuring monitors is available on the Hyprland Wiki
-https://wiki.hyprland.org/Configuring/Monitors/
+Information on configuring monitors is available on the [Hyprland Wiki](https://wiki.hyprland.org/Configuring/Monitors/)
 
 ##  How do I add applications to ZaneyOS? 
 
@@ -73,38 +72,35 @@ Followed by a list of packages These are required for ZaneyOS.
 We suggest you add a comment at the end of the package names. Then add in your packages. 
 
 ```
-            e.g. 
-            ...
-            virt-viewer
-            wget
-            ###  My Apps ### 
-            bottom
-            dua
-            emacs-nox
-            fd
-            gping
-            lazygit
-            lunarvim
-            luarocks
-            mission-center
-            ncdu
-            nvtopPackages.full
-            oh-my-posh
-            pyprland
-            shellcheck
-            multimarkdown
-            nodejs_23
-            ugrep
-            zoxide
-        
-        ];
-        }
+    ...
+    virt-viewer
+    wget
+    ###  My Apps ### 
+    bottom
+    dua
+    emacs-nox
+    fd
+    gping
+    lazygit
+    lunarvim
+    luarocks
+    mission-center
+    ncdu
+    nvtopPackages.full
+    oh-my-posh
+    pyprland
+    shellcheck
+    multimarkdown
+    nodejs_23
+    ugrep
+    zoxide
+  ];
+}
 ```
 
 2.  For applications that will only be on specific host. 
    
-You edit the `host-packages.nix` associated with that host. 
-	`~/zaneyos/hosts/<HOSTNAME>/host-packages.nix` 
+You edit the `host-packages.nix` associated with that host. `~/zaneyos/hosts/<HOSTNAME>/host-packages.nix` 
 
 The part of the file you need to edit, looks like this: 
 
@@ -214,61 +210,62 @@ It will be announced on the Zaney [Discord](https://discord.gg/W7efsSDS) server.
 
 ## What are the Kitty keybindings and how can I change them? 
 
-  The kitty bindings are configured in `~/zaneyos/modules/home/kitty.nix`  
+The kitty bindings are configured in `~/zaneyos/modules/home/kitty.nix`  
   
-  The defaults are:
+The defaults are:
 
-  ```   # Clipboard
-      map ctrl+shift+v        paste_from_selection
-      map shift+insert        paste_from_selection
+```
+    # Clipboard
+    map ctrl+shift+v        paste_from_selection
+    map shift+insert        paste_from_selection
 
-      # Scrolling
-      map ctrl+shift+up        scroll_line_up
-      map ctrl+shift+down      scroll_line_down
-      map ctrl+shift+k         scroll_line_up
-      map ctrl+shift+j         scroll_line_down
-      map ctrl+shift+page_up   scroll_page_up
-      map ctrl+shift+page_down scroll_page_down
-      map ctrl+shift+home      scroll_home
-      map ctrl+shift+end       scroll_end
-      map ctrl+shift+h         show_scrollback
+    # Scrolling
+    map ctrl+shift+up        scroll_line_up
+    map ctrl+shift+down      scroll_line_down
+    map ctrl+shift+k         scroll_line_up
+    map ctrl+shift+j         scroll_line_down
+    map ctrl+shift+page_up   scroll_page_up
+    map ctrl+shift+page_down scroll_page_down
+    map ctrl+shift+home      scroll_home
+    map ctrl+shift+end       scroll_end
+    map ctrl+shift+h         show_scrollback
 
-      # Window management
-      map alt+n               new_os_window
-      map alt+w               close_window
-      map ctrl+shift+enter    launch --location=hsplit
-      map ctrl+shift+s        launch --location=vsplit
-      map ctrl+shift+]        next_window
-      map ctrl+shift+[        previous_window
-      map ctrl+shift+f        move_window_forward
-      map ctrl+shift+b        move_window_backward
-      map ctrl+shift+`        move_window_to_top
-      map ctrl+shift+1        first_window
-      map ctrl+shift+2        second_window
-      map ctrl+shift+3        third_window
-      map ctrl+shift+4        fourth_window
-      map ctrl+shift+5        fifth_window
-      map ctrl+shift+6        sixth_window
-      map ctrl+shift+7        seventh_window
-      map ctrl+shift+8        eighth_window
-      map ctrl+shift+9        ninth_window
-      map ctrl+shift+0        tenth_window
+    # Window management
+    map alt+n               new_os_window
+    map alt+w               close_window
+    map ctrl+shift+enter    launch --location=hsplit
+    map ctrl+shift+s        launch --location=vsplit
+    map ctrl+shift+]        next_window
+    map ctrl+shift+[        previous_window
+    map ctrl+shift+f        move_window_forward
+    map ctrl+shift+b        move_window_backward
+    map ctrl+shift+`        move_window_to_top
+    map ctrl+shift+1        first_window
+    map ctrl+shift+2        second_window
+    map ctrl+shift+3        third_window
+    map ctrl+shift+4        fourth_window
+    map ctrl+shift+5        fifth_window
+    map ctrl+shift+6        sixth_window
+    map ctrl+shift+7        seventh_window
+    map ctrl+shift+8        eighth_window
+    map ctrl+shift+9        ninth_window
+    map ctrl+shift+0        tenth_window
 
-      # Tab management
-      map ctrl+shift+right    next_tab
-      map ctrl+shift+left     previous_tab
-      map ctrl+shift+t        new_tab
-      map ctrl+shift+q        close_tab
-      map ctrl+shift+l        next_layout
-      map ctrl+shift+.        move_tab_forward
-      map ctrl+shift+,        move_tab_backward
+    # Tab management
+    map ctrl+shift+right    next_tab
+    map ctrl+shift+left     previous_tab
+    map ctrl+shift+t        new_tab
+    map ctrl+shift+q        close_tab
+    map ctrl+shift+l        next_layout
+    map ctrl+shift+.        move_tab_forward
+    map ctrl+shift+,        move_tab_backward
 
-      # Miscellaneous
-      map ctrl+shift+up      increase_font_size
-      map ctrl+shift+down    decrease_font_size
-      map ctrl+shift+backspace restore_font_size
+    # Miscellaneous
+    map ctrl+shift+up      increase_font_size
+    map ctrl+shift+down    decrease_font_size
+    map ctrl+shift+backspace restore_font_size
 
-  ```
+```
 
 ## What are the Yazi keybindings and how can I change them? 
 
@@ -280,25 +277,14 @@ The keymap is in the `~/zaneyos/modules/home/yazi/keymap.toml` file
 
 ## I am new to NIXOS where can I go to get more info? 
 
-- NIXOS Config Guide 
-https://www.youtube.com/watch?v=AGVXJ-TIv3Y&t=34s
-- VIMJOYER YouTube Channel  
-https://www.youtube.com/@vimjoyer/videos
-- Librephoenix YouTube Channel  
-https://www.youtube.com/@librephoenix
-- 8 Part Video Series on NIXOS  
-https://www.youtube.com/watch?v=QKoQ1gKJY5A&list=PL-saUBvIJzOkjAw_vOac75v-x6EzNzZq-
+- [NIXOS Config Guide](https://www.youtube.com/watch?v=AGVXJ-TIv3Y&t=34s)
+- [VIMJOYER YouTube Channel](https://www.youtube.com/@vimjoyer/videos)
+- [Librephoenix YouTube Channel](https://www.youtube.com/@librephoenix)
+- [8 Part Video Series on NIXOS](https://www.youtube.com/watch?v=QKoQ1gKJY5A&list=PL-saUBvIJzOkjAw_vOac75v-x6EzNzZq-)
 
 ## Where can I get info on using GIT repositories 
 
-- Managing NIXOS config with GIT
-https://www.youtube.com/watch?v=20BN4gqHwaQ
-
-- GIT for dummies 
-https://www.youtube.com/watch?v=K6Q31YkorUE
-
-- How GIT works
-https://www.youtube.com/watch?v=e9lnsKot_SQ
-
- - In depth 1hr video on GIT
-https://www.youtube.com/watch?v=S7XpTAnSDL4&t=123s
+- [Managing NIXOS config with GIT](https://www.youtube.com/watch?v=20BN4gqHwaQ)
+- [GIT for dummies](https://www.youtube.com/watch?v=K6Q31YkorUE)
+- [How GIT works](https://www.youtube.com/watch?v=e9lnsKot_SQ)
+- [In depth 1hr video on GIT](https://www.youtube.com/watch?v=S7XpTAnSDL4&t=123s)
