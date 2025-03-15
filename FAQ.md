@@ -1,5 +1,5 @@
 # ZaneyOS FAQ for v2.3 
-- **Revision v1.01**  
+- **Revision v1.02**  
 - **Date:** 15-Mar-2025
 
 ## Why did you create ZaneyOS ?
@@ -222,21 +222,12 @@ To change the hostname, there are several steps and you will have to reboot to m
 
 ## How do I change the image for Stylix? 
 
-- To Enable:  
-1. Edit the `~/zaneyos/modules/core/stylix.nix` file.  
-2. Add or edit the filename next to `image = ` 
+1. Edit the `~/zaneyos/hosts/HOSTNAME/varibles.nix` 
+2. Change the `stylixImage = ` to the filename you want to use. Wallpapers are in `~/zaneyos/wallpapers`
 
+``` # Set Stylix Image
+  stylixImage = ../../wallpapers/AnimeGirlNightSky.jpg;
 ```
-  # Styling Options
-  stylix = {
-    enable = true;
-    image = ../../wallpapers/Anime-girl-sitting-night-sky_1952x1120.jpg;
-    #image = ../../wallpapers/Rainnight.jpg;
-    #image = ../../wallpapers/zaney-wallpaper.jpg;
-
-```
-3. As you see you can have multiple images configured, then uncomment the one you want.
-4. Run the `fr` command alias to create a new generation and make the change effective immediately.
 
 ## How do I add more wallpapers? 
 
