@@ -24,4 +24,7 @@
 
   # Enable Printing Support
   printEnable = false;
+
+  # Set Stylix Image
+  stylixImage = ../../wallpapers/zaney-wallpaper.jpg;
 }
