@@ -26,5 +26,5 @@
   printEnable = false;
 
   # Set Stylix Image
-  stylixImage = ../../wallpapers/zaney-wallpaper.jpg;
+  # stylixImage = ../../wallpapers/zaney-wallpaper.jpg;
 }
