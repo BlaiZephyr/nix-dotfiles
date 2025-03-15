@@ -1,31 +1,11 @@
-return {
-    entry = function()
-        local output = Command("git"):arg("status"):stderr(Command.PIPED):output()
-        if output.stderr ~= "" then
-            ya.notify({
-                title = "lazygit",
-                content = "Not in a git directory",
-                level = "warn",
-                timeout = 5,
-            })
-        else
-            permit = ya.hide()
-            local output, err_code = Command("lazygit"):stderr(Command.PIPED):output()
-            if err_code ~= nil then
-                ya.notify({
-                    title = "Failed to run lazygit command",
-                    content = "Status: " .. err_code,
-                    level = "error",
-                    timeout = 5,
-                })
-            elseif not output.status.success then
-                ya.notify({
-                    title = "lazygit in" .. cwd .. "failed, exit code " .. output.status.code,
-                    content = output.stderr,
-                    level = "error",
-                    timeout = 5,
-                })
-            end
-        end
-    end,
-}
+--- @since 25.2.26
+--- @sync entry
+
+local function setup(self, opts) self.open_multi = opts.open_multi end
+
+local function entry(self)
+	local h = cx.active.current.hovered
+	ya.mgr_emit(h and h.cha.is_dir and "enter" or "open", { hovered = not self.open_multi })
+end
+
+return { entry = entry, setup = setup }
