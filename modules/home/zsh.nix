@@ -25,7 +25,8 @@
       cat = "bat";
       man = "batman";
       ls = "eza --icons --group-directories-first -1";
-      ll = "eza --icons -a --group-directories-first -1 --no-user --long";
+      ll = "eza --icons -lh --group-directories-first -1 --no-user --long";
+      la = "eza --icons -lah --group-directories-first -1";
       tree = "eza --icons --tree --group-directories-first";
     };
   };

@@ -58,7 +58,7 @@
       map ctrl+shift+0        tenth_window
       map ctrl+shift+right    next_tab
       map ctrl+shift+left     previous_tab
-      map ctrl+shift+t        new_tab 
+      map ctrl+shift+t        new_tab
       map ctrl+shift+q        close_tab
       map ctrl+shift+l        next_layout
       map ctrl+shift+.        move_tab_forward
@@ -71,5 +71,3 @@
     '';
   };
 }
-     
-      
