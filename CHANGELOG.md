@@ -65,10 +65,10 @@ has been improved.
 - Added profiles for what kind of system you have based of GPU / VM.
 - Reduced the host specific files and made the entire flake more modular.
 - Fixed git getting set to wrong user settings.
-- Set stylix and nvf to use dracula theme by default.
 - Fixed hyprlock conflicting with stylix.
 - Setup nh in a better fashion.
-- Added support for qmk out of the box and added usbutils for lsusb functionality.
+- Added support for qmk out of the box and added usbutils for lsusb
+  functionality.
 - Massive improvement to Hyprland window rules.
 - Removed broken support for Apple Silicon (this may return).
 - Install script improved.
@@ -77,6 +77,7 @@ has been improved.
 - Added vim keybindings zsh (alt+hjkl).
 - Added (ctrl+hjkl) keybinds for vim movement while in insert mode in neovim.
 - Supports adb out of the box.
-- Ddubs/dwilliam62 helped with the addition of pyprland and scratchpad support. He is now also a maintainer.
+- Ddubs/dwilliam62 helped with the addition of pyprland and scratchpad support.
+  He is now also a maintainer.
 - Added image used by Stylix into the host variables file.
 - Made printing and NFS variables so they can be easily toggled between hosts.
