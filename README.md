@@ -92,15 +92,34 @@ content!
 
 Simply copy this and run it:
 
+![ZaneyOS First Install Command](img/first-install-cmd.avif)
+
 ```
 nix-shell -p git curl
 ```
 
 Then:
 
+![ZaneyOS Install Script Command](img/install-script.avif)
+
 ```
 sh <(curl -L https://gitlab.com/Zaney/zaneyos/-/raw/main/install-zaneyos.sh)
 ```
+
+The install process will look something like this:
+
+![First Part Of Install](img/1.avif)
+
+![Second Part Of Install](img/2.avif)
+
+After the install completes your environment will probably look broken. Just
+reboot and you will see this as your login:
+
+![Display Manager](img/3.avif)
+
+Then after login you should see a screen like this:
+
+![Desktop Example](img/4.avif)
 
 #### 🦽 Manual:
 
