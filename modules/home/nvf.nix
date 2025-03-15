@@ -77,7 +77,7 @@
       ];
 
       theme = {
-        enable = false;
+        enable = true;
         name = "dracula";
         style = "dark";
         transparent = true;
