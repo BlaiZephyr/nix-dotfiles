@@ -1,6 +1,6 @@
 # ZaneyOS FAQ for v2.3 
-- **Revision v1.0**  
-- **Date:** 14-Mar-2025
+- **Revision v1.01**  
+- **Date:** 15-Mar-2025
 
 ## Why did you create ZaneyOS ?
  
@@ -150,6 +150,132 @@ To change the hostname, there are several steps and you will have to reboot to m
 3.  In the `~/zaneyos` Directory run `git add .` *The rebuild will fail with a 'file not found' error if you forget this step.*
 
 4.  Use the `fr` alias to create a new generation with the new hostname.  You must reboot to make the change effective. 
+
+## How do I enable or disable Stylix? 
+
+- To Enable:  
+1. Edit the `~/zaneyos/modules/core/stylix.nix` file.  
+2. Comment out from `base16Scheme` to the `};` after `base0F` 
+
+```
+# Styling Options
+  stylix = {
+    enable = true;
+    image = ../../wallpapers/Anime-girl-sitting-night-sky_1952x1120.jpg;
+    #image = ../../wallpapers/Rainnight.jpg;
+    #image = ../../wallpapers/zaney-wallpaper.jpg;
+    #  base16Scheme = {
+    #  base00 = "282936";
+    #  base01 = "3a3c4e";
+    #  base02 = "4d4f68";
+    #  base03 = "626483";
+    #  base04 = "62d6e8";
+    #  base05 = "e9e9f4";
+    #  base06 = "f1f2f8";
+    #  base07 = "f7f7fb";
+    #  base08 = "ea51b2";
+    #  base09 = "b45bcf";
+    #  base0A = "00f769";
+    #  base0B = "ebff87";
+    #  base0C = "a1efe4";
+    #  base0D = "62d6e8";
+    #  base0E = "b45bcf";
+    #  base0F = "00f769";
+    #};
+    polarity = "dark";
+    opacity.terminal = 1.0;
+    cursor = {
+      package = pkgs.bibata-cursors;
+      name = "Bibata-Modern-Ice";
+      size = 24;
+    };
+```
+3. Select the image you wasnt stylex to use for the colorpalette.
+4. Run `fr` command alias to create a new generation with this colorscheme.
+
+- To disable uncomment 
+1. Edit the `~/zaneyos/modules/core/stylix.nix` file.  
+2. Uncomment out from `base16Scheme` to the `};` after `base0F` 
+
+```
+     base16Scheme = {
+      base00 = "282936";
+      base01 = "3a3c4e";
+      base02 = "4d4f68";
+      base03 = "626483";
+      base04 = "62d6e8";
+      base05 = "e9e9f4";
+      base06 = "f1f2f8";
+      base07 = "f7f7fb";
+      base08 = "ea51b2";
+      base09 = "b45bcf";
+      base0A = "00f769";
+      base0B = "ebff87";
+      base0C = "a1efe4";
+      base0D = "62d6e8";
+      base0E = "b45bcf";
+      base0F = "00f769";
+    };
+
+```
+3. Run the `fr`command alias to build a new generation with either the default dracula or set your own custom colors
+
+## How do I change the image for Stylix? 
+
+- To Enable:  
+1. Edit the `~/zaneyos/modules/core/stylix.nix` file.  
+2. Add or edit the filename next to `image = ` 
+
+```
+  # Styling Options
+  stylix = {
+    enable = true;
+    image = ../../wallpapers/Anime-girl-sitting-night-sky_1952x1120.jpg;
+    #image = ../../wallpapers/Rainnight.jpg;
+    #image = ../../wallpapers/zaney-wallpaper.jpg;
+
+```
+3. As you see you can have multiple images configured, then uncomment the one you want.
+4. Run the `fr` command alias to create a new generation and make the change effective immediately.
+
+## How do I add more wallpapers? 
+
+- Wallpapers are stored in the `~/zaneyos/wallpapers` directory.  
+
+## How do I change the background? 
+
+- SUPER + ALT + W will select a new background 
+
+## How can I set a timer to change the wallpaper automatically? 
+
+1. Edit the `~/zaneyos/modules/home/hyprland/config.nix` file. 
+2. Comment out the line `sleep 1.5 && swww img ...`
+3. Add new line after that with `sleep 1 && wallsetter` 
+
+```
+ settings = {
+      exec-once = [
+        "dbus-update-activation-environment --all --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
+        "systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
+        "killall -q swww;sleep .5 && swww init"
+        "killall -q waybar;sleep .5 && waybar"
+        "killall -q swaync;sleep .5 && swaync"
+        "nm-applet --indicator"
+        "lxqt-policykit-agent"
+        "pypr &"
+        #"sleep 1.5 && swww img /home/${username}/Pictures/Wallpapers/zaney-wallpaper.jpg"
+        "sleep 1 && wallsetter"
+      ];
+```
+4.  Run the command alias `fr` to create a new generation.  
+5.  You will need to logout or reboot to make the change effective.
+
+## How do I change the interval the wallpaper changes? 
+
+1.  Edit the `~/zaneyos/modules/home/scripts/wallsetter`  
+2.  Change the `TIMEOUT = ` value. Which is in seconds. 
+3.  Run the command alias `fr` to create a new generation.  
+4.  You will need to logout or reboot to make the change effective. 
 
 ## How do I update my version ZaneyOS ? 
 
