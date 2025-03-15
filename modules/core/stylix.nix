@@ -1,7 +1,6 @@
-{pkgs,host, ...}: 
-# let
-#   inherit (import ../../hosts/${host}/variables.nix) stylixImage;
-# in
+{pkgs,host, ...}: let
+  inherit (import ../../hosts/${host}/variables.nix) stylixImage;
+in
 {
   # Styling Options
   stylix = {
