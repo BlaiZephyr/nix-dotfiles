@@ -44,8 +44,7 @@ This includes the wallpaper, scripts, applications, config files, and more.
 - You can define separate settings for different host machines and users.
 - Easily specify extra packages for your users in the modules/core/user.nix
   file.
-- Easy to understand file structure and simple, but encompassing,
-  configuratiion.
+- Easy to understand file structure and simple, but encompassing, configuration.
 
 #### 👼 An Incredible Community Focused On Support
 
@@ -105,50 +104,47 @@ sh <(curl -L https://gitlab.com/Zaney/zaneyos/-/raw/main/install-zaneyos.sh)
 
 #### 🦽 Manual:
 
-Run this command to ensure Git & Vim are installed:
+1. Run this command to ensure Git & Vim are installed:
 
 ```
 nix-shell -p git vim
 ```
 
-Clone this repo & enter it:
+2. Clone this repo & enter it:
 
 ```
-git clone https://gitlab.com/zaney/zaneyos.git
+cd && git clone https://gitlab.com/zaney/zaneyos.git
 cd zaneyos
 ```
 
 - _You should stay in this folder for the rest of the install_
 
-Create the host folder for your machine(s)
+3. Create the host folder for your machine(s) like so:
 
 ```
 cp -r hosts/default hosts/<your-desired-hostname>
 ```
 
-**🪧🪧🪧 Edit `hosts/<your-desired-hostname>/variables.nix` 🪧🪧🪧**
+4. Edit `hosts/<your-desired-hostname>/variables.nix`.
 
-Generate your hardware.nix like so:
+5. Edit `flake.nix` and fill in your username, profile, and hostname.
+
+6. Generate your hardware.nix like so:
 
 ```
 nixos-generate-config --show-hardware-config > hosts/<your-desired-hostname>/hardware.nix
 ```
 
-Run this to enable flakes and install the flake replacing `profile` with any of
-these options:
-
-- amd
-- nvidia
-- nvidia-laptop
-- intel
-- vm
+7. Run this to enable flakes and install the flake replacing hostname with
+   whatever you put as the hostname:
 
 ```
 NIX_CONFIG="experimental-features = nix-command flakes" 
 sudo nixos-rebuild switch --flake .#profile
 ```
 
-Now when you want to rebuild the configuration you have access to an alias `fr`
-that will rebuild the flake!
+Now when you want to rebuild the configuration you have access to an alias
+called `fr` that will rebuild the flake and you do not have to be in the
+`zaneyos` folder for it to work.
 
 Hope you enjoy!
