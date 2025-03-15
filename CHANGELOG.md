@@ -79,4 +79,4 @@ has been improved.
 - Added vim keybindings zsh (alt+hjkl).
 - Added (ctrl+hjkl) keybinds for vim movement while in insert mode in neovim.
 - Supports adb out of the box.
-- Ddubs/dwilliam62 helped with the addition of pyprland and scratchpad support.
+- Ddubs/dwilliam62 helped with the addition of pyprland and scratchpad support. He is now also a maintainer.
