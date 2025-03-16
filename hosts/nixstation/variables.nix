@@ -27,4 +27,7 @@
 
   # Set Stylix Image
   stylixImage = ../../wallpapers/AnimeGirlNightSky.jpg;
+
+  # Set Waybar
+  waybarChoice = ./waybar.nix;
 }

@@ -1,4 +1,6 @@
-{...}: {
+{host, ...}: let
+  inherit (import ../../hosts/${host}/variables.nix) waybarChoice;
+in {
   imports = [
     ./bash.nix
     ./bashrc-personal.nix
@@ -21,7 +23,7 @@
     ./stylix.nix
     ./swaync.nix
     ./virtmanager.nix
-    ./waybar.nix
+    waybarChoice
     ./wezterm.nix
     ./wlogout
     ./xdg.nix
