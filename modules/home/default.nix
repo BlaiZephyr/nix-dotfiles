@@ -13,6 +13,7 @@ in {
     ./ghostty.nix
     ./git.nix
     ./gtk.nix
+    ./htop.nix
     ./hyprland
     ./kitty.nix
     ./nvf.nix
