@@ -37,7 +37,7 @@
      config.window_background_opacity = 0.90
      config.color_scheme = "nightfox"
      config.font_size = 12
-     config.font = wezterm.font("FiraCode Nerd Font Mono", { weight = "Regular", italic = false })
+     config.font = wezterm.font("FiraCode", { weight = "Regular", italic = false })
 
      config.window_padding = {
        left = 10,
