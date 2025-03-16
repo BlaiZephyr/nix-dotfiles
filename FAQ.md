@@ -1,6 +1,6 @@
 # ZaneyOS FAQ for v2.3 
-- **Revision v1.02**  
-- **Date:** 15-Mar-2025
+- **Revision v1.03**  
+- **Date:** 16-Mar-2025
 
 ## Why did you create ZaneyOS ?
  
@@ -427,6 +427,67 @@ ALT + Right Arrow       Move to pane -- Right
 ALT + Down Arrow        Move to pane -- Down
 ALT + Up Arrow          Move to pane -- Down
 
+```
+
+## How do I enable the ghostty terminal? 
+
+1. Edit the `~/zaneyos/modules/home/ghostty.nix` file. 
+2. Change `enable = true;`
+3. Run the command alias `fr` to create a new generation. 
+
+## How do I change the ghostty theme? 
+
+1. Edit the `~/zaneyos/modules/home/ghostty.nix` file.
+2. There are several example themes included but commented out.
+
+```
+    #theme = Aura
+    theme = Dracula
+    #theme = Aardvark Blue
+    #theme = GruvboxDarkHard
+
+```
+3.  Comment out `Dracula` and either uncomment one of the others or add one of ghostty's many themes.
+
+## What are the default ghostty keybindings? 
+
+```
+ # keybindings
+    keybind = alt+s>r=reload_config
+    keybind = alt+s>x=close_surface
+
+    keybind = alt+s>n=new_window
+
+    # tabs
+    keybind = alt+s>c=new_tab
+    keybind = alt+s>shift+l=next_tab
+    keybind = alt+s>shift+h=previous_tab
+    keybind = alt+s>comma=move_tab:-1
+    keybind = alt+s>period=move_tab:1
+
+    # quick tab switch
+    keybind = alt+s>1=goto_tab:1
+    keybind = alt+s>2=goto_tab:2
+    keybind = alt+s>3=goto_tab:3
+    keybind = alt+s>4=goto_tab:4
+    keybind = alt+s>5=goto_tab:5
+    keybind = alt+s>6=goto_tab:6
+    keybind = alt+s>7=goto_tab:7
+    keybind = alt+s>8=goto_tab:8
+    keybind = alt+s>9=goto_tab:9
+
+    # split
+    keybind = alt+s>\=new_split:right
+    keybind = alt+s>-=new_split:down
+
+    keybind = alt+s>j=goto_split:bottom
+    keybind = alt+s>k=goto_split:top
+    keybind = alt+s>h=goto_split:left
+    keybind = alt+s>l=goto_split:right
+
+    keybind = alt+s>z=toggle_split_zoom
+
+    keybind = alt+s>e=equalize_splits
 ```
 
 ## I am new to NIXOS where can I go to get more info? 
