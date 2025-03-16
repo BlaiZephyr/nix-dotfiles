@@ -1,4 +1,8 @@
-{pkgs,inputs, ...}: {
+{
+  pkgs,
+  inputs,
+  ...
+}: {
   programs = {
     firefox.enable = false; # Firefox is not installed by defualt
     dconf.enable = true;
@@ -59,6 +63,7 @@
     picard # For Changing Music Metadata & Getting Cover Art
     pkg-config # Wrapper Script For Allowing Packages To Get Info On Others
     playerctl # Allows Changing Media Volume Through Scripts
+    rhythmbox
     ripgrep # Improved Grep
     socat # Needed For Screenshots
     unrar # Tool For Handling .rar Files
@@ -68,6 +73,6 @@
     virt-viewer # View Virtual Machines
     wget # Tool For Fetching Files With Links
     ytmdl # Tool For Downloading Audio From YouTube
-    inputs.yazi.packages.${pkgs.system}.yazi   #TUI FileMgr
+    inputs.yazi.packages.${pkgs.system}.yazi #TUI FileMgr
   ];
 }
