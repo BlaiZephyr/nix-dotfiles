@@ -1,6 +1,6 @@
 # ZaneyOS FAQ for v2.3 
-- **Revision v1.03**  
-- **Date:** 16-Mar-2025
+- **Revision v1.04**  
+- **Date:** 18-Mar-2025
 
 ## Why did you create ZaneyOS ?
  
