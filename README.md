@@ -16,13 +16,13 @@ This includes the wallpaper, scripts, applications, config files, and more.
 > to use ZaneyOS here!** **dwilliams62 have put a lot of effort into the
 > [FAQ](https://zaney.org/wiki/zaneyos-2.3/faq) so it should be accurate.
 > However, please if you notice that something is wrong with it create an issue
-> or reach out to me on Discord.**
+> or reach out to us on Discord.**
 
 #### 🍖 Requirements
 
 - You must be running on NixOS.
 - The zaneyos folder (this repo) is expected to be in your home directory.
-- Must have installed using GPT & UEFI. Systemd-boot is what is supported, for
+- Must have installed using **GPT** & **UEFI**. Systemd-boot is what is supported, for
   GRUB you will have to brave the internet for a how-to. ☺️
 - Manually editing your host specific files. The host is the specific computer
   your installing on.
