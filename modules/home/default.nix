@@ -32,5 +32,6 @@ in {
     ./zoxide.nix
     ./zsh.nix
     ./zshrc-personal.nix
+    ./code.nix
   ];
 }

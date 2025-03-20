@@ -1,12 +1,11 @@
-{ pkgs, ... }:
-{
+{pkgs, ...}: {
   hardware = {
     sane = {
       enable = true;
-      extraBackends = [ pkgs.sane-airscan ];
-      disabledDefaultBackends = [ "escl" ];
+      extraBackends = [pkgs.sane-airscan];
+      disabledDefaultBackends = ["escl"];
     };
-    logitech.wireless.enable = false;
+    logitech.wireless.enable = true;
     logitech.wireless.enableGraphical = false;
     graphics.enable = true;
     enableRedistributableFirmware = true;
@@ -14,5 +13,5 @@
     bluetooth.enable = true;
     bluetooth.powerOnBoot = true;
   };
-  local.hardware-clock.enable = false;
+  local.hardware-clock.enable = true;
 }

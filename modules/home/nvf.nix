@@ -118,12 +118,12 @@
 
       visuals = {
         nvim-web-devicons.enable = true;
-        nvim-cursorline.enable = true;
-        cinnamon-nvim.enable = true;
-        fidget-nvim.enable = true;
+        nvim-cursorline.enable = false;
+        cinnamon-nvim.enable = false;
+        fidget-nvim.enable = false;
 
-        highlight-undo.enable = true;
-        indent-blankline.enable = true;
+        highlight-undo.enable = false;
+        indent-blankline.enable = false;
       };
 
       statusline = {
@@ -155,10 +155,10 @@
         gitsigns.codeActions.enable = false; # throws an annoying debug message
       };
 
-      projects.project-nvim.enable = true;
-      dashboard.dashboard-nvim.enable = true;
+      projects.project-nvim.enable = false;
+      dashboard.dashboard-nvim.enable = false;
 
-      filetree.neo-tree.enable = true;
+      filetree.neo-tree.enable = false;
 
       notify = {
         nvim-notify.enable = true;
@@ -183,7 +183,7 @@
       };
 
       ui = {
-        borders.enable = true;
+        borders.enable = false;
         noice.enable = true;
         colorizer.enable = true;
         illuminate.enable = true;

@@ -11,23 +11,12 @@
         separator = " ➜  ";
       };
 
-      logo = {
-        source = ./nixos.png;
-        type = "kitty-direct";
-        height = 10;
-        width = 20;
-        padding = {
-          top = 2;
-          left = 2;
-        };
-      };
-
       modules = [
         "break"
         {
           type = "os";
-          key = "OS - ZaneyOS v2.3"; 
-          keyColor = "31";  
+          key = "OS - ZaneyOS v2.3";
+          keyColor = "31";
         }
         {
           type = "kernel";
@@ -128,4 +117,3 @@
     };
   };
 }
-

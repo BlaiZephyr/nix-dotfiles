@@ -21,6 +21,7 @@
     ./virtualisation.nix
     ./xdg.nix
     ./xserver.nix
+    ./devenv.nix
     inputs.stylix.nixosModules.stylix
   ];
 }

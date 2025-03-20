@@ -5,6 +5,8 @@
     syntaxHighlighting.enable = true;
 
     initExtra = ''
+      eval "$(direnv hook zsh)"
+      export DIRENV_LOG_FORMAT=""
       bindkey "\eh" backward-word
       bindkey "\ej" down-line-or-history
       bindkey "\ek" up-line-or-history
