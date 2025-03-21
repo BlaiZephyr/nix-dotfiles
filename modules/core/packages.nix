@@ -4,7 +4,7 @@
   ...
 }: {
   programs = {
-    firefox.enable = false; # Firefox is not installed by defualt
+    firefox.enable = false; # Firefox is not installed by default
     dconf.enable = true;
     seahorse.enable = true;
     fuse.userAllowOther = true;
@@ -29,6 +29,7 @@
   nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [
+    nixd # LSP for nix
     amfora # Fancy Terminal Browser For Gemini Protocol
     appimage-run # Needed For AppImage Support
     firefox
