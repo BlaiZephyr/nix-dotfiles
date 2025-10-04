@@ -13,6 +13,7 @@
     #export VISUAL="nvim"
  
     #alias c="clear"
+    eval "$(direnv hook zsh)"
    
 
   '';

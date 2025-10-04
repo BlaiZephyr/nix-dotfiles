@@ -3,5 +3,7 @@
     audacity
     discord
     nodejs
+    direnv
+    nix-direnv
   ];
 }

@@ -1,4 +1,6 @@
 { lib, ... }: {
+  
+
   programs.alacritty =
     let
       font_family = lib.mkForce "Maple Mono NF";
@@ -27,4 +29,9 @@
         };
       };
     };
+    programs.direnv = {
+      enable = true;
+      nix-direnv.enable = true;
+    };
 }
+

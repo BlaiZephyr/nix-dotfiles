@@ -2,13 +2,20 @@
 
 {
   boot = {
+    supportedFilesystems = [ "ntfs" ];
     kernelPackages = pkgs.linuxPackages_zen;
     kernelModules = [ "v4l2loopback" ];
     extraModulePackages = [ config.boot.kernelPackages.v4l2loopback ];
     kernel.sysctl = { "vm.max_map_count" = 2147483642; };
-    loader.systemd-boot.enable = true;
-    loader.efi.canTouchEfiVariables = true;
-    # Appimage Support
+    loader = {
+    grub = {
+        enable = true;
+        devices = [ "nodev" ];
+        efiSupport = true;
+    };
+    efi.canTouchEfiVariables = true;
+    };
+
     binfmt.registrations.appimage = {
       wrapInterpreterInShell = false;
       interpreter = "${pkgs.appimage-run}/bin/appimage-run";

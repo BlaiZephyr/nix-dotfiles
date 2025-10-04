@@ -4,6 +4,7 @@
     enableCompletion = true;
     initExtra = ''
       fastfetch
+      eval "$(direnv hook $SHELL)"
       if [ -f $HOME/.bashrc-personal ]; then
         source $HOME/.bashrc-personal
       fi
